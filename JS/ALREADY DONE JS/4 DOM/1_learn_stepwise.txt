@@ -1,0 +1,50 @@
+### **1️⃣ Core DOM Basics (Understanding Nodes & Attributes)**  
+Start with fundamental concepts like node structure and attributes:  
+- `NODE-obj-pt1.html` (Understanding Node objects)  
+- `attributes.html` (Working with attributes)  
+- `getAttribute.html` (Getting attribute values)  
+- `setAttribute.html` (Setting attributes)  
+- `hasAttribute.html` (Checking if an attribute exists)  
+- `removeAttribute.html` (Removing attributes)  
+
+---
+
+### **2️⃣ Creating & Modifying DOM Elements**  
+Learn how to create and modify elements dynamically:  
+- `createElement.html` (Creating elements)  
+- `createTextNode.html` (Creating text nodes)  
+- `createComment.html` (Creating comment nodes)  
+- `appendData.html` (Appending data to elements)  
+- `insertBefore.html` (Inserting elements before other elements)  
+- `insertAdjacentElement.html` (Inserting elements in specific positions)  
+- `replaceNode.html` (Replacing nodes)  
+- `removeNode.html` (Removing nodes)  
+
+---
+
+### **3️⃣ DOM Traversal (Navigating the DOM Tree)**  
+Understand how to move through the DOM tree efficiently:  
+- `dom-traversal-pt1.html` (Basic traversal)  
+- `dom-traversal-pt2.html` (Advanced traversal techniques)  
+- `dom-traversal-pt3.html` (More traversal methods)  
+
+---
+
+### **4️⃣ Event Handling in the DOM**  
+Learn how to work with events in JavaScript:  
+- `event-handling-pt1.html` (Basic event handling)  
+- `addEventListener-pt1.html` (Adding event listeners)  
+- `addEventListener-pt2.html` (Advanced event listener techniques)  
+- `mouseEvents.html` (Handling mouse-related events)  
+- `preventDefault.html` (Preventing default behaviors)  
+
+---
+
+### **5️⃣ Special DOM Concepts & Utilities**  
+Explore some additional useful DOM concepts:  
+- `classList.html` (Manipulating classes dynamically)  
+- `copyNode.html` (Copying nodes)  
+- `document-fragment.html` (Using document fragments for efficiency)  
+- `enter-to-dom.html` (Inserting elements dynamically into the DOM)  
+- `normalize.html` (Normalizing the DOM structure)  
+- `getComputedStyle.html` (Getting computed CSS styles)  

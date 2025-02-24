@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>class list of tokenList</title>
+  </head>
+  <body>
+    <h1>JS - TUTs</h1>
+
+    <p id="para" class="para">i am a paragraph.</p>
+
+    <div class="myDiv div1">
+      <h3 class="heading myDiv-h3">this is h3 inside a div.</h3>
+
+      <p class="para myDiv-para">this is p inside a div.</p>
+    </div>
+
+    <script>
+      // in this tut, we are going to learn about the classList property of the DOM, which is a type of DOMTokenList which represents the space seperated list of values what we need, here the space seperated list of classes of the particular element...
+
+      // let's have a closer look...
+
+      let div = document.querySelector(".div1");
+
+      let tokenListOfDiv = div.classList;
+
+      console.log(tokenListOfDiv);
+
+      // 2 properties of tokenList -> 1) length & 2) value
+
+      console.log(tokenListOfDiv.length);
+      console.log(tokenListOfDiv.value);
+
+      // there are multiple methods of the tokenList 'classList' ...
+
+      // here, we can access one of the class of the class list value using indexing and the same task we can do using one of its method is 'item(indexNo)'...
+
+      console.log("----------");
+      console.log(tokenListOfDiv[0]);
+      console.log(tokenListOfDiv.item(1));
+
+      // using add('className') method you can add an extra class to the particular elementNode...
+
+      tokenListOfDiv.add("main-div");
+      console.log(tokenListOfDiv);
+
+      // using remove('className') method you can remove any particular class of the elementNode from its classList... like here we have added 'main-div' which is not useful or not seems imp, so we are going to remove it...
+
+      tokenListOfDiv.remove("main-div");
+      console.log(tokenListOfDiv);
+
+      // using replace('oldClassName', 'newClassName') method you can replace any class with a new class name...
+
+      // like here we are going to replace 'div-1' class to the 'first-div' and then we'll check about it!
+
+      tokenListOfDiv.replace("div1", "first-div");
+      console.log(tokenListOfDiv);
+
+      // using contains('className') method we can check whether the particular element contains the specific class or not! if yes then it returns 'true' else 'false'...
+
+      if (tokenListOfDiv.contains("first-div"))
+        tokenListOfDiv.forEach((val) => {
+          if (val == "first-div") console.log(val);
+        });
+
+      // the line above is tells that if the tokenListOfDiv variable contains 'first-div' named entry then it will perform this operation : first of all it will runs a for each loop oven the values of 'tokenListOfDiv' and then during the looping it will check for the 'first-div' value and if it is found then it will logs it on the console...
+
+      // now we are going to learn about toggle('className') method of the DOM, which is used to toggle the class into the classList, means if the provided className is not exists into the list then it will add it to the classList otherwise it will remove it from the classList...
+
+      // suppose here not another class name 'main-div' so first of all we are going to toggle it only one time but after it we will toggle it again and check what happens...
+
+      tokenListOfDiv.toggle("main-div");
+      console.log(tokenListOfDiv);
+      tokenListOfDiv.toggle("main-div");
+      console.log(tokenListOfDiv);
+    </script>
+  </body>
+</html>

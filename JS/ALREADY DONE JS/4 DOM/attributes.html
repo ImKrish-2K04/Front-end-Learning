@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>attributes property</title>
+  </head>
+  <body>
+    <h1>JS - TUTs</h1>
+
+    <p id="para">i am paragraph.</p>
+
+    <script>
+      // in this tutorial we are going to learn about 'attributes' property which is used to check the properties of a particular element, its value and to set its value...
+      // let's we learn it by practically...
+
+      let p = document.getElementById("para");
+
+      console.log(p.attributes);
+
+      // let's access its id attribute and also trying to change its value!
+
+      console.log(p.attributes[0]);
+      console.log(p.attributes[0].nodeName);
+      console.log(p.attributes[0].nodeValue);
+      p.attributes[0].nodeValue = "paragraph-1";
+      console.log(p.attributes[0].nodeValue);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <h1>fetching APIs</h1>
+
+    <script>
+      const createTodo = async () => {
+        let options = {
+          method: "POST",
+
+          headers: {
+            "Content-type": "application/json",
+          },
+
+          body: JSON.stringify({
+            title: "My-self",
+            fname: "Makwana",
+            lname: "Krishna",
+            age: 20,
+            gender: "Male",
+          }),
+        };
+
+        let response = await fetch(
+          "https://jsonplaceholder.typicode.com/posts",
+          options
+        );
+        let result = await response.json();
+        return result;
+      };
+
+      const creation = async () => {
+        let todos = await createTodo();
+        console.log(todos);
+      };
+
+      creation();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grid learning</title>
+    <style>
+      *::before,
+      *::after,
+      * {
+        margin: 0;
+        padding: 0;
+        user-select: none;
+        font-family: Arial, Helvetica, sans-serif;
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #353f41;
+      }
+
+      .grid-container {
+        width: 80%;
+        background-color: #dce;
+        color: #fff;
+        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(250px, 1fr));
+        grid-template-rows: repeat(2, 225px);
+        grid-auto-rows: 225px;
+      }
+
+      @media (width <= 935px) {
+        .grid-container {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+      }
+
+      .grid-container .item {
+        display: grid;
+        place-items: center;
+        text-transform: uppercase;
+        font-size: 2rem;
+        letter-spacing: 0.2rem;
+        font-weight: bold;
+      }
+
+      .item-1 {
+        background-color: #67304e;
+      }
+
+      .item-2 {
+        background-color: #1e404c;
+      }
+
+      .item-3 {
+        background-color: #1d355b;
+      }
+
+      .item-4 {
+        background-color: #855041;
+      }
+
+      .item-5 {
+        background-color: #4b4b4b;
+      }
+
+      .item-6 {
+        background-color: #825b6f;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="grid-container">
+      <div class="item item-1">item-1</div>
+      <div class="item item-2">item-2</div>
+      <div class="item item-3">item-3</div>
+      <div class="item item-4">item-4</div>
+      <div class="item item-5">item-5</div>
+      <div class="item item-6">item-6</div>
+    </div>
+  </body>
+</html>

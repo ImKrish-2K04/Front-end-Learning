@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Job Application Form</h1>
+    <form action="" method="post">
+      <fieldset>
+        <legend>Personal Details:</legend>
+
+        <label for="name">Name:</label> <br />
+        <input type="text" name="fullName" id="name" /> <br />
+
+        <label for="mail">Email:</label> <br />
+        <input type="email" name="email address" id="mail" /> <br />
+
+        <label for="telephone">Phone:</label> <br />
+        <input type="tel" name="telephone_no" id="telephone" /> <br />
+
+        <label for="resume_file">Choose resume:</label> <br />
+        <input type="file" name="resume_file" id="resume_file" /> <br />
+
+        <label for="exp">Experience:</label> <br />
+        <input type="number" name="experience" id="exp" max="20" /> <br />
+      </fieldset>
+
+      <fieldset>
+        <legend>Skills:</legend>
+
+        <input type="checkbox" name="html" id="html" /> <br />
+        <label for="html">HTML</label> <br />
+        <input type="checkbox" name="css" id="css" /> <br />
+        <label for="css">CSS</label> <br />
+        <input type="checkbox" name="js" id="js" /> <br />
+        <label for="js">JavaScript</label> <br />
+      </fieldset>
+
+      <fieldset>
+        <legend>Others:</legend>
+        <label for="high_edu">Higher Education:</label> <br />
+        <select name="higher education" id="high_edu">
+          <option value="high_school">High School</option>
+          <option value="ug">Under Graduation</option>
+          <option value="pg">Post Graduation</option>
+          <option value="phd">P.h.d</option>
+        </select>
+        <br />
+        <label>Availability:</label> <br />
+        <input type="radio" name="availability" id="full_time" /> <br />
+        <label for="full_time">Full time</label> <br />
+        <input type="radio" name="availability" id="half_time" /> <br />
+        <label for="half_time">Half time</label> <br />
+
+        <label for="comment">Additional Comments:</label> <br />
+        <textarea
+          name="additional Comments"
+          id="comment"
+          rows="5"
+          cols="30"
+        ></textarea>
+        <br />
+        <input type="submit" value="Submit" name="submit" />
+      </fieldset>
+    </form>
+  </body>
+</html>

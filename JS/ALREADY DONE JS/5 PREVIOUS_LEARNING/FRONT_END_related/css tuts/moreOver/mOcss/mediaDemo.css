@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+#container {
+  width: 100%;
+  height: 50%;
+}
+
+#container h1 {
+  text-align: center;
+  padding: 15px;
+  background-color: black;
+  color: aliceblue;
+}
+
+#container .content {
+  width: 50%;
+  height: 340px;
+  float: left;
+  font-size: 26px;
+  text-align: justify;
+  padding: 20px;
+  background-color: cadetblue;
+  color: antiquewhite;
+  border: none;
+}
+
+#container .image {
+  width: 50%;
+  height: 340px;
+  float: left;
+  text-align: center;
+  background-color: black;
+}
+
+#container .image img {
+  height: 330px;
+  width: 90%;
+  padding: 20px;
+}
+
+@media (max-width: 1320px) {
+  #container .content {
+    font-size: 23px;
+  }
+
+  #container .image img {
+    height: auto;
+    max-height: 330px;
+  }
+}
+
+@media (min-width: 896px) and (max-width: 1100px) {
+  #container .content {
+    font-size: 20px;
+  }
+
+  #container .image img {
+    height: auto;
+    max-height: 330px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 896px) {
+  #container .content {
+    font-size: 17px;
+  }
+
+  #container .image img {
+    height: auto;
+    max-height: 330px;
+  }
+}
+
+@media (min-width: 360px) and (max-width: 720px) {
+  #container .content {
+    font-size: 16px;
+    width: 100%;
+    height: auto;
+  }
+
+  #container .image {
+    width: 100%;
+    height: auto;
+    border: none;
+  }
+
+  h1 {
+  }
+
+  #container .image img {
+    height: auto;
+    max-height: 330px;
+  }
+}

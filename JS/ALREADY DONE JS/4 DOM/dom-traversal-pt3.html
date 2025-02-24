@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      h1 {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="heading">DOM Traversal</h1>
+
+    <p class="para para1">
+      Here, we are going to learn some more rest node properties which are used
+      to accessing nodes of the elements and element nodes of the elements.
+    </p>
+
+    <p class="para para2">
+      these node objects are used to traversal into the Document Object Model
+      (i.e DOM)...
+    </p>
+
+    <p class="para para3">those objects are as follows:</p>
+
+    <ol type="1">
+      <li>nextSibling</li>
+      <!-- the four nodes -->
+      <li>previousSibling</li>
+      <li>nextElementSibling</li>
+      <li>previousElementSibling</li>
+    </ol>
+
+    <script>
+      // look here! nextSibling && previousSibling...
+
+      // nextSibling and previousSibling are the properties used for travesing in the DOM, which is used in a particular tag to accessing the sibling node of a particular node and that sibling node can be text node or comment node or element node...here nextSibling is used for check the next node and the previous node by the previousSibling...
+
+      let orderedList = document.querySelector("ol");
+      console.log(orderedList.childNodes[4].previousSibling);
+      console.log(orderedList.childNodes[4].nodeValue);
+      console.log(orderedList.childNodes[4].nextSibling);
+
+      // look here! nextElementSibling && previousElementSibling...
+
+      // both are same as the above two but they are not considering text node or comment node or any others except the element nodes...
+
+      // only element nodes are accepted by this...
+
+      // check here! success!
+      console.log(
+        orderedList.children[2].previousElementSibling.childNodes[0].nodeValue
+      );
+      console.log(orderedList.children[2].childNodes[0].nodeValue);
+      console.log(
+        orderedList.children[2].nextElementSibling.childNodes[0].nodeValue
+      );
+    </script>
+  </body>
+</html>

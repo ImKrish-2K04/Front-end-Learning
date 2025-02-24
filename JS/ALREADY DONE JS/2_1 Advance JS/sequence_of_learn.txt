@@ -1,0 +1,22 @@
+1. some_imp_understanding.txt
+2. s_i_understanding_2.txt
+
+... for more detailed and in short understanding of microtasks, macrotasks, task queue, call stack and event loop you have to go to 2nd no. file -> 's_i_understanding_2.txt' else for lengthy information go to 11th no. file...
+
+3. syncro..&asyncro..pt1.txt
+4. syncro..&asyncro..pt2.txt
+
+5. normal_E_H_1.txt
+
+6. callbacks_1.txt
+7. callbacks_2.txt
+8. callbacks_3.txt
+9. callback_hell_&_more_1.txt
+10. callback_hell_&_more_2.txt
+
+11. promises_1.txt
+12. promises_2.txt
+
+13. destructuring_assign_pt1.html
+14. destructuring_assign_pt2.html
+15. spread_syntax.html

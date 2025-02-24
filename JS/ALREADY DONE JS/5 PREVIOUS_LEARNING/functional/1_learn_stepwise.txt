@@ -1,0 +1,30 @@
+### **1. Basic Function Concepts**  
+- `func_tut1.htm` (Introduction to functions)  
+- `func_tut2.htm` (More function basics)  
+- `func_tut3.htm` (Function scope, return values)  
+- `func_tut4.htm` (Advanced function topics)  
+
+### **2. Function Variations & Types**  
+- `arrow_func.htm` (Arrow functions)  
+- `factory_func.html` (Factory functions)  
+- `obj_const_func.htm` (Functions inside object constructors)  
+- `parameterized_constructor.htm` (Parameterized constructors)  
+- `pass_anon_func.htm` (Passing anonymous functions)  
+
+### **3. Function Execution & Invocation**  
+- `imm_invoked_func_pt1.htm` (Immediately Invoked Function Expressions - IIFE)  
+- `imm_invoked_func_pt2.htm` (More on IIFE)  
+- `ret_func.htm` (Returning functions from functions)  
+
+### **4. Methods & Object-Oriented Concepts**  
+- `for_methods.htm` (Methods related to looping)  
+- `method_overriding.htm` (Method overriding - correct spelling)  
+- `method_overridding.htm` (Duplicate/misspelled - check if needed)  
+
+### **5. Array & String Methods Related to Functions**  
+- `array_funcs_pt1.htm` (Array functions - part 1)  
+- `Array_funcS.html` (Possible continuation of array functions)  
+- `str_num_methods.htm` (String & number methods)  
+
+### **6. Miscellaneous & Utility Functions**  
+- `random_number_generation.htm` (Generating random numbers)  

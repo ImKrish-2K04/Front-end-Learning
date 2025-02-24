@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Hello World</title>
+  </head>
+
+  <body>
+    <h1>Mixins OR Compositions</h1>
+
+    <script>
+      //create required objects first..
+
+      let eating = {
+        eat: function (nm) {
+          return `${nm} can eat.`;
+        },
+      };
+
+      let walking = {
+        walk: function (nm) {
+          return `${nm} can walk.`;
+        },
+      };
+
+      let talking = {
+        talk: function (nm) {
+          return `${nm} can talk.`;
+        },
+      };
+
+      //let's create a function that assigns source objects to target objects..
+
+      function mixin(target, ...sources) {
+        Object.assign(target, ...sources);
+      }
+
+      //let's create constructor function or so called classes..
+
+      //one category..
+      let Human = function () {};
+      let Robot = function () {};
+
+      //upon category objects are assigned..
+      mixin(Human.prototype, eating, walking, talking);
+      mixin(Robot.prototype, walking, talking);
+
+      /*
+      using constructor function we are assigning property values of sources objects to the prototype object of constructor function's related object..
+
+      here human is a constructor function and source object's properties and its values are stored inside of human.prototype object..  same is for robot.. 
+
+      in Human.prototype => eating,walking,talking
+
+      in Robot.prototype => walking,talking
+
+      so we can create objects using these constructor functions and use their functionality
+      */
+
+      let Ramesh = new Human();
+      let Alexa = new Robot();
+
+      console.log("Ramesh...");
+      console.log(Ramesh.eat("Ramesh"));
+      console.log(Ramesh.walk("Ramesh"));
+      console.log(Ramesh.talk("Ramesh"));
+
+      console.log("Alexa...");
+      console.log(Alexa.walk("Alexa"));
+      console.log(Alexa.talk("Alexa"));
+    </script>
+  </body>
+</html>

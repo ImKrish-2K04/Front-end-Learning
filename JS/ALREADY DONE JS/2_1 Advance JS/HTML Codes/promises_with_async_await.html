@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Async - Await</h1>
+
+    <script>
+      function getUsers(userId) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            console.log("users fetched!");
+            resolve({ userId: userId, name: "kamlesh" });
+          }, 1000);
+        });
+      }
+
+      function getPosts(userId) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            console.log("posts fetched!");
+            resolve({ postId: 1, content: "Hello World" });
+          }, 1000);
+        });
+      }
+
+      function getComments(postId) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            console.log("comments fetched!");
+            resolve({ commentId: 1, comment: "i am comment!" });
+          }, 1000);
+        });
+      }
+
+      async function fetchUserData() {
+        try {
+          const user = await getUsers(1);
+          const post = await getPosts(user.userId);
+          const comment = await getComments(post.postId);
+          console.log(comment.comment);
+        } catch (err) {
+          console.error(err.message);
+        }
+      }
+
+      fetchUserData();
+    </script>
+  </body>
+</html>

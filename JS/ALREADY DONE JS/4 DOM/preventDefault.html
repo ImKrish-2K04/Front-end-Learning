@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>prevent default behavior</title>
+
+    <style>
+      #amazon-link {
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JS - TUTs</h1>
+
+    <p>i am a paragraph.</p>
+
+    <a id="amazon-link" href="https://www.amazon.in"
+      >take me to amazon shopping site.</a
+    >
+
+    <script>
+      // in this tutorial we are going to learn about preventDefault() method of the DOM...
+      // this method prevents the default behavior of the particular node...
+      // this is also achieved using eventListener...
+
+      // let's delve into deep about this method...
+
+      let site = document.querySelector("#amazon-link");
+
+      // in this ex, we are going to prevent the default behavior of the anchor link, which is to redirect a user to the specified web page when the link is clicked...
+
+      site.addEventListener("click", (e) => {
+        e.preventDefault();
+      });
+    </script>
+  </body>
+</html>

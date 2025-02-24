@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>working doc...</title>
+  </head>
+  <body>
+    <h1>Callback - Hell 👻</h1>
+
+    <script>
+      function getUser(userId, callback) {
+        setTimeout(() => {
+          console.log("Fetched user");
+          callback(null, { userId: userId, name: "John Doe" });
+        }, 1000);
+      }
+
+      function getPosts(userId, callback) {
+        setTimeout(() => {
+          console.log("Fetched posts for user", userId);
+          callback(null, { postId: 1, content: "Hello world!" });
+        }, 1000);
+      }
+
+      function getComments(postId, callback) {
+        setTimeout(() => {
+          console.log("Fetched comments for post", postId);
+          callback(null, { commentId: 1, content: "Nice post!" });
+        }, 1000);
+      }
+
+      // Using nested callbacks leading to callback hell
+      getUser(1, (err, user) => {
+        if (err) {
+          console.error("Error fetching user:", err);
+        } else {
+          getPosts(user.userId, (err, posts) => {
+            if (err) {
+              console.error("Error fetching posts:", err);
+            } else {
+              getComments(posts.postId, (err, comments) => {
+                if (err) {
+                  console.error("Error fetching comments:", err);
+                } else {
+                  console.log("Comments:", comments);
+                }
+              });
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

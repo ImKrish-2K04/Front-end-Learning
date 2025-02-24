@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Hello World</title>
+  </head>
+
+  <body>
+    <h1>JS - TuTs</h1>
+
+    <script>
+      let SuperClass = function () {};
+
+      SuperClass.prototype.getAddition = function () {
+        return this.a + this.b;
+      };
+
+      SuperClass.prototype.getMul = function () {
+        return this.a * this.b;
+      };
+
+      SuperClass.prototype.getRemainder = function () {
+        return this.a % this.b;
+      };
+
+      let nums = function (a, b) {
+        this.a = a;
+        this.b = b;
+      };
+
+      nums.prototype = Object.create(SuperClass.prototype);
+      nums.prototype.constructor = nums;
+
+      let sum = new nums(10, 40);
+      let add = new nums(30, 15);
+      let rem = new nums(60, 13);
+
+      console.log(sum.getMul());
+      console.log(add.getAddition());
+      console.log(rem.getRemainder());
+    </script>
+  </body>
+</html>

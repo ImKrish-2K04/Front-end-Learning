@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>practice set 6</title>
+  </head>
+  <body>
+    <h1>JS - TUTs</h1>
+
+    <input type="color" name="cl" id="clr" onchange="func();" />
+
+    <script>
+      //Q1: write a program using prompt function to take input of age as a value from the user and use alert to tell him if he can drive...
+      //Q2: in Q1 use confirm to ask the user if he wants to see the prompt again...
+      //Q3: in previous question, use console.error() to log error if the ege entered is negative...
+      //Q4: write a program to change a url to the google.com (redirection) if user enters a number greater than 4...
+      //Q5: change the background color of the page to yellow, red or any other color according to user's input...
+
+      // Q1...
+
+      // let age = prompt('pl. enter your age here.');
+      // (age >= 18) ? alert('you can drive!') : alert("you can't drive");
+
+      // Q2...
+
+      //   let ageValidation = () => {
+      //     let age = prompt("pl. enter your age here.");
+      //     age >= 18 ? alert("you can drive!") : alert("you can't drive");
+      //   };
+
+      //   ageValidation();
+      //   confirm("want to input again?") ? ageValidation() : alert("Thanks you!");
+
+      // Q3...
+
+      //   let ageValidation = () => {
+      //     let age = prompt("pl. enter your age here.");
+
+      //     if (age >= 18 && age > 0) alert("You can drive!");
+      //     else if (age > 0 && age < 18) alert("You can't drive");
+      //     else console.error("You have entered a wrong value!...");
+      //   };
+
+      //   ageValidation();
+      //   confirm("want to input again?") ? ageValidation() : alert("Thanks you!");
+
+      // Q4...
+
+      //   let val = prompt("enter a number");
+
+      //   if (val >= 4) {
+      //     alert('you are going to redirected on google...');
+      //     window.open("https://www.google.com", "_blank");
+      //   } else alert(`you have entered ${val}.`);
+
+      // Q5...
+
+      function func() {
+        let colorValue = document.getElementById("clr").value;
+        document.body.style.backgroundColor = colorValue;
+      }
+    </script>
+  </body>
+</html>

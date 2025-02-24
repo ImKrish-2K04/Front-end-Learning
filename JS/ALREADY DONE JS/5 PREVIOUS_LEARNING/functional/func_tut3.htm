@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Hello World</title>
+  </head>
+
+  <body>
+    <!--  -->
+
+    <script>
+      document.write("<h1> JS Tutorial - 3 </h1>");
+
+      //one very imp thing is 'arguments' is not an array but an object that behaves in similar way as array..
+      //now we see the 'arguments' Array that is always exists in all functions when is created..
+      //using this you can pass multiple arguments to this function without creating its parameters..   let's see this..
+
+      function add() {
+        if (arguments.length == 0) {
+          console.log("NoValuePassedException"); //this is not an exception but just message so we can understand..
+        } else if (arguments.length == 1) {
+          console.log("NotEnoughNumberException");
+        } else {
+          let i = 0;
+          let sum = 0;
+          for (i; i <= arguments.length - 1; i++) {
+            sum += arguments[i];
+          }
+          console.log("sum is -> " + sum);
+        }
+      }
+
+      add(10, 20, 30, 40, 10, 20, 30, 10, 20, 10); //200
+      add(10);
+      add();
+
+      //there is a very interesting point which is very imp to notice..
+      //we can store any function inside a variable but when we are doing this stuff we do not have to use parenthesis
+      //after the function name..   but imp point is we have to use that variable in same way as we are uses functions
+
+      let summation = add;
+      summation(2, 3, 4, 5, 6, 7, 8, 9); //44
+
+      //what if we wanna access any argument?..  argument[i].. you have seen it....in loop....
+    </script>
+  </body>
+</html>

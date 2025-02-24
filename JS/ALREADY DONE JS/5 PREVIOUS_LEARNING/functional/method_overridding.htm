@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Hello World</title>
+  </head>
+
+  <body>
+    <h1>JS - TuTs</h1>
+
+    <script>
+      //method overridding
+
+      let Mobile = function () {};
+
+      Mobile.prototype.show = function () {
+        return "Mobile's show is called";
+      };
+
+      let Samsung = function () {};
+
+      Samsung.prototype = Object.create(Mobile.prototype);
+      Samsung.prototype.constructor = Samsung;
+
+      Samsung.prototype.show = function () {
+        return "Samsung's show is called";
+      };
+
+      let galaxy = new Samsung();
+      let mob = new Mobile();
+
+      console.log(galaxy.show());
+      console.log(mob.show());
+    </script>
+  </body>
+</html>

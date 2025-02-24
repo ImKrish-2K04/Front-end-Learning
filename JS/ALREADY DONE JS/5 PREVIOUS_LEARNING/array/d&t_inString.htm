@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Hello World</title>
+  </head>
+
+  <body>
+    <h1>JS - TuTs</h1>
+
+    <script>
+      var date = new Date();
+      var month = date.getMonth();
+      var day = date.getDay();
+
+      function getMonthName(month) {
+        var months = [
+          "jan",
+          "feb",
+          "mar",
+          "apr",
+          "may",
+          "june",
+          "july",
+          "aug",
+          "sept",
+          "oct",
+          "nov",
+          "dec",
+        ];
+        return months[month];
+      }
+
+      function getDayName(day) {
+        var days = [
+          "sunday",
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday",
+          "saturday",
+        ];
+
+        return days[day];
+      }
+
+      console.log(getMonthName(month));
+      console.log(getDayName(day));
+    </script>
+  </body>
+</html>

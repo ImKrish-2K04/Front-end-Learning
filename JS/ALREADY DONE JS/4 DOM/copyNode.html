@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cloneNode method use</title>
+  </head>
+  <body>
+    <h1>JS - TUTs</h1>
+
+    <p id="para">I am a <strong>software developer</strong>.</p>
+
+    <div id="myDiv"></div>
+
+    <script>
+      // here we'r going to learn about one method of DOM which is useful to clone any node with their attributes and their values, even it is able to copy their contents...
+      // this method is 'cloneNode(Bool)', this accepts one of two values 'true' or 'false'.
+      // by default is set to the 'false', so it is able to clone the node with only its attributes and their values...
+      // but we can set it to thr 'true', so it can accepts everything of the node including its contents also...
+      // one more important part related to this method is, when we are using this method to cloning a node then the created clone will not be a part of live DOM, it will be considered as an object out of the active DOM, we can append it or insert it to the our active DOM inside any element like div or section by using appendChild() or similar methods...
+      // one more thing, due to cloning it will also have the same attributes and their values so suppose if we have id attribute and we are cloning this then we can have an issue of having same node with same id attribute value in our document which is not fair as per rules/conventions, so before appending the clone, we should must have to change its id attribute value...
+
+      // let's see it practically...
+
+      let div = document.querySelector("#myDiv");
+      let para = document.getElementById("para");
+
+      // cloning a node...
+      let paraClone = para.cloneNode(true);
+
+      // changing id attribute value of the cloned node...
+      paraClone.attributes[0].nodeValue = "para2";
+
+      // appending the cloned node to the div...
+      div.appendChild(paraClone);
+    </script>
+  </body>
+</html>

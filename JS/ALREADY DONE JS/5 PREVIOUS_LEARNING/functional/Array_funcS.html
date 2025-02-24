@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Hello World</title>
+  </head>
+
+  <body>
+    <script>
+      /*
+      1. concat method
+      this function returns array so we have to initialize this array to other array..
+
+      this function is used to concat values or arrays to another array and assign this array to another array
+
+      syntax: "here 'arr' is array"
+      1. arr = arr1.concat(value1,value2,value n....);
+      2. arr = arr1.concat(arr2,arr3,arr n...);
+
+      //values
+      let arr = [];
+      let arr1 = ["Krishna", "Ram", 19, "Shivani"];
+      arr = arr1.concat("parshuram", "Shiv");
+      console.log(arr);
+
+      //arrays
+      let arr = [];
+      let arr1 = ["Krishna", "Ram"];
+      let arr2 = [19, "Shivani", "Parshuram"];
+      let arr3 = ["Shiv"];
+      arr = arr1.concat(arr2, arr3);
+      console.log(arr);
+      */
+
+      /*
+      => join method
+      using join method we can join the values of array and form a string..
+      let arr = ["Makwana", "Krishna", "Jasmin", "Bhai."];
+      let str = arr.join(" ");
+      it adds one white space after a value and this way it joins all values of an array and forms a string..
+      let arr = ["Rajaram", "sitaram", "jay jay shree Ram"];
+      let str = arr.join(" / ");
+
+      => split method
+      using split method we can split a string and form an array..
+      the splitting operation is performed on which value we are passing as parameter..
+      for an instance we passes one white space and during running phase when white space encountered the string is splits from there and becomes a value of an array....
+      let arr2 = str.split(" ");
+      */
+
+      /*
+      => reverse method
+      the reverse method reverses the order of the elements in an array.
+      Syntax : array_name = array_name.reverse();
+
+      if we don't want to make reverse the order of values in our main array then you can use following method..
+      let arr = ["Rahul", "Rajesh", "Rakesh"];
+      let arr2 = arr.reverse();
+      console.log(arr2);
+
+      but if you don't mind on whether your array's order of value changes or not you can use the following method..
+      let arr = ["Rahul", "Rajesh", "Rakesh"];
+      arr.reverse();
+      console.log(arr);
+      */
+
+      /*
+      => slice method
+      the slice() method returns a shallow copy of a portion of an array into a new array object selected from begin to end(end not included).the original array will not be modified..
+      Syntax. : array_name.slice(begin,end);
+
+      START:-
+
+      if begin is undefined, slice begin from index 0.
+      if begin is greater than the length of the sequence, an empty array is returned.
+      a negetive index can be used, indicating an offset from the end of the sequence. slice(-2) extracts the last two elements in the sequence.
+
+      END:-
+
+      if end is ommited, slice extracts through the end of the sequence (arr.length).
+      if end is greater than the length of the sequence, slice extracts to through the end of the sequence (arr.length).
+      a negative index can be used, indicating an offset from the end of the sequence.slice(2,-1) extracts the third element through the second-to-last element in the sequence.
+      slice extracts up to but not including end.
+
+      //            0         1       2       3         4
+      //           -5        -4      -3      -2        -1
+      var arr = ["samsung", "lenovo", "vivo", "oneplus", "iphone"];
+
+      var arr1 = arr.slice(-5, -1);
+      var arr2 = arr.slice(1, 4);
+      console.log(arr1);
+      console.log(arr2);
+      */
+
+      /*
+      => toString() method..
+
+      the toString() method returns a string containing the comma-seperated values of the array.this method is invoked automatically when you print an array.it is equivalent to invoking join method without any arguments. the returned string will seperate the elements in the array with commas.
+
+      let arr = ["samsung", "oneplus", "gionee", "lava"];
+      document.write(arr.join());
+      document.write(arr.toString());
+
+      => Array.isArray() method..
+
+      the Array.isArray() method determines whether the passed value is an array or not.this function returns true if the object is an array, and false if not.
+
+      let arr = ["samsung", "gionee", "lava", "oneplus"];
+      let arr1 = new Array("samsung", "gionee", "lava", "oneplus");
+      let arr2 = new Array("samsung");
+      let arr3 = "Hello Friend";
+      let result = Array.isArray(arr3);
+      if (result) document.write("arr is an array.");
+      else document.write("arr is not an array.");
+
+      => splice() method..
+
+      the splice method changes the contents of an array by removing existing elements and/or adding new elements. this method changes the original array.
+
+      Syntax. :- array_name.splice(start, deleteCount, replaceValues);
+      array_name.splice(starting_index, num_of_values_going_to_delete, values to insert seperated with comma);
+
+      start :- the first argument start specifies at what position to add/remove items, use negative values to specify the position from the end of the array.
+
+      deleteCount :- the second element deleteCount, is the number of elements to delete begining with index start.
+
+      replaceValues :- replacevalues are inserted in place of the deleted elements. if more than one seperate it by comma.
+
+      let arr = ["samsung", "lenovo", "apple", "dell", "acer"];
+      console.log(arr);
+      arr.splice(2, 0, "HP", "Asus");
+      console.log(arr);
+      arr.splice(0, 2);
+      console.log(arr);
+      */
+
+      /*
+      => indexOf()
+
+      Syntax. :- array.indexOf(value);
+      this returns the index of the passed value of an array.
+
+      var arr = ["samsung", "dell", "lenovo", "acer"];
+      console.log(arr.indexOf("dell"));
+
+      => fill()
+
+      the fill() method fills all the elements in an array with a static value.
+      Syntax. :- array_name.fill(value,start,end);
+
+      value : value to which we need to fill in an array.
+      start : the starting index from where we want to fill values in array.
+      end : the ending index till where we want to fill value the value will be filled till the ending index
+      means if ending index is specified 4 then value is filled till 3rd index.
+      .->
+      var arr = ["samsung", "acer", "val1", "val2", "val3", "dell", "hp"];
+      arr.fill("compOfComp", 2, 5);
+      console.log(arr);
+      .->
+      var arr = ["samsung", "acer", "val1", "dell", "hp"];
+      arr.fill("compOfComp", 2, 3);
+      console.log(arr);
+      */
+
+      /*
+      Escape Notation:
+      \0 : null
+      \' : single quote
+      \" : double quote
+      \\ : black slash
+      \n : new line
+      \r : carriage return
+      \v : verticle tab
+      \t : tab
+      \b : backspace
+      \f : form feed
+      */
+
+      /*
+      => sort();
+      this method is used for sorting the array elements in alphabetic order..
+      as well as it also runs on digits.. and with both words&digits..
+      ex:-
+      var arr = ["Aman", "Zack", "Farhan", "Divya", "Bhavesh"];
+      console.log(arr);
+      arr.sort();
+      console.log(arr);
+      ex2:-
+      var arr = ["Aman", "Zack", 89, -3, 32, "Farhan", "Divya", "Bhavesh"];
+      console.log(arr);
+      arr.sort();
+      console.log(arr);
+
+      => lastIndexOf("searchItem",indexValue);
+      this function starts fetching value you have passed from the ending index...
+      ex:-
+      let arr = ["spiderman","ironman","batman","Hulk","Antman","ironman","superman","omniman"];
+      console.log(arr.lastIndexOf("ironman", 4));   //cLog1
+      console.log(arr.lastIndexOf("ironman", 5));   //cLog2
+      ....like above example in first cLog it starting fetching values from index 4 to 0
+      and in second cLog it starting to fetch from 5 to 0
+      ....from 4 to 0 "ironman" is founded on 1st index so it returns 1..
+      ....but from 5 to 0 index range it has founded value on 5th index so it returns 5..
+      */
+
+      /*
+      => includes();
+      this method is used for searching whether a value is exists in array or not..
+      Syntax.:- array.includes(value);
+      ex:-
+      var arr = ["krishna","jasminbhai","bhumikaben","arvindbhai","nirmalaben"];
+      console.log(arr.includes("pinkyben"));
+      console.log(arr.includes("arvindbhai"));
+
+      => some();
+      performs check operation so if any of the value in the array pass a test on given condition then it returns true.
+      function creation is required..
+      let arr = [12, 14, 15, 16, 18, 20, 34, 56, 70];
+      let checkNum = (num) => {
+        return num > 69;
+      };
+      console.log(arr.some(checkNum));
+      // function checkNum(num) {
+      //   return num > 69;
+      // }
+
+      => every();
+      every function requires all the values in the array should must be pass the test on given condition..
+      ex:-
+      let arr = [12, 34, 23, 16, 29, 7];
+      let testFunction = function (val) {
+        return val >= 19;
+      };
+      let result = arr.every(testFunction);
+      console.log(result);
+
+      IMP Note on some() and every() function..
+      it performs check operation on each and every values of an array even after the test is passes..
+      */
+
+      /*
+      => find();
+      it's coding is same as some() function but there is 2 differences b/w them both..
+      1. some() function performs check operation on each and every value even after the required condition is met..
+      but in the case of find() function it stops execution after the condition is met and the test is passed..
+      2. some() function returns true or false as per result..
+      where find() function returns that value which is the reason of the test passing..
+      ex:-
+      let arr = [12, 17, 22, 43, 50];
+      let result = arr.find(function (val) {
+        return val >= 18;
+      });
+      console.log(result);
+
+      => findIndex();
+      findIndex() method is the same as the find() method but there is only one difference b/w them both..
+      findIndex() method returns the index of the first element in an array that pass a test..
+      ex:-
+      let arr = [12, 17, 22, 43, 50];
+      let result = arr.findIndex((val) => {
+        return val >= 18;
+      });
+      console.log(result);
+      */
+
+      /*
+      => filter();
+      Syntax.->   array.filter(function_name);
+      filter function is one of the best array function because it returns an array as per the condition test..
+      means, a function that performs check operation on the specified array and returns a new array that is based on the required condition..
+      the writing method of this function code is same as some(),every(),find(),findIndex()...
+      ex:-
+      var ages = [10, 23, 9, 20];
+      var result = ages.filter((val) => {
+        return val >= 18;
+      });
+      for (var data of result) {
+        console.log(data);
+      }
+      */
+
+      /*
+      => map();
+      map function is very useful array function..
+      that is used for create an array from another array with modification and without modification and we can assign this array to new array..
+      ex:-
+      var arr = [
+        { fname: "Krishna", lname: "Makwana" },
+        { fname: "Rajat", lname: "Sharma" },
+        { fname: "Bhumika", lname: "Chawla" },
+      ];
+      var b = arr.map(construct);
+      function construct(x) {
+        return x.fname + " " + x.lname;
+      }
+      for (var d of b) {
+        console.log(d);
+      }
+      ex2:-
+      var arr = [1, 2, 3, 4, 5];
+      var arr2 = arr.map(func);
+      function func(x) {
+        return x.toString(2);
+      }
+      console.log(arr);
+      console.log(arr2);
+      */
+    </script>
+  </body>
+</html>

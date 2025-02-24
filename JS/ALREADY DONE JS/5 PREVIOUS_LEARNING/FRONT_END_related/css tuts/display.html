@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>display!!</title>
+    <link rel="icon" type="image/x-icon" href="images/youtube_icon.png" />
+    <style>
+      ul {
+        border: 2px solid black;
+        box-sizing: border-box;
+        width: 700px;
+        padding: 10px;
+        /* list-style-position: inside; */
+      }
+
+      li {
+        border: 2px solid green;
+        margin: 5px;
+        padding: 5px;
+        display: inline;
+      }
+
+      span {
+        border: 2px solid black;
+        list-style-position: inside;
+        margin: 10px;
+        padding: 10px;
+        display: inline-block;
+        /* display: list-item; */
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- values of display attribute in css....
+
+        -> none             -> inline-flex      -> table-caption
+        -> inline           -> inline-grid      -> table-column-group
+        -> block            -> table            -> table-row-group
+        -> inline-block     -> inline-table     -> table-header-group
+        -> list-item        -> table-row        -> table-footer-group
+        -> flex             -> table-cell       -> run-in
+        -> grid             -> table-column     -> contents
+    -->
+
+    <h2>Margin and Padding will not more affects on inline elements</h2>
+    <h3>
+      you can use inline-block property for use mg. and pd. on inline elements
+    </h3>
+    <p>li element is bydefault block level element</p>
+    <p>a element is bydefault inline element</p>
+    <p>below is list (list-items.. i.e use of list tag)</p>
+
+    <ul>
+      <li>kaju</li>
+      <li>badam</li>
+      <li>anjir</li>
+      <li>kishmish</li>
+      <li>akhrot</li>
+    </ul>
+
+    <p>
+      below is the list of spans i.e here no use of li tag here use of span tag
+    </p>
+
+    <span>tomato</span>
+    <span>potato</span>
+    <span>onion</span>
+    <span>carrot</span>
+    <span>cabbage</span>
+  </body>
+</html>

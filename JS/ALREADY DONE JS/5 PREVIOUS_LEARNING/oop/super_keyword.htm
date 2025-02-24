@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Hello World</title>
+  </head>
+
+  <body>
+    <script>
+      class Person {
+        constructor(name) {
+          this.name = name;
+        }
+
+        detail() {
+          return `I am ${this.name}.`;
+        }
+      }
+
+      class Anons extends Person {
+        constructor(profession, name) {
+          super(name);
+          this.profession = profession;
+        }
+
+        toKnow() {
+          return `I am from ${this.profession} profession.`;
+        }
+      }
+
+      let anonKrish = new Anons("Hacker", "Krishna");
+
+      console.log(anonKrish.detail());
+      console.log(anonKrish.toKnow());
+    </script>
+  </body>
+</html>

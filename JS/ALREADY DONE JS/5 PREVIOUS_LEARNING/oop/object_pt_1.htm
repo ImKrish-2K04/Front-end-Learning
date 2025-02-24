@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>This is object lecture..</title>
+  </head>
+
+  <body>
+    <!-- objects in java script.. -->
+
+    <script>
+      //we can create objects in similar way as array..
+
+      //let obj.Name = {};    ->    object creation definition
+
+      //we can create an object property with a white-space included but it is not recommended..use only [] withit
+      //it is like -> starting -> 'property-Name' <-ending ,....  use comma and write name inside comma..
+      //the quoted property with a whitespace is works with only [] not with dot operator so remember this..
+
+      let person = {
+        firstName: "Krishna",
+        lastName: "Makwana",
+        "full Name": "Makwana Krishna Jasminbhai",
+      };
+
+      //let's access it, but as an instruction : it can be accessed in two ways..
+      console.log(person.lastName); //first way
+      console.log(person["full Name"]); //second way
+
+      console.log(person);
+
+      //let's modify the values of a property of an object
+      person.firstName = "bhumika";
+      console.log(person["firstName"]);
+
+      //let's create a new property of an object
+      //this way we can create properties even after creating an object as per our sudden needs..
+      person.age = 37;
+      console.log(person);
+
+      //now understands how to delete object properties..
+      //syntax -> delete objectName.propertyName;     here delete is a keyword that is not used as any identifier
+      delete person["full Name"];
+      console.log(person);
+
+      //if you wanna to check that any specific property is exists in your object or not then use ..
+      //'in' keyword..    ->    syntax    ->    console.log('prop.-needed-to-find' in objectName);
+      //it returns true if pro. exists else it will returns false
+      console.log("height" in person);
+      console.log("firstName" in person);
+
+      //to know the properties of any objects we can use for-in loop..
+      //with properties you also want to check value then use [] and access it as below specified..
+      //when we are using the real name of properties then only we uses quotes inside [] but when we are
+      //using for-in loop then we are not using real props. so we are not using quotes...
+      let i = 0;
+      for (let vars in person) {
+        i++;
+        console.log("property " + i + " = " + vars + " : " + person[vars]);
+      }
+
+      //we can create an object in another way using new keyword..
+      let prs1 = new Object();
+      prs1.Name = "Makwana Krishna";
+      console.log("using a new keyword : " + prs1.Name);
+
+      //here the discussion about the object related some important things are ends...
+    </script>
+  </body>
+</html>

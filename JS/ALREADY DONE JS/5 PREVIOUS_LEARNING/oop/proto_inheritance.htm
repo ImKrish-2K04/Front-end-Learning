@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Prototype</title>
+  </head>
+
+  <body>
+    <h1>JS - TuTs</h1>
+
+    <script>
+      /*
+      let's see the prototype hierarchy.....
+
+                        NULL
+                         |
+                        VV
+                      Object    ->  Object.prototype
+                        |
+                       VV
+      when we creating any object construction function then it creates two objects..
+      1. the object with the same name of function  &  2. the prototype object name should be 
+      'objectName.Prototype'
+
+      suppose we create a function
+      let Mobile = function(brand,manuf_cost,variant_name){
+
+      }
+
+      so the Mobile function creates 2 objects ... 1. Mobile  and 2. Mobile.Prototype
+      each prototype haves only one parent is Object.Prototype  and Object is parent of all objects..
+
+      in Mobile object there is one property created by default is 'prototype' that is connected to its prototype object  &  when we creates any objects using 'new' keyword then in that object also one property created by default is '__proto__' that also connected to its prototype object.. means Mobile.Prototype...
+      */
+
+      /*
+      now we are going to see the working in backside..
+                                                                       
+                                                                     NULL
+                                                |---------------|     ^  
+                                                |   object.     |     |
+                                                | prototype     |     |                                     
+                                                |  __proto__    |-----|
+                                                |---------------|
+                                                       ^ 
+                                                       |             
+                                                       | linked with
+      |----------|  prototype   |----------|           | __proto__
+      |  Mobile  |  property    | Mobile.  |-----------|
+      | Function |----------'-> | Prototype|
+      |----------|              |----------|
+                                    ^
+                                    |
+      |----------|                  |
+      | samsung  |   ---------------|
+      | object   |   __proto__
+      |----------|   Property
+
+      prototype objects haves the '__proto__'  property that is linked to its parent prototype object..
+      every object created by 'new' keyword haves the '__proto__' property that is linked to its prototype object..
+
+      'Mobile object' has 'prototype' property that is connected to its prototype object 'Mobile.prototype'..
+      'samsung object' is created using new keyword with Mobile constructor and it has '__proto__' property that is linked to its
+      prototype object i.e Mobile.prototype ..
+
+      mobile.prototype is linked to its parent prototype object i.e 'Object.prototype' with '__proto__' property..
+
+      we can also create property inside the prototype object.. and it is different from object function and its objects..
+      by,
+            Mobile.prototype.a=10;
+            samsung.__proto__.a=10;
+
+      the upper-diagram shows how they are linked to each other..
+
+      we can inherit the properties of one function to another function by calling method..
+
+      like we have two functions..
+
+      function func1() {
+        this.a = 10;
+        this.b = 20;
+      }
+      function func2() {
+        func1.call(this);
+        this.c = 30;
+      }
+      let fetcha = new func2();
+      document.write(fetcha.a + "<br />" + fetcha.b + "<br />" + fetcha.c);
+
+      using call method we can use properties of one function in another function and this makes our works very much easy..
+      means we are inheriting properties and methods from one constructor function to another constructor function..
+
+      we can also make inheriting possible with prototype objects..
+      
+      here we have two functions and therefore there are two prototypes are created..
+      func1.prototype  &  func2.prototype
+
+      suppose we have some properties in func1 Prototype object and we want to fetch them by func2's object then it will give us error
+      because when object has not that property then it will checks inside it's prototype object and even there property is not exists then it will returns undefined(not an error..)..
+      there is more about to understand, every prototype's are connects to the 'Object.prototype' so when the prototype object of func2 has not the matching property then it will goes to Most Parent Object -^    ....... not to the func1's prototype object
+      so if we want to fetch from func1's prototype object then we have to cut the connection of func2 with object.prototype and connect it with func1.prototype object...
+
+      this can be done by following statement but with clearity..
+
+      function func1() {        ->      'func1' named Function Object
+        this.a = 10;            ->      creates prototype object of func1 can be fatched using -> 'func1.prototype'
+        this.b = 20;
+      }
+      function func2() {        ->      'func2' named Function Object
+        func1.call(this);       ->      creates prototype object of func2 can be fatched using -> 'func2.prototype'
+        this.c = 30;
+      }
+
+      let var1 = new func1();   ->      becomes an object named 'var1'
+      let var2 = new func2();   ->      becomes an object named 'var2'
+
+      func1.prototype.z="Krishna";          -> this will add var 'z' to func1 prototype object..
+      we can fetch it without any problem by 'var1'...
+      but for 'var2' we have to use following statement...
+      func2.prototype = Object.create(func1.prototype);
+
+      line above will join the prototype object of func2 to prototype object of func1 and disconnects with Object.prototype
+      but afterall with func2's object we can fetch members of Object.prototype because func2's prototype object is connected to func1's prototype object and func1's prototype object is connected to Object's prototype object.... see with practicle..
+
+      //Mobile constructor
+      var Mobile = function () {
+        this.a = 10;
+      };
+      //property of prototype object of Mobile
+      Mobile.prototype.z = 30;
+      //samsung constructor
+      var Samsung = function () {
+        Mobile.call(this);
+        this.b = 20;
+      };
+      //prototype inheritance
+      Samsung.prototype = Object.create(Mobile.prototype);
+      Samsung.prototype.constructor = Samsung;
+      //object creation
+      //here mobile is parent class and samsung is a child class..
+      let s = new Samsung();
+      //value fetching process
+      document.write(s.a + "<br />");
+      document.write(s.b + "<br />");
+      document.write(s.z + "<br />");
+      */
+    </script>
+  </body>
+</html>

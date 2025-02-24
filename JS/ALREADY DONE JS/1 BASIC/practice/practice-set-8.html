@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>practice set 8</title>
+
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+        box-sizing: border-box;
+        user-select: none;
+        padding: 0;
+        margin: 0;
+        font-size: 20px;
+      }
+
+      .btn-list {
+        display: flex;
+        justify-content: center;
+        gap: 20%;
+        margin-top: 20%;
+      }
+
+      .btn {
+        font-size: 20px;
+        width: 175px;
+        height: 50px;
+        border-radius: 10px;
+        border: none;
+        background-color: rgb(208, 233, 255);
+        box-shadow: 0 0 15px 2px rgb(68, 108, 117);
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="btn-list">
+      <button class="btn btn-1" show-data="i am button 1.">button 1</button>
+      <button class="btn btn-2" show-data="i am button 2.">button 2</button>
+      <button class="btn btn-3" show-data="i am button 3.">button 3</button>
+    </div>
+
+    <script>
+      // Q1 : write a program to show different alerts when clicked different buttons!
+      // Q2 : create a website which is capable of storing bookmarks of your favorites websites using href...
+      // Q3 : repeat Q2 using event listeners...
+      // Q4 : write a javascript program to keep fetching contents of a website(Every 5 seconds)...
+      // Q5 : create a glowing bulb effect using classList toggle in Javascript...
+
+      // Q1:
+
+      let btnList = document.querySelectorAll(".btn");
+
+      btnList.forEach((btns) => {
+        btns.addEventListener("click", (e) => {
+          alert(btns.attributes[1].textContent);
+        });
+      });
+
+      // Q2:
+
+      // is done in prac_set_8_q2.html file...
+
+      // Q3:
+
+      // is done in prac_set_8_q2.2.html file...
+
+      // Q4:
+
+      // high level API-related question... so we have skipped it for now!
+
+      // Q5:
+
+      // is done in prac_set_8_5.html file...
+    </script>
+  </body>
+</html>

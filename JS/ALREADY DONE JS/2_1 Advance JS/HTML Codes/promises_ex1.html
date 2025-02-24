@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>working doc...</title>
+  </head>
+  <body>
+    <h1>Promises 🫰</h1>
+
+    <script>
+      const getUser = (userId) => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            console.log("user data fetched!");
+            resolve({ userId: userId, name: "John" });
+          }, 1000);
+        });
+      };
+
+      const getPost = (userId) => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            console.log("user post fetched!");
+            resolve({ postId: 1, content: "Hello world" });
+          }, 1000);
+        });
+      };
+
+      const getComment = (postId) => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            console.log("user comment fetched!");
+            resolve({ commentId: 1, content: "Nice post" });
+          }, 1000);
+        });
+      };
+
+      getUser(1)
+        .then((user) => {
+          return getPost(user.userId);
+        })
+        .then((post) => {
+          return getComment(post.postId);
+        })
+        .then((comment) => {
+          setTimeout(() => {
+            console.log(comment.content);
+          }, 1000);
+        })
+        .catch((error) => {
+          console.error(error.message);
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>object constructor function</title>
+  </head>
+  <body>
+    <h1>JS - TuTs</h1>
+
+    <script>
+      //object constructor function....
+      //before we are making objects having same properties and functions many times and we are making size bigger of our script file..
+      //but with the help of the object constructor function we can make easy that work..
+      //let's begins..
+
+      function Student(fnm, lnm, age, gndr) {
+        this.fname = fnm;
+        this.lname = lnm;
+        this.age = age;
+        this.gender = gndr;
+      } //this is our object constructor function
+
+      //now let's create an object using this function..
+
+      let student1 = new Student("Krishna", "Makwana", 19, "Male");
+      let student2 = new Student("Anna", "zailin", 23, "Female");
+      console.log(student1);
+
+      //now let's see to add properties and methods to the object..
+      //but keep in mind that method of adding those stuffs are effects only specified object.. not to function .. that's not means there is no way to add those stuff to the function .. but that is an other way.. which will be discussed later..
+
+      /*
+      student1.nationality = "Indian";
+      student1.fullName = function () {
+        return this.fname + " " + this.lname;
+      };
+
+      console.log(student1);
+      console.log(student1.fullName());
+      */
+
+      //till here we are understood how to add these stuffs to the object, so now we start to moving towards to add into directly function..
+      //for adding these into the function we need to use 'prototype' object that is parent of all objects that are predefined or userdefined..
+
+      Student.prototype.nationality;
+      console.log(student1);
+      console.log("before : " + student1.nationality);
+      student1.nationality = "Indian";
+      console.log("after : " + student1.nationality);
+      console.log("student2 : ");
+      student2.nationality = "Brazillian";
+      console.log(student2);
+
+      Student.prototype.fullName = function () {
+        return this.fname + " " + this.lname + ".";
+      };
+
+      console.log(student2.fullName());
+    </script>
+  </body>
+</html>

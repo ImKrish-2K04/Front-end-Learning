@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>appending data</title>
+  </head>
+  <body>
+    <h1>JS - TUTs</h1>
+
+    <p id="para"></p>
+
+    <script>
+      // here we are going to learn about how to append data into text node of any element...
+      // this is done by one DOM method called appendData(string)...
+      // syntax : textNode.appendData(string);
+
+      // suppose, here i want to append some text data to the text node of the paragraph element node!
+      
+      // here one condition for running this function, we should have atleast one children of the target node to append some text data to its textNode...
+
+      // you can understand it by commenting the 'textContent' line of below and running it, to see inside the devtools in chrome... and then do uncomment it to see the actual changes...
+
+      let p = document.querySelector('#para');
+      p.textContent = 'Hey there!';
+      p.firstChild.appendData('oye!');
+      console.log(p.childNodes);
+    //   console.log(p);
+    </script>
+  </body>
+</html>

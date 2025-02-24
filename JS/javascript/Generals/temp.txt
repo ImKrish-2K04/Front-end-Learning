@@ -1,0 +1,97 @@
+// ? promise example 1
+
+const promise1 = new Promise((resolve, reject) => {
+  // asyncronous works..
+  setTimeout(() => {
+    console.log("Async task1 is completed!");
+    resolve();
+  }, 1000);
+});
+
+promise1.then(() => {
+  console.log("promise1 is resolved successfully!");
+});
+
+// ? promise example 2
+
+new Promise((resolve, reject) => {
+  // Async works..
+  setTimeout(() => {
+    console.log("Async task2 is completed successfully!");
+    resolve();
+  }, 2000);
+}).then(() => {
+  console.log("promise2 is resolved successfully!");
+});
+
+// ? promise example 3
+
+new Promise((resolve, reject) => {
+  // Async task..
+  setTimeout(() => {
+    console.log("Async task3 is completed successfully!");
+    resolve({ name: "krishna", age: 21, gender: "male" });
+  }, 3000);
+}).then((userData) => {
+  console.log(`yourName   : ${userData.name}`);
+  console.log(`yourAge    : ${userData.age}`);
+  console.log(`yourGender : ${userData.gender}`);
+});
+
+// ? promise example 4
+
+new Promise((resolve, reject) => {
+  // Async work..
+  setTimeout(() => {
+    let err = true;
+    if (err) {
+      console.log("Async task4 is failed!");
+      reject("ERROR: (@promise4) something went wrong!");
+    } else {
+      console.log("Async task4 is completed successfully!");
+      resolve();
+    }
+  }, 4000);
+})
+  .then(() => {
+    console.log("promise4 is resolved successfully!");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+// ? promise example 5
+
+new Promise((resolve, reject) => {
+  // Async task..
+  setTimeout(() => {
+    let err = true;
+    if (err) {
+      reject(`ERROR: (@promise5) something went wrong!`);
+    } else {
+      resolve({
+        name: "krishna",
+        email: "krishmakwana1674@gmail.com",
+        age: 21,
+        gender: "male",
+      });
+    }
+  }, 5000);
+})
+  .then((userData) => {
+    const data = `hey ${userData.name}, your details are as follows:\nemail: ${userData.email}\nage: ${userData.age}\ngender: ${userData.gender}`;
+
+    return data;
+  })
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+  .finally(() => {
+    console.log("i will run! no matter if promise resolved or rejected!");
+  });
+
+// ? promise example 6
+

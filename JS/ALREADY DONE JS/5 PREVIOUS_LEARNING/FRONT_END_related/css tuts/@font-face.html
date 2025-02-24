@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>@Font-Face Rule Applying</title>
+
+    <style>
+      /*
+        commented fonts are ready to work 
+        but note 1 points you can add these font using commas ',' but of same type
+        so you can see differences ...
+        or can use different types also ...
+        by adding more than one fonts it may be cause taking load for servers..
+        example is below..
+      
+        @font-face {
+            font-family: moreThanOne;
+            src : url("FontsForWeb/VeraSerif-webfont.woff"),
+            url("FontsForWeb/After_Shok-webfont.woff");
+        }
+
+        adding more than one fonts are works as per order 
+        if there are two fonts in one font-face are supported by browser
+        then 1st font gets more priority
+        if it is not supported then the 2nd gets priority to applying..
+        check it..
+        */
+      @font-face {
+        font-family: moreThanOne;
+        src: url("FontsForWeb/VeraSerif-webfont.woff"),
+          url("FontsForWeb/After_Shok-webfont.woff");
+      }
+
+      /* @font-face {
+        font-family: afterShock;
+        src: url("FontsForWeb/After_Shok-webfont.woff");
+      } */
+      /* @font-face {
+        font-family: capsulla;
+        src: url("FontsForWeb/Capsuula-webfont.woff");
+      } */
+      /* @font-face {
+        font-family: collabMedium;
+        src: url("FontsForWeb/ColabMed-webfont.woff");
+      } */
+      /* @font-face {
+        font-family: collabRegular;
+        src: url("FontsForWeb/ColabReg-webfont.woff");
+      } */
+      /* @font-face {
+        font-family: daValencia;
+        src: url("FontsForWeb/De_Valencia.woff");
+      } */
+      /* @font-face {
+        font-family: dejavuSansMono;
+        src: url("FontsForWeb/DejaVuSansMono-webfont.woff");
+      } */
+      /* @font-face {
+        font-family: veraSerif;
+        src: url("FontsForWeb/VeraSerif-webfont.woff");
+      } */
+
+      .ff {
+        border: 2px solid black;
+        width: 350px;
+        box-sizing: border-box;
+        padding: 12px;
+        text-align: justify;
+        font-size: 20px;
+        font-family: moreThanOne;
+      }
+
+      h2 {
+        font-family: moreThanOne;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--  -->
+
+    <h2>we have learnt about adding new fonts on web page</h2>
+
+    <div class="ff">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
+      illum vitae quis, consequuntur ab autem laborum molestias aliquid placeat,
+      saepe, nostrum ut asperiores quasi quia totam sit quam rerum quo.
+    </div>
+  </body>
+</html>

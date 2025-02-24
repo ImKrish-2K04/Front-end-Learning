@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<!--
+BDI - BI-DIRECTIONAL ISOLATION
+BDO - BI-DIRECTIONAL OVERRIDE
+
+bdi is used to isolate the username from surrounding text-directions..
+is shown as below..
+it isolates the words specified inside bdi tag from changing directions..
+
+bdo is used for override the text-directions..
+it uses an 'dir' attribute for specifying the direction that is only 
+'rtl' - right to left..
+
+normally our text is from left to right direction therefore there is only one value..
+-->
+
+<html>
+    <head>
+        <title>Direction settings..</title>
+    </head>
+
+    <body>
+        <ul>
+            <li><bdo><bdi>Makwana Krishna Jasminbhai</bdi></bdo></li>
+            <li><bdo dir="rtl">Makwana Krishna Jasminbhai</bdo></li>
+        </ul>
+    </body>
+</html>

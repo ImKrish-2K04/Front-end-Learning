@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Hello World</title>
+  </head>
+
+  <body>
+    <h1>JS Tutorial</h1>
+
+    <script>
+      // type 1 of declaration..
+      let forAll = ["book1", "book2", "book3", "book4"];
+      console.log(forAll);
+      // type 2 of declaration..
+      let forAll2 = new Array("book1'2", "book2'2", "book3'2", "book4'2");
+      console.log(forAll2);
+      //concatenation of forAll and forAll2..
+      console.log(forAll.concat(forAll2));
+
+      //finding the length of a value of an array..
+      console.log("Length of value -> " + forAll2[1].length);
+      //finding the length of an array..
+      console.log("Length of array -> " + forAll2.length);
+
+      //add values to the begining of an array and to the end of an array..
+      let forAll3 = new Array("Hindi", "Gujarati", "English", "Science");
+      //subjects will be added are physics and maths..
+      console.log("before -> " + forAll3);
+      forAll3.push("physics");
+      console.log("after 1st -> " + forAll3);
+      forAll3.unshift("Math");
+      console.log("after 2nd -> " + forAll3);
+      //using shift we can remove a value from the begining and using pop from end..
+      /*
+      forAll3.shift();
+      console.log("after 3rd -> " + forAll3);
+      forAll3.pop();
+      console.log("after 4th -> " + forAll3);
+      */
+
+      //suppose we want to remove gujarati and english from this array'3'
+      //then we will use splice method that uses 2 parameters
+      //splice(starting-index , no of values);
+      //Math,Hindi,Gujarati(2nd),English,Science,physics  ->  this is array in current time..
+
+      forAll3.splice(2, 2);
+      console.log("after splicing -> " + forAll3);
+
+      //if you want to make your array empty then use one of these
+      //array = [];    or    array.length = 0;
+
+      //use one of below to check result
+
+      //forAll3.length = 0;
+      //forAll3 = [];
+      console.log(
+        "making empty -> " + forAll3 + " <- array is empty so not visible"
+      );
+
+      //let's find a position of a value in array..
+      forAll4 = new Array(
+        "Math",
+        "Hindi",
+        "Gujarati",
+        "English",
+        "Science",
+        "physics"
+      );
+
+      console.log(
+        "the position of gujarati is -> " + forAll4.indexOf("Gujarati")
+      );
+
+      //now let's create a array from a string ...
+      let name = "Makwana Krishna Jasmin bhai";
+      let nameArray = name.split(" ");
+      console.log(nameArray);
+      //now let's create a string from an array ...
+      nameArray = nameArray.join(" ");
+      console.log(nameArray);
+
+      //now let's create a multidimensional array ...
+      let mulArray;
+      mulArray = [
+        ["book1", 100],
+        ["book2", 200],
+        ["book3", 300],
+      ];
+      console.log(
+        "mulArray's value -> " + mulArray[1][0] + " and " + mulArray[1][1]
+      );
+    </script>
+  </body>
+</html>

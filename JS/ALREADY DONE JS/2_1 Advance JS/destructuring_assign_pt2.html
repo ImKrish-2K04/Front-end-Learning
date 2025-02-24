@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>destructuring assignment</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        user-select: none;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Destructuring...</h1>
+
+    <!--
+    ! 'DESTRUCTURING ASSIGNMENT'
+
+    ? here we are going to learn everything about the destructuring assingment of object and in the first part, we have learned about destructuring assignment of array elements...
+
+    * key points of the object destructuring...
+
+    ! Property Names:
+
+    * Object destructuring relies on property names, not positions.
+    * The variable names must match the property names of the object unless you provide different names using the : syntax.
+
+    ! Order Irrelevance:
+
+    * The order in which you destructure properties does not matter.
+    * You can destructure in any order you want, as long as the property names match.
+
+    ! Default Values:
+
+    * You can provide default values if the property does not exist or is undefined.
+  -->
+
+    <script>
+      // for non-undefined values experiments...
+      let obj = {
+        name: "krishna",
+        age: 20,
+        gender: "male",
+      };
+
+      // for undefined values experiments...
+      // let obj = {
+      //   name: undefined,
+      //   age: 20,
+      //   gender: "male",
+      // };
+
+      // basic object destructuring...
+      // as we are doing destructuring with arrays, we are going to do the same with objects, but in different way. like, we will declare some variables where the properties of the object will be assigns and it will follows the same funda as array destructuring assignment in which the no. of values are stored in variables is depended on how many variables are there!
+
+      /*
+      let { name, age, gender } = obj;
+      console.log(name);
+      console.log(age);
+      console.log(gender);
+      */
+
+      // Assigning to Different Variable Names
+      // here we can assign the values of the object to the distinct variable names and access their values as the following...
+
+      /*
+      let {name : n, age: a, gender: g} = obj;
+      console.log(n);
+      console.log(a);
+      console.log(g);
+      */
+
+      // Default Values
+      // here the name property of object is assigned with undefined, so the default value of the destructuring variable is assigned to it and is reflected...
+
+      /*
+      let {name: n = 'radhe', age : a = 40} = obj;
+      console.log(n);
+      console.log(a);
+      */
+
+      // Rest Operator
+      // here we can use the rest operator to use the rest of the object properties without storing them into distinct variables...
+
+      let { name, ...rest} = obj;
+      console.log(name);
+      console.log(rest);
+    </script>
+  </body>
+</html>

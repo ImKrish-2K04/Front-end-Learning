@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>practice - demos</title>
+  </head>
+  <body>
+    <h1>Js - practice</h1>
+
+    <script>
+      // now we are going to learn about cookies in javascript...
+
+      // in java script you can fetch cookies stored in your browser using 'document.cookie'
+
+      // and also you can add cookie in the existing cookies set by using that syntax...
+
+      // currently in our browser where we are going to see our practicle, there is not any cookies are preset...
+
+      // so here we are going to see the preset cookies first then we will set our one, and then again will see it...
+
+      /*
+      document.cookie = 'firstName=Krishna';
+      alert(document.cookie);
+      */
+
+      // here we are going to see 2 methods, which are really very important in the context of passing information by cookies or sessions or in any context. when you are trying to store a string value in cookie, it will checks wether any special characters are exists in the string or not... if exists then it will not set our {key,value} pair properly...
+
+      // to set any special characters as a key or value you can use encodeURIComponent() method which accepts a string and encodes its special characters so we can set them, and to see the original one, we can use decodeURIComponent() method... let's see it not by practicle...
+
+      /*
+      let key = encodeURIComponent(prompt("enter your key"));
+      let value = encodeURIComponent(prompt("enter your value"));
+      let key_value = `${key}=${value}`;
+      document.cookie = key_value;
+      alert(document.cookie);
+      */
+
+      // NOTES : 
+
+      // the {name,value} pair, after encodeURIComponent should not exceeds 4kb ... and the total no. of cookies per domain is limited to around 20 cookies and the number is depended on browser also...
+    </script>
+  </body>
+</html>

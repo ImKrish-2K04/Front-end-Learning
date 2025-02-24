@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>carousal project</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      .container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+
+        & .box {
+          width: 55vw;
+          height: 45rem;
+          border-radius: 1rem;
+          box-shadow: rgba(255, 255, 255, 0.1) 0px 4px 16px,
+            rgba(255, 255, 255, 0.1) 0px 8px 24px,
+            rgba(255, 255, 255, 0.1) 0px 16px 56px;
+          background-size: 100% 100%;
+          background-repeat: no-repeat;
+          animation: carousal 15s ease-in-out infinite alternate;
+        }
+      }
+
+      @keyframes carousal {
+        0% {
+          background-image: url("../images/utilities/img1.jpg");
+        }
+        25% {
+          background-image: url("../images/utilities/img2.jpg");
+        }
+        50% {
+          background-image: url("../images/utilities/img3.jpg");
+        }
+        75% {
+          background-image: url("../images/utilities/img4.jpg");
+        }
+        100% {
+          background-image: url("../images/utilities/img5.jpg");
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box"></div>
+    </div>
+  </body>
+</html>

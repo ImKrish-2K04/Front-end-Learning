@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Hello World</title>
+  </head>
+
+  <body>
+    <h1>JS - TuTs</h1>
+
+    <script>
+      //multilevel inheritance..
+
+      let Mobile = function () {
+        this.a = 10;
+      };
+
+      Mobile.prototype.z = 40;
+
+      let Samsung = function () {
+        Mobile.call(this);
+        this.b = 20;
+      };
+
+      let Galaxy = function () {
+        Samsung.call(this);
+        this.c = 30;
+      };
+
+      function extend(child, parent) {
+        child.prototype = Object.create(parent.prototype);
+        child.prototype.constructor = child;
+      }
+
+      extend(Samsung, Mobile);
+      extend(Galaxy, Mobile);
+
+      let mob = new Mobile();
+      let samMob = new Samsung();
+      let samGal = new Galaxy();
+
+      console.log(samGal.z + samGal.a);
+    </script>
+  </body>
+</html>

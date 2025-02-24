@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Hello World</title>
+  </head>
+
+  <body>
+    <h1>Hi! JS</h1>
+
+    <script>
+      var dt = new Date();
+      function getMonthName(dt) {
+        var month = dt.getMonth();
+        var arr = [
+          "jan",
+          "feb",
+          "mar",
+          "apr",
+          "may",
+          "june",
+          "july",
+          "aug",
+          "sept",
+          "oct",
+          "nov",
+          "dec",
+        ];
+        return arr[month];
+      }
+
+      function dateFormation(dt) {
+        var date = dt.getDate();
+        var year = dt.getFullYear();
+        var month = getMonthName(dt);
+
+        return date + " / " + month + " / " + year;
+      }
+
+      console.log("Date is : " + dateFormation(dt));
+    </script>
+  </body>
+</html>
+
+<!--
+console.log("date formatting...");
+
+      let wholeDate = new Date();
+      console.log(dateFormation(wholeDate));
+
+      function dateFormation(dt) {
+        let m_val = dt.getMonth();
+        let date = dt.getDate();
+        let year = dt.getFullYear();
+        let m_arr = [
+          "jan",
+          "feb",
+          "mar",
+          "apr",
+          "may",
+          "june",
+          "july",
+          "aug",
+          "sept",
+          "oct",
+          "nov",
+          "dec",
+        ];
+        month = m_arr[m_val];
+
+        return date + " / " + month + " / " + year;
+      }
+-->

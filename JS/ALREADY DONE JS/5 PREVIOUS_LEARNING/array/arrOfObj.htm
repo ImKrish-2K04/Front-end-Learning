@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Hello World</title>
+  </head>
+
+  <body>
+    <h1>JS - TuTs</h1>
+
+    <script>
+      var student = [
+        { name: "Krishna", surname: "Makwana" },
+        { name: "Juhi", surname: "Chawla" },
+        {
+          name: "Vikas",
+          surname: "Gokhle",
+          personalDetail: {
+            address: "Vastrapur",
+            city: "Ahmedabad",
+            detail: [{ pincode: 380232 }, { country: "India" }],
+          },
+        },
+      ];
+
+      console.log(student);
+      console.log(student[1].name);
+      console.log(student[2].personalDetail.city);
+      console.log(student[2].personalDetail.detail[0].pincode);
+    </script>
+  </body>
+</html>

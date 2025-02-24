@@ -1,0 +1,40 @@
+@font-face {
+  font-family: collReg;
+  src: url("FontsForWeb/ColabReg-webfont.woff");
+}
+
+body {
+  background-image: url("images/gra12.jpg");
+  background-size: cover;
+  background-attachment: contain;
+}
+
+ul {
+  list-style-type: none;
+  background-image: url("images/gra12.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: auto;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  text-decoration: none;
+  color: lightskyblue;
+  font-size: 20px;
+  font-family: collReg;
+  padding: 10px 20px;
+  margin: 0;
+  display: block;
+  transition: 0.3s ease;
+}
+
+a:hover {
+  font-size: 30px;
+  color: rgb(85, 182, 221);
+}

@@ -1,0 +1,102 @@
+@font-face {
+  font-family: picollo;
+  src: url("../FontsForWeb/After_Shok-webfont.woff");
+}
+
+body {
+  font-family: arial, helvetica;
+  background: slategray;
+  margin: 0;
+  padding: 0;
+}
+
+#wrapper {
+  width: 1000px;
+  background-color: white;
+  margin: 0 auto;
+}
+
+#header {
+  background-color: crimson;
+  padding: 13px;
+  color: white;
+}
+
+#content {
+  width: 800px;
+  min-height: 440px;
+  float: left;
+  padding: 20px 20px;
+  box-sizing: border-box;
+  text-align: justify;
+}
+
+#sidebar {
+  width: 200px;
+  min-height: 440px;
+  float: right;
+  background-color: lightblue;
+  padding-top: 50px;
+  font-size: 20px;
+}
+
+#sidebar a {
+  text-decoration: none;
+  color: black;
+  transition: 0.2s ease-in-out;
+}
+
+#header h1 {
+  transition: 0.2s ease-in-out;
+  font-family: picollo;
+}
+
+#header h1:hover {
+  color: darkred;
+}
+
+#sidebar a:hover {
+  font-size: 30px;
+  color: darkslateblue;
+}
+
+#sidebar ul li {
+  list-style-type: none;
+}
+
+#sidebar li {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#footer {
+  clear: both;
+  background-color: lightsalmon;
+  text-align: right;
+  padding: 7px;
+}
+
+#menu ul {
+  list-style-type: none;
+  background-color: lightsalmon;
+  margin: 0;
+  padding: 0;
+}
+
+#menu li {
+  display: inline-block;
+}
+
+#menu li a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  padding: 13px 13px;
+  transition: 0.2s ease-in-out;
+}
+
+#menu a:hover {
+  background-color: crimson;
+  color: white;
+  font-size: 20px;
+}

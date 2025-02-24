@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Hello World</title>
+  </head>
+
+  <body>
+    <script>
+      class Mobile {
+        constructor(model, price) {
+          this.model = model;
+          this.price = price;
+        }
+        details = () => `price of variant ${this.model} is ${this.price}.`;
+      }
+
+      let mob = new Mobile("galaxy", 43000);
+      console.log(mob.details());
+    </script>
+  </body>
+</html>

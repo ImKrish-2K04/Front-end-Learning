@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Text-Shadow</title>
+
+    <style>
+      /* text -- shadow */
+      * {
+        margin: 10px 0 0 10px;
+        padding: 5px;
+        background-color: black;
+      }
+
+      .para:hover {
+        background-color: cadetblue;
+        transition: 0.2s ease-in-out;
+      }
+
+      .para {
+        font-size: 80px;
+        font-weight: 800;
+        color: orangered;
+        text-shadow: 2px 2px 5px green;
+        border-bottom: 5px ridge green;
+        border-top: 5px ridge green;
+        border-radius: 26px;
+        box-shadow: 2px 2px 4px 2px orangered;
+      }
+
+      .para2 {
+        font-size: 80px;
+        font-weight: 800;
+        color: green;
+        text-shadow: 2px 2px 5px orangered;
+        border-bottom: 5px ridge orangered;
+        border-top: 5px ridge orangered;
+        border-radius: 26px;
+        box-shadow: 2px 2px 4px 2px green;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Text-shadow
+    ? Text Decoration....
+      'text-decoration' properties..
+    text-decoration-line : ;
+    text-decoration-color: ;
+    text-decoration-style: ;
+
+      'text-decoration-line'
+    underline, overline, linethrough(like strike or s tag), none..
+
+      'text-decoration-style'
+    solid, dotted, dashed, double, wavy..
+    -->
+    <span class="para">Kisu</span><span class="para2">Dada</span>
+  </body>
+</html>

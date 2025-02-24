@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>insert element before any element</title>
+  </head>
+  <body>
+    <h1>JS - TUTs</h1>
+
+    <div id="mainDiv">
+      <p id="para">i am paragraph of div.</p>
+    </div>
+
+    <script>
+      // in this tutorial we are going to learn about the insertBefore() method...
+      // this method is used to insert a new element to a specific position means to inside any element and before a specific element...
+      // this method needs some specifications like the reference of parentNode, newNode, referenceNode. here referenceNode is the node before of which we are going to place the newNode...
+      // let's see how we will doing this...
+
+      let parentNode = document.getElementById("mainDiv");
+      let referenceNode = document.getElementById("para");
+
+      let newNode = document.createElement("h2");
+      let tNofnewNode = document.createTextNode("New Node");
+      newNode.appendChild(tNofnewNode);
+
+      //   console.log(newNode);
+      // here we can see how we can add a newly created element node before any node inside a particular element node!!
+
+      parentNode.insertBefore(newNode, referenceNode);
+      console.log(parentNode);
+    </script>
+  </body>
+</html>

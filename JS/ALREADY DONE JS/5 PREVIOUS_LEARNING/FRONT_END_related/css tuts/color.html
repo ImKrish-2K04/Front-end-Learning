@@ -1,0 +1,78 @@
+<!--
+    ?   Color related some imp notes..
+    ! let's defining them all..
+
+    1. rgb(0-255,0-255,0-255)
+    2. rgba(0-255,0-255,0-255,0.0 to 1.0)
+    3. hsl(0-360,0-100%,0-100%)     //0&360 - red  ,  120 - green  ,  240 - blue  for each hue-situration-lightness
+    4. hsla(,0.0 to 1.0)
+    5. color : color-name 
+    OR 
+    #000000 to #ffffff (hexadecimal value)
+    6. background-color : color-name 
+    OR 
+    #000000 to #ffffff (hexadecimal value)
+
+    * a is stands for alpha -> this is used for transparency 
+    * 0.0 is fully transparent and 1.0 is fully colorful
+-->
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Hello World!!</title>
+
+    <style>
+      .box {
+        width: 200px;
+        height: 168px;
+        border: 2px solid black;
+        color: rgb(120, 255, 255);
+        background-color: rgba(169, 45, 98, 0.8);
+      }
+      .box2 {
+        width: 200px;
+        height: 168px;
+        border: 2px solid black;
+        color: hsl(240, 50%, 50%);
+        margin-top: 50px;
+        background-color: hsla(20, 89%, 50%, 0.7);
+      }
+      .box3 {
+        width: 250px;
+        height: 190px;
+        border: 2px solid white;
+        border-radius: 10px;
+        box-sizing: border-box;
+        padding: 20px;
+        color: whitesmoke;
+        margin-top: 50px;
+        background-color: black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>This is Color related Tutorial..</h2>
+    <hr />
+    <div class="box">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
+      suscipit, voluptatum nobis voluptatem ea debitis in quo. Eaque aliquam,
+      quo cum sit enim recusandae exercitationem aspernatur odit temporibus esse
+      voluptas?
+    </div>
+    <div class="box2">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
+      suscipit, voluptatum nobis voluptatem ea debitis in quo. Eaque aliquam,
+      quo cum sit enim recusandae exercitationem aspernatur odit temporibus esse
+      voluptas?
+    </div>
+    <div class="box3">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
+      suscipit, voluptatum nobis voluptatem ea debitis in quo. Eaque aliquam,
+      quo cum sit enim recusandae exercitationem aspernatur odit temporibus esse
+      voluptas?
+    </div>
+  </body>
+</html>

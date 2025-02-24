@@ -1,0 +1,30 @@
+### **1. Basic Array Concepts**  
+- `ArrayTut.htm` (Introduction to arrays)  
+- `arr_1.htm` (Basic array operations)  
+- `arr_2.htm` (More array operations)  
+- `arr_3.htm` (Array manipulation)  
+- `arr_4.htm` (Advanced array operations)  
+
+### **2. Array of Objects & Multidimensional Arrays**  
+- `arrOfObj.htm` (Array of objects)  
+- `mulDimArrPt1.htm` (Multidimensional arrays - Part 1)  
+- `empty_2d_arr.htm` (Empty 2D array)  
+- `empty_2d_arr_pt2.htm` (Empty 2D array - Part 2)  
+- `input_in_2d_arr.htm` (Input in 2D arrays)  
+
+### **3. String & Template Literals Related to Arrays**  
+- `d&t_inString.htm` (Date and time in string manipulation)  
+- `imp_string.htm` (Important string operations)  
+- `string-manip.htm` (String manipulation techniques)  
+- `template-literal.html` (Using template literals with arrays)  
+
+### **4. User Input & Loops in Arrays**  
+- `in_from_user_Arr.htm` (Getting input for arrays from user)  
+- `break_&_cont.htm` (Break and continue in loops)  
+
+### **5. Date Objects and Formation**  
+- `date_formation.htm` (Formatting dates)  
+- `Date_Object.htm` (Date object and its methods)  
+
+### **6. Miscellaneous Topics**  
+- `arr_5.htm` (If there’s any further array-related topic to be included)  

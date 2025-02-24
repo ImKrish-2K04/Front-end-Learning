@@ -1,0 +1,56 @@
+ul {
+  list-style-type: none;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  background-image: url(images/jsr2.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+#jsr {
+  margin: 250px 150px;
+  padding: 15px;
+  border: 2px groove yellowgreen;
+  border-radius: 20px;
+  width: max-content;
+  font-weight: bolder;
+}
+
+samp {
+  color: transparent;
+  background-image: url("images/gra12.jpg");
+  font-size: 60px;
+  -webkit-background-clip: text;
+  /* -webkit-background-clip: text; 
+  this works in both chrome and moz firefox
+  but if use only bg-clip then it works only
+  on firefox....*/
+}
+
+li {
+  float: left;
+}
+
+a:hover {
+  color: orange;
+  font-size: 22px;
+}
+
+li a {
+  text-decoration: none;
+  padding: 12px 20px;
+  color: azure;
+  display: block;
+  text-align: center;
+  transition: 0.4s;
+}
+
+body {
+  background-image: url(images/jsr2.png);
+  background-size: cover;
+  background-attachment: fixed;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Hello World</title>
+  </head>
+
+  <body>
+    <script>
+      var rows = 2;
+      var cols = 3;
+
+      var arr = new Array(rows);
+      //arr[0th, 1st]
+
+      for (var i = 0; i < rows; i++) {
+        arr[i] = new Array(cols);
+        //arr[oth[,,], 1st[,,]]
+      }
+
+      for (var i = 0; i < rows; i++) {
+        for (var j = 0; j < cols; j++) {
+          document.write(arr[i][j] + " | ");
+        }
+        document.write("<br />");
+      }
+    </script>
+  </body>
+</html>

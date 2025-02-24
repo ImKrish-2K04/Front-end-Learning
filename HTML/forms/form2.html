@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" method="post">
+      <fieldset>
+        <legend>Personal Details:</legend>
+        <label for="fname">Name:</label><br />
+        <input type="text" required name="fullName" maxlength="10" id="fname" />
+        <br />
+        <label for="mail">Email:</label><br />
+        <input type="email" required name="email id" id="mail" />
+        <br />
+        <label for="mob_no">Phone:</label><br />
+        <input type="tel" required name="mobile no" id="mob_no" />
+      </fieldset>
+      <br />
+      <label for="occupation">Occupation:</label><br />
+      <select name="occupation" id="occupation">
+        <option value="SE1">Software Engineer 1</option>
+        <option value="backend">Backend Developer</option>
+        <option value="frontend">Frontend Developer</option>
+      </select>
+      <br />
+      <br />
+      <fieldset>
+        <legend>Topics of Interest:</legend>
+        <label for="html">HTML</label>
+        <input type="checkbox" name="html" id="html" />
+        <label for="css">CSS</label>
+        <input type="checkbox" name="css" id="css" />
+        <label for="js">JavaScript</label>
+        <input type="checkbox" name="js" id="js" />
+      </fieldset>
+      <br />
+      <label for="comments">Comments:</label> <br />
+      <textarea name="txtarea" id="txtarea" rows="4" cols="30"></textarea>
+      <br />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>

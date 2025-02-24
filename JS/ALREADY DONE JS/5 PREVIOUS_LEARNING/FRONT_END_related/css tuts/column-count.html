@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Column Count Tut</title>
+
+    <style>
+      /* column count */
+      .rem {
+        /*
+        width: 1000px;
+        column-width: 300px;
+        text-align: justify;
+        column-gap: 50px;
+        column-rule: 15px groove lemonchiffon;
+        
+        this is working in best condition but let's see the proper way..
+        */
+
+        column-count: 3;
+        width: 1000px;
+        text-align: justify;
+        column-gap: 50px;
+        column-rule: 15px groove lemonchiffon;
+      }
+
+      h2{
+        column-span: all;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Column Count Properties 
+        *   column-count
+        *   column-gap
+        *   column-rule : width style color;
+        *   column-rule-width
+        *   column-rule-style
+        *   column-rule-color
+        *   column-width  <--|  
+            ? when you use above property then column-count is not needed it autometically adjusts columns
+        *   column-span
+            ! below both properties are not properly works in any browsers
+        *   column-fill
+        *   column
+    -->
+
+    <!-- <div class="rem">
+      <h2>This is Column Property of CSS-3</h2>
+
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad totam
+      exercitationem fuga dolore aut voluptates ex impedit ipsa tempora at ipsam
+      pariatur amet reprehenderit vero facere delectus, corrupti nesciunt
+      repudiandae! 
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
+      totam exercitationem fuga dolore aut voluptates ex impedit ipsa tempora at
+      ipsam pariatur amet reprehenderit vero facere delectus, corrupti nesciunt
+      repudiandae! 
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
+      totam exercitationem fuga dolore aut voluptates ex impedit ipsa tempora at
+      ipsam pariatur amet reprehenderit vero facere delectus, corrupti nesciunt
+      repudiandae! 
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
+      totam exercitationem fuga dolore aut voluptates ex impedit ipsa tempora at
+      ipsam pariatur amet reprehenderit vero facere delectus, corrupti nesciunt
+      repudiandae! 
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
+      totam exercitationem fuga dolore aut voluptates ex impedit ipsa tempora at
+      ipsam pariatur amet reprehenderit vero facere delectus, corrupti nesciunt
+      repudiandae!
+    </div> -->
+
+    <div class="rem">
+      <h2>This is Column Property of CSS-3</h2>
+
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad totam
+      exercitationem fuga dolore aut voluptates ex impedit ipsa tempora at ipsam
+      pariatur amet reprehenderit vero facere delectus, corrupti nesciunt
+      repudiandae! 
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
+      totam exercitationem fuga dolore aut voluptates ex impedit ipsa tempora at
+      ipsam pariatur amet reprehenderit vero facere delectus, corrupti nesciunt
+      repudiandae! 
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
+      totam exercitationem fuga dolore aut voluptates ex impedit ipsa tempora at
+      ipsam pariatur amet reprehenderit vero facere delectus, corrupti nesciunt
+      repudiandae! 
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
+      totam exercitationem fuga dolore aut voluptates ex impedit ipsa tempora at
+      ipsam pariatur amet reprehenderit vero facere delectus, corrupti nesciunt
+      repudiandae! 
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
+      totam exercitationem fuga dolore aut voluptates ex impedit ipsa tempora at
+      ipsam pariatur amet reprehenderit vero facere delectus, corrupti nesciunt
+      repudiandae!
+    </div>
+  </body>
+</html>

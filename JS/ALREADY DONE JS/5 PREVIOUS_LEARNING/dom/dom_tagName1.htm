@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Tree</title>
+  </head>
+
+  <body>
+    <!-- 
+        !   Element Access Methods..
+        *1.  document.getElementById("ID");
+        ->  Get Element by specified ID.
+        *2.  document.getElementsByClassName("CLASS_Name");
+        ->  Get all specified element by class name.
+        *3.  document.getElementByTagName("Tag_Name");
+        ->  get all specified element by tag name.
+        *4.  document.querySelector("css_selector");
+        ->  it returns the first match of the passed selector string.
+        *5.  document.querySelectorAll("css_selector");
+        ->  it returns a node list of DOM elements that match the query.
+     -->
+    <h1>we are learning JS</h1>
+    <h2>Subscribe Geeky Shows</h2>
+    <p id="geek">Hello <b style="font-weight: bold">Geeky</b> Shows</p>
+    <p id="find">Bye GeekyShows</p>
+    <div>
+      <p>1st p</p>
+      <p>2nd p</p>
+    </div>
+    <script>
+      console.dir(document.lastChild.lastChild.lastChild);
+      console.log(document.getElementById("geek").innerHTML);
+      //the line below is gives the list of elements in the html with selectors..
+      console.log(document.getElementsByTagName("*"));
+      console.log(document.getElementsByTagName("*").length);
+      console.log(document.getElementsByTagName("*")[2]);
+
+      //if you want to see all elements used inside any seperate block then append it between the line as below..
+
+      console.log(" ");
+      console.log("seperations inside of a block");
+      console.log(document.body.getElementsByTagName("*"));
+      console.log(" ");
+
+      var storage = document.getElementsByTagName("p");
+      var storage1 = document.getElementsByTagName("p")[0];
+      var storage2 = document.getElementsByTagName("p")[0].innerHTML;
+      console.log(" ");
+      console.log(storage);
+      console.log(storage1);
+      console.log(storage2);
+
+      console.log(" ");
+    </script>
+  </body>
+</html>

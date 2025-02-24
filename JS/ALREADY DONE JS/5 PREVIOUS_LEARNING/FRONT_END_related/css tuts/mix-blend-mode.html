@@ -1,0 +1,64 @@
+<!-- mix blend mode..
+values are same and concept is little changed..
+for this mode any one item is enough in background like image or color (normal or gradient)
+and you can mix it with a content displayed over it....
+it is little bit different from bg-blend-mode....
+-->
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Hello World</title>
+
+    <style>
+      .box {
+        background-color: cornflowerblue;
+        /* background-image: url("images/jsr2.png"); */
+
+        width: 400px;
+        height: 270px;
+        padding: 60px 15px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        background-size: cover;
+      }
+
+      samp {
+        background-color: green;
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        padding: 5px 5px;
+        mix-blend-mode: color-burn;
+        border-bottom: 2px solid red;
+        border-right: 2px solid red;
+        border-radius: 10px;
+      }
+
+      .box2 {
+        background-image: linear-gradient(red, green, blue);
+        /* background-color: red; */
+        margin-top: 30px;
+        height: 300px;
+        width: 350px;
+        border-radius: 10px;
+      }
+
+      img {
+        border-radius: 10px;
+        mix-blend-mode: darken;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box">
+      <samp>Makwana Monster</samp>
+    </div>
+
+    <div class="box2">
+      <img src="images/chameleon.jpg" height="300px" width="350px" />
+    </div>
+  </body>
+</html>

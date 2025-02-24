@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>creating new element</title>
+</head>
+<body>
+    <h1>JS - TUTs</h1>
+
+    <script>
+        // here we are going to create a new html element node using java script...
+        // this can be achieved by using a function of DOM called 'createElement()'
+        // in this function we have to pass the name of element we want to create and if we are passing an element name which is not exists in html then it creates a new element and returns, so we have to store it to a variable...
+
+        // creating h2 element node!
+        let nENode = document.createElement("h2");
+
+        // adding text content to it and accessing it!
+        nENode.textContent = 'New Node!';
+        console.log(nENode.childNodes[0].nodeValue);
+        
+        // changing text content of it and accessing it!
+        nENode.childNodes[0].nodeValue = 'changed Value!'
+        console.log(nENode.childNodes[0].nodeValue);
+    </script>
+</body>
+</html>

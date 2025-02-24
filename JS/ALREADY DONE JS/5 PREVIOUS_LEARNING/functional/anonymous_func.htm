@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Hello World</title>
+  </head>
+
+  <body>
+    <h1>JS - TuTs</h1>
+
+    <script>
+      //Anonymous Functions
+
+      //Anonymous functions are those functions which has no name or identity,
+      //Anonymous function is use when you need to store any function inside any variable,
+      //because when you stores a function in a variable then why you give a name to that function,
+      //when we assigns a function to the variable you have to use that variable in the same way as we execute function.
+
+      //when we assigns functions to the variables then it called a "Function Expression"..
+
+      /*
+      let greet = function () {
+        console.log("Hello, Good Morning..");
+      }; //"Function Expression"
+
+      setTimeout(greet, 3000);
+      */
+
+      //greet();
+
+      //if we want to print output after certain amount of time, there is one function provided by JS..
+      //Syntax = > setTimeOut(Function-Name , time-in-milliSecond);   // 1000ms = 1s...
+
+      //we can pass whole anonymous function directly as argument so no memory will be occupied..
+      //Example is below :  that will not occupies the memory and run more efficiently and fastly
+      setTimeout(function () {
+        console.log("Hello, Good Morning..");
+      }, 3000);
+    </script>
+  </body>
+</html>

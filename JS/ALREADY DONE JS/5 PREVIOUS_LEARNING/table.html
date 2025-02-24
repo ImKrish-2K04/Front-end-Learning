@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>table...</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        box-sizing: border-box;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+      }
+
+      table {
+        text-align: center;
+        border-collapse: collapse;
+        border: 1px solid #632BDE;
+      }
+
+      caption {
+        font-size: 30px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      th,
+      td {
+        padding: 10px 30px;
+      }
+
+      .heading th {
+        background-color: #632bde;
+        color: white;
+      }
+
+      .btn {
+        background-color: #632bde;
+        color: white;
+        border: none;
+        border-radius: 2px;
+        padding: 2px 6px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body bgcolor="#cadcff">
+    <!-- 
+    #632BDE
+    #E1E3E7
+    -->
+
+    <div class="container">
+      <table>
+        <caption>
+          Create Your Domain Name
+        </caption>
+        <thead>
+          <tr class="heading">
+            <th>TLD</th>
+            <th>Duration</th>
+            <th>Registration</th>
+            <th>Renewal</th>
+            <th>Transfer</th>
+            <th>Register</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>.com</th>
+            <td>1 Year</td>
+            <td>&dollar;70.00</td>
+            <td>&dollar;5.00</td>
+            <td>&dollar;5.00</td>
+            <td>
+              <button class="btn">Sign Up</button>
+            </td>
+          </tr>
+          <tr>
+            <th>.net</th>
+            <td>1 Year</td>
+            <td>&dollar;75.00</td>
+            <td>&dollar;5.00</td>
+            <td>&dollar;5.00</td>
+            <td>
+              <button class="btn">Sign Up</button>
+            </td>
+          </tr>
+          <tr>
+            <th>.org</th>
+            <td>1 Year</td>
+            <td>&dollar;65.00</td>
+            <td>&dollar;5.00</td>
+            <td>&dollar;5.00</td>
+            <td>
+              <button class="btn">Sign Up</button>
+            </td>
+          </tr>
+          <tr>
+            <th>.biz</th>
+            <td>1 Year</td>
+            <td>&dollar;60.00</td>
+            <td>&dollar;5.00</td>
+            <td>&dollar;5.00</td>
+            <td>
+              <button class="btn">Sign Up</button>
+            </td>
+          </tr>
+          <tr>
+            <th>.info</th>
+            <td>1 Year</td>
+            <td>&dollar;50.00</td>
+            <td>&dollar;5.00</td>
+            <td>&dollar;5.00</td>
+            <td>
+              <button class="btn">Sign Up</button>
+            </td>
+          </tr>
+          <tr>
+            <th>.me</th>
+            <td>1 Year</td>
+            <td>&dollar;45.00</td>
+            <td>&dollar;5.00</td>
+            <td>&dollar;5.00</td>
+            <td>
+              <button class="btn">Sign Up</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      const rows = document.getElementsByTagName("tbody")[0].children;
+
+      Array.from(rows).forEach((row) => {
+        const rowCells = row.children;
+
+        Array.from(rowCells).forEach((cell, index) => {
+          // Check if index is even (including 0, which is the first column)
+          if (index % 2 === 0) {
+            const computedStyle = cell
+              .computedStyleMap()
+              .get("background-color");
+            // Check if computed background-color is transparent or not set
+            if (
+              computedStyle === undefined ||
+              computedStyle.value === "transparent"
+            ) {
+              cell.style.backgroundColor = "white"; // Set background-color to white
+            } else {
+              // Example of toggling background-color
+              cell.style.backgroundColor =
+                computedStyle.value === "rgb(255, 255, 255)"
+                  ? "transparent"
+                  : "white";
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

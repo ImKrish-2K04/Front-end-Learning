@@ -1,0 +1,67 @@
+<!--
+    using col inside colgroup to modify columns
+    and using span inside col to spanning
+    two or more columns..
+-->
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 5px;
+        padding-right: 40px;
+        text-align: left;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>HTML Table</h2>
+
+    <table>
+      <colgroup>
+        <col span="2" style="background-color: red" />
+        <col style="background-color: green" />
+        <col style="background-color: blue" />
+      </colgroup>
+
+      <tr>
+        <th>Rno</th>
+        <th>Fname</th>
+        <th>Lname</th>
+        <th>Pincode</th>
+      </tr>
+
+      <tr>
+        <td>1</td>
+        <td>Krishna</td>
+        <td>Makwana</td>
+        <td>380026</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Mahesh</td>
+        <td>Prajapati</td>
+        <td>301026</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Janmesh</td>
+        <td>Wagh</td>
+        <td>332232</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Roshni</td>
+        <td>Jain</td>
+        <td>380016</td>
+      </tr>
+    </table>
+  </body>
+</html>

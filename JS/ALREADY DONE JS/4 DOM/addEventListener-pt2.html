@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>addEventListener pt2</title>
+
+    <style>
+      .div1 {
+        height: 400px;
+        width: 400px;
+        background-color: rgb(0, 0, 128);
+        color: white;
+        font-size: 20px;
+        transition: 0.4s ease-in-out;
+      }
+
+      .div2 {
+        height: 300px;
+        width: 300px;
+        background-color: rgb(0, 128, 0);
+        color: white;
+        font-size: 20px;
+        transition: 0.4s ease-in-out;
+      }
+
+      .div3 {
+        height: 200px;
+        width: 200px;
+        background-color: rgb(128, 0, 0);
+        color: white;
+        font-size: 20px;
+        transition: 0.4s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JS - TUTs</h1>
+
+    <p id="para">i am a paragraph.</p>
+
+    <div class="divs div1">
+      1
+      <div class="divs div2">
+        2
+        <div class="divs div3">3</div>
+      </div>
+    </div>
+
+    <script>
+      // let's learn about the event related some topics...
+
+      // when we are creates an event listeners it has some flows of execution like from parent to child or from child to parent...
+      // like if we are creating a click event to div, then again we are adding a click event to the next div which is child of the first div, then again we are adding a click event to the next div which is child of the second div, means here we have added three click events to the div which have parent child relationship.
+      // now let's understand some phases depending on the example above.. there is two main phases in JS event flow... 1) Capture Phase and 2) Bubbling Phase...
+      // Capture phase is gonna capture all the same events from the parent to child and executes them even if we are not want to execute them means if we are gonna do something which will trigger click event of the div three, then it will go to the most parent of it and if it has same event then it will execute its functionality and then go to its child and find for that event if found then execute its functionalities and goes on the same until it reaches to the end!
+      // the same is goes for the Bubbling phase, which is goes from the child to the parent, means it executes the functionalities of the child first of which event is triggered! then goes for its parent and find, and so on!...
+
+      // to activate the Capture phase you have to add the third parameter value to the addEventListener() method is 'true'. by default the third parameter value is set to 'false' which is refers to the Bubbling phase
+
+      // here one more important thing... suppose you have that kinda situations and you want to trigger the event only of which node you wants then you have 2 methods of DOM...
+      // 1) stopPropagation() and 2) stopImmediatePropagation()
+      // the stopPropagation() method is used when you are just focusing over parent child relationship means you want to prevent the event firing on the parents or the childs...
+      // the stopImmediatePropagation() method is used when you have same 2 or more event inside the same object and you want to execute just one of them then you have to use that method inside that listener method...
+
+      // let's delve into deep inside code and understand all those things...
+
+      // let's create functions which will be pass to the listeners...
+
+      function div1_func(e) {
+        this.style.backgroundColor = "red";
+      }
+
+      function div2_func(e) {
+        this.style.backgroundColor = "orange";
+      }
+
+      function div2_2_func(e) {
+        this.style.width = "350px";
+        e.stopImmediatePropagation();
+        // e.stopPropagation();
+      }
+
+      function div3_func(e) {
+        this.style.backgroundColor = "blue";
+        // e.stopPropagation();
+      }
+
+      let div1 = document.querySelector(".div1");
+      let div2 = document.querySelector(".div2");
+      let div3 = document.querySelector(".div3");
+
+      div1.addEventListener("click", div1_func, false);
+      div2.addEventListener("click", div2_func, false);
+      div2.addEventListener("click", div2_2_func, false);
+      div3.addEventListener("click", div3_func, false);
+
+      // now let's we stop propagation of event triggering and its functionality executions...
+      // we will do this on the div3 so only the third div will be triggered and its functionalities will be executed not its parent's...
+      // this will be achieved by stopPropagation() method...
+      // it is done already, you just do uncomment the last line of div3's method div3_func() and look how it is works!
+
+      // --------------------------
+
+      // above we have seen about to stop the propagation in parent-child relationship, but what about if we are applying the same event but different styling to the same object and we want to execute only one... for this we have to use stopImmediatePropagation() method into one of the child listener function... this will let to execute only that function over that event triggering not the other child listener functions on that same event...
+      // this is already done! check the last line of the div2's div2_2_func() function...
+      // one more thing, this will also stop the prevent propagation of event triggering...
+    </script>
+  </body>
+</html>

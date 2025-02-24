@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>document</title>
+  </head>
+  <body>
+    <h1>JS - TUTs</h1>
+
+    <p id="para">i am a <b>web developer</b>.</p>
+
+    <script>
+      // here we are going to use one method named replaceChild(replacingNode, oldNode);
+      // this will returns the replaced node means an old node... this can be stored inside any variable...
+      // syntax : parentNode.replaceChild(newNode, oldNode);
+
+      // here we are going to replace the child element node of the paragraph element, which is bold element...
+      // due to replacing, the attributes, their values and the content of bold element will be destroyed, therefore if the contents were important then we can first take them and store and then replace the old node with the new node with same content...
+      // here we will try to use <i> instead of <b>, means replacing <b> with <i>...
+
+      // accessing parent element node and the child element node to which we want to replace...
+      let p = document.querySelector("#para");
+      let b = document.querySelector("b");
+
+      // creating a new node with which we want to replace the old node and appending the text content of the old node to the new node...
+      let italic = document.createElement("i");
+      italic.appendChild(document.createTextNode(b.textContent));
+
+      // replacing the new node with old node...
+      p.replaceChild(italic, b);
+    </script>
+  </body>
+</html>

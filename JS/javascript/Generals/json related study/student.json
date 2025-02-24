@@ -1,0 +1,11 @@
+{
+  "name": "krishna",
+  "age": 20,
+  "subjects": ["maths", "physics", "english", "chemistry"],
+  "marks": {
+    "maths": 96,
+    "physics": 90,
+    "english": 87,
+    "chemistry": 99
+  }
+}

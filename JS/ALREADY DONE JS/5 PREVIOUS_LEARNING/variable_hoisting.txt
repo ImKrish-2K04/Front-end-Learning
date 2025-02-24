@@ -1,0 +1,73 @@
+in java there is a very useful concept that is called a 'Variable Hoisting'..
+in variable hoisting there are two things to understand..
+variable hoisting is done with the variable declaration..
+
+when variables are declared inside a function scope or outside of function scope,
+javascript intelligence moves the declaration part of variable to the top and all the rest
+declarations and initialization of variable are stay as they was..
+
+like,
+
+The normal definition of a function is as below..
+function varHoisting(){
+    var a = "Hello Krish!";
+    document.write(a);
+    var b = "Good Morning!!";
+}
+
+let's see how the hoisting is works..
+function varHoisting(){
+    var a;  
+    var b;
+    a = "Hello Krish!";
+    document.write(a);
+    b = "Good Morning!!";
+}
+
+here a and b both are declared as variable and initialized with declaration,
+but when we are saving that file and runnig in browser,
+before running it performs variable hoisting style on variables as like from line no.19..
+
+only variables are moves above but initialization is lives as it is ..
+
+we can use variables before it's declaration like
+function varHoisting(){
+    a = "Hello Krish!";
+    document.write(a);
+    var a;
+}
+
+let's see what is happening inside a function...
+function varHoisting(){
+    var a;  //the declaration is hoisted and
+    a = "Hello Krish!";     //initialization is as it is..
+    document.write(a);      //other syntaxes are also same as it is
+}
+
+let's see local and global scope with variable hoisting..
+
+STARTING ->
+i = "Namaste!";
+document.write(i);
+var i;
+function varHoisting(){
+    var i;
+    document.write(i);
+    i = "Welcome to vsCode";
+}
+<- ENDING
+
+let's see what happens..
+
+STARTING ->
+var i;
+i = "Namaste!";
+document.write(i);  //will prints value stored in 'i'...
+function varHoisting(){
+    var i;  //it is local to function so it get first priority..
+    document.write(i);  //there is not any value initialized or assigned to it so it prints undefined..
+    i = "Welcome to vsCode";    //initialized here but not affects above only affects to next syntaxes..
+}
+<- ENDING
+
+hoisting is done with the local , global or block scope also but in variable hoisting only with varias..

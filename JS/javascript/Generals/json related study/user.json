@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "userName": "krishna",
+      "age": 21,
+      "gender": "male",
+      "education": "graduate",
+      "employed": false,
+      "business": "no business"
+    },
+    {
+      "userName": "vikrant",
+      "age": 20,
+      "gender": "male",
+      "education": "under-graduate",
+      "employed": false,
+      "business": "no business"
+    },
+    {
+      "userName": "diksha",
+      "age": 23,
+      "gender": "female",
+      "education": "graduate",
+      "employed": true,
+      "business": "no business"
+    }
+  ]
+}

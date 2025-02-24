@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Tree</title>
+  </head>
+
+  <body>
+    <h1>We are learning JS</h1>
+    <h1 class="geek myclass">subscribe geekyshows</h1>
+    <h2>Now</h2>
+    <p class="geek">
+      Hello <span>Geekyshows</span> <em>World</em> <span>Youtube</span>
+    </p>
+    <p class="myclass"><span>Bye</span> Geekyshows</p>
+    <div>
+      <p>1st p of div</p>
+      <p class="geek">2nd p of div</p>
+    </div>
+
+    <script>
+      var data = document.getElementsByClassName("geek");
+      var len = data.length;
+      for (var i = 0; i < len; i++) {
+        console.log(data[i].innerText);
+      }
+    </script>
+  </body>
+</html>

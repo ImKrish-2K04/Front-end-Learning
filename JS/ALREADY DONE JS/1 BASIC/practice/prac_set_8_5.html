@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>practice set 8 que 5</title>
+
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+        user-select: none;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      .container {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(202, 202, 202);
+      }
+
+      #bulb-img {
+        transition: 0.4s ease-in-out;
+        margin-bottom: 30px;
+      }
+
+      #bulb-toggle-btn {
+        width: 75px;
+        border: none;
+        padding: 5px 10px;
+        background-color: black;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+      }
+
+      .glow {
+        filter: drop-shadow(0 0 15px rgb(196, 174, 37));
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img
+        src="bulb-off.png"
+        width="300px"
+        height="300px"
+        alt="bulb-img"
+        id="bulb-img"
+      />
+      <button id="bulb-toggle-btn">Light on!</button>
+    </div>
+
+    <script>
+      let btn = document.getElementById("bulb-toggle-btn");
+      let bulb = document.getElementById("bulb-img");
+
+      btn.addEventListener("click", (e) => {
+        bulb.classList.toggle("glow");
+        if (bulb.classList.contains("glow")) btn.textContent = "Light off!";
+        else btn.textContent = "Light on!";
+      });
+    </script>
+  </body>
+</html>

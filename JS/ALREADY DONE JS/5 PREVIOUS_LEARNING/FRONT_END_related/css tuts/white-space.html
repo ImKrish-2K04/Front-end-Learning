@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<!--
+! in this tut we will see text-overflow property of css also
+! text-overflow has three different values
+
+* ellipsis
+* string
+* clip
+-->
+
+<html>
+  <head>
+    <title>White-space</title>
+
+    <style>
+      /* White - Space */
+      * {
+        margin: 10px;
+        padding: 0 2px;
+      }
+
+      .frs {
+        border: 2px solid black;
+        width: 300px;
+        box-sizing: border-box;
+        padding: 10px;
+        text-align: justify;
+        text-indent: 50px;
+        white-space: normal;
+        /* only one whitespace is allowed in pre-line value of white-space*/
+        /* text-overflow: " etc."; only runs in firefox*/
+        /* text-overflow: ellipsis; */
+        /* overflow-x: scroll; */
+
+        /* 
+        pre-wrap functionality working same as pre property
+        'pre' it supports nowrap but pre-wrap dows not supports nowrap..
+        */
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- White - Space
+            ! white space values -> 
+            *Normal
+            *Nowrap
+            *Pre
+            *Pre-line
+            *Pre-wrap
+    -->
+    <div class="frs">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab natus rerum
+      pariatur veniam eos itaque velit temporibus aliquid in esse molestias
+      impedit, neque quasi nulla vel quia dolorum exercitationem magnam!
+    </div>
+  </body>
+</html>

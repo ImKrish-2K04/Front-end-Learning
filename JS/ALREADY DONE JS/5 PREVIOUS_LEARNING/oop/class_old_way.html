@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Hello World</title>
+  </head>
+
+  <body>
+    <h1>JS - TuTs</h1>
+
+    <script>
+      //here we are going to create a class in old way..
+      //here understand one point that class is object construction function..
+
+      let Mobile = function (m_name, m_no, m_price, add_charge) {
+        this.name = m_name;
+        this.id = m_no;
+        this.price = m_price;
+        this.additional = add_charge;
+
+        this.calc = function () {
+          return this.price + this.additional;
+        };
+
+        this.detail = function () {
+          document.write(
+            "<br>" +
+              "Mobile Name : " +
+              this.name +
+              "<br>" +
+              "Original Price : " +
+              this.calc() +
+              "<br>" +
+              "Discount : " +
+              2500 +
+              "<br>" +
+              "Main Price : " +
+              (this.calc() - 2500)
+          );
+        };
+      }; //here the 'Mobile' is considered as a class..
+
+      let lg = new Mobile("luminous", 101, 20000, 5000);
+      lg.detail();
+    </script>
+  </body>
+</html>

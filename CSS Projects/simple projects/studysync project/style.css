@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*::after,
+*::before,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+* {
+  font-family: "Poppins", serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --general-color: #1c1c1c;
+  --text-size: 1.7rem;
+  --main-color: #1f09ff;
+  --white: #fff;
+  --black: #000;
+  --smooth-trans: all 0.2s linear;
+  --weight: 600;
+  --btn--box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+/* ? modules or layouts starts from here.. ? */
+.container {
+  padding: 6rem 2.4rem;
+  width: 142rem;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-two--cols {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5rem;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-transform: uppercase;
+  font-weight: var(--weight);
+  text-decoration: none;
+  color: var(--general-color);
+  font-size: var(--text-size);
+  display: inline-block;
+  transition: var(--smooth-trans);
+}
+
+p {
+  font-size: var(--text-size);
+  color: var(--general-color);
+  line-height: 1.6;
+}
+
+.primary--btn {
+  width: 15rem;
+  padding: 1.2rem 2rem;
+  font-size: var(--text-size);
+  font-weight: var(--weight);
+  border-radius: 0.75rem;
+  background-color: var(--main-color);
+  color: var(--white);
+
+  &:hover {
+    box-shadow: var(--btn--box-shadow);
+  }
+
+  &:active {
+    transform: scale(0.97);
+    box-shadow: none;
+  }
+}
+/* ? modules or layouts ends from here.. ? */
+
+/* !---=== header-section starts ===---! */
+.header__section {
+  display: flex;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 10px -3px,
+    rgba(0, 0, 0, 0.05) 0px 2px 3px -2px;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+    padding-block: 1.8rem;
+  }
+
+  .logo--section {
+    width: 15%;
+  }
+
+  .nav-links--section {
+    display: none;
+
+    ul {
+      display: flex;
+      gap: 2.4rem;
+    }
+
+    li a {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0.15rem;
+        border-bottom: 2.5px solid var(--main-color);
+        width: 0%;
+        transition: var(--smooth-trans);
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+
+  .c-us__navbar-btn {
+    display: none;
+  }
+
+  .hamburger-menu {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: none;
+  }
+}
+/* !---=== header-section ends ===---! */
+
+/* !---=== hero-section starts ===---! */
+.hero__section {
+  display: flex;
+  justify-content: center;
+
+  .container {
+    align-items: center;
+    padding-block: 10rem;
+
+    .content--part {
+      .intro {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: darkblue;
+        margin-bottom: 1rem;
+      }
+
+      .main--heading {
+        font-size: 6rem;
+        line-height: 1.2;
+        margin-bottom: 3rem;
+      }
+
+      .main--desc {
+        margin-bottom: 3rem;
+      }
+
+      .buttons {
+        display: flex;
+        gap: 2rem;
+        .primary--btn:nth-child(2) {
+          background-color: var(--general-color);
+        }
+
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+
+    .image--part {
+      overflow: hidden;
+      border-radius: 2rem;
+      height: 100%;
+
+      img {
+        transition: all 0.4s linear;
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+
+        &:hover {
+          scale: 1.02;
+        }
+      }
+    }
+  }
+}
+/* !---=== hero-section ends ===---! */
+
+/* !---=== responsiveness ===---! */
+@media screen and (min-width: 768px) {
+  .header__section {
+    .nav-links--section {
+      display: inline-block;
+    }
+
+    .c-us__navbar-btn {
+      display: inline-block;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header__section {
+    .hamburger-menu {
+      display: inline-block;
+    }
+
+    .logo--section {
+      width: 30%;
+    }
+  }
+
+  .hero__section {
+    .grid {
+      grid-template-columns: repeat(1, 1fr);
+      padding-block: 6rem;
+    }
+
+    .content--part {
+      .intro {
+        text-align: center;
+      }
+    }
+
+    .image--part {
+      display: none;
+    }
+
+    .buttons {
+      width: 30rem;
+      a {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+/* !---=== responsiveness ===---! */

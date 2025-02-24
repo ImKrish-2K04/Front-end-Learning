@@ -1,0 +1,79 @@
+NOTE:
+-----
+
+NOTE-START:
+-----------
+
+in this lecture we are going to understand the callbacks with an example in an easy manner with its explanation but we have to make sure that it is a basic information about callbacks and the syncronous and asynchronous behavior at the time of the callbacks...
+
+we will see it more deeply in our next lecture about callbacks...
+
+and one more thing, in each text file lectures we have some code to which we have to write in an html file and then see the result of the code in browser in dev-tools and out of dev-tools... if we are modifying the code in html file and trying to understand it in our way then it makes our understanding more good... ```NOTE-END```
+
+Definition:
+-----------
+
+A callback is a function passed as an argument to another function, and it gets executed inside the outer function when specific conditions are met. It's important to note that callbacks can be either synchronous (executed immediately) or asynchronous (executed later). Asynchronous callbacks are particularly useful in operations that take time to complete, such as fetching data from a server or performing file I/O.
+
+Explanation with Code Example:
+------------------------------
+
+Let's understand the concept of callbacks and asynchronous programming more deeply with the following code example.
+
+In the `greetings` function, we declare four parameters that can accept any type of value: a variable, an object, or a function. For this example, we assumes these parameters are functions because we are studying callbacks. We will pass four functions as arguments to `greetings`.
+
+Inside the `greetings` function, we create a `Date` object to find the current time. The purpose of the `greetings` function is to call a specific greeting function based on the current time of day. We check the current hour using a 24-hour clock and then call the corresponding function: `gn` (good night), `gm` (good morning), `gaf` (good afternoon), or `gev` (good evening).
+
+These functions are called callback functions because they are passed as arguments and then executed within the outer function based on certain conditions. Although in this example the callbacks are synchronous (they are called immediately based on the current time), the concept can be extended to asynchronous operations where callbacks are executed at a later time when certain conditions are met.
+
+javascript_code:
+----------------------
+
+const greetings = (gm, gaf, gev, gn) => {
+  let dt = new Date();
+  let currentTime = dt.getHours();
+
+  ? Synchronously call the appropriate greeting function based on the current time
+
+  if (currentTime >= 0 && currentTime < 6) gn();
+  else if (currentTime >= 6 && currentTime < 12) gm();
+  else if (currentTime >= 12 && currentTime < 18) gaf();
+  else if (currentTime >= 18 && currentTime < 24) gev();
+};
+
+? Define greeting functions
+
+function gn() {
+  alert("Good night!");
+  console.log("Good night!");
+}
+
+function gm() {
+  alert("Good morning!");
+  console.log("Good morning!");
+}
+
+function gev() {
+  alert("Good evening!");
+  console.log("Good evening!");
+}
+
+function gaf() {
+  alert("Good afternoon!");
+  console.log("Good afternoon!");
+}
+
+? Pass the greeting functions as callbacks to the greetings function
+
+greetings(gm, gaf, gev, gn);
+
+In this code, we:
+-----------------
+
+1. Define the `greetings` function that accepts four callback functions as parameters.
+2. Create a `Date` object to get the current time.
+3. Use conditional logic to determine the current time of day and call the appropriate greeting function.
+4. Define four greeting functions (`gn`, `gm`, `gev`, `gaf`) that display an alert and log a message to the console.
+5. Pass the greeting functions as arguments to the `greetings` function, which calls the appropriate function based on the current time.
+
+This example demonstrates the use of synchronous callbacks. In real-world scenarios, you might use asynchronous callbacks for tasks that involve waiting for external resources or completing time-consuming operations.

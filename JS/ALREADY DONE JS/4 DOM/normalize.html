@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>normalize</title>
+  </head>
+  <body>
+    <h1>JS - TUTs</h1>
+
+    <p id="para"></p>
+
+    <script>
+      // this technique is used to remove all white spaces and merge text nodes into one...
+
+      let p = document.getElementById('para');
+
+      p.appendChild(document.createTextNode('i '));
+      p.appendChild(document.createTextNode('am '));
+      p.appendChild(document.createTextNode('text.'));
+
+      console.log(p.childNodes);
+      
+      // check here!
+
+      p.normalize();
+      console.log(p.childNodes);
+      
+    </script>
+  </body>
+</html>

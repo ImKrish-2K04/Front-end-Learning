@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Hello World</title>
+  </head>
+
+  <body>
+    <h1>JS - TuTs</h1>
+
+    <script>
+      //date objects..
+
+      //first of all create a date object Syntax -> " let date = new Date(); "
+
+      let x = new Date();
+      console.log(x);
+
+      //if you want to set date then the order of passing parameters is
+      //" year , month , date , hour , min , second , millisecond "
+      //here the month is starting from '0'->jan to '11'->dec
+      //days are also from 0 to 6 and from sunday to saturday
+
+      //now let's get and set all values
+      console.log("Date : " + x.getDate());
+      console.log("Year : " + x.getFullYear());
+      console.log("Month : " + (x.getMonth() + 1));
+      console.log("Day : " + x.getDay());
+      console.log("Hour : " + x.getHours());
+      console.log("Minute : " + x.getMinutes());
+      console.log("Second : " + x.getSeconds());
+      //now we setting up values using another variable..
+
+      let y = new Date(2011, 3, 12, 20, 35, 40);
+      console.log(
+        "---------------------------------------------------------------"
+      );
+      console.log("random date and time (before) :->  " + y);
+      y.setFullYear(2004);
+      y.setMonth(6);
+      y.setDate(16);
+      y.setHours(8);
+      y.setMinutes(21);
+      y.setSeconds(40);
+      console.log("random date and time (after)  :->  " + y);
+
+      //what we can if the task is given to check the date and time after few days of a particular date?
+      //let's understand this work and implements it..
+
+      let m = new Date(2011, 3, 12, 20, 35, 40);
+
+      console.log("before : " + m);
+      m.setDate(m.getDate() + 8);
+      console.log("after : " + m);
+
+      //let's if i want to know that on which day my birth day will come then ..
+      console.log(
+        "---------------------------------------------------------------"
+      );
+      console.log("today's date...");
+      console.log(x);
+      console.log("my birth day of future...");
+      console.log("0-sun 1-mon 2-tues 3-wed 4-thurs 5-fri 6-satur");
+      x.setDate(16);
+      x.setFullYear(2023);
+      x.setMonth(6);
+      console.log(x.getDay());
+      console.log(
+        "---------------------------------------------------------------"
+      );
+      console.log("we can set date in another type..");
+      let g = new Date("december 20,2019, 14:30:43");
+      console.log(g);
+      console.log(
+        "---------------------------------------------------------------"
+      );
+      //now let's compares dates..
+      let e = new Date();
+
+      if (g < e) console.log("g is past date");
+      else if (g > e) console.log("g is future date");
+      else console.log("both dates are same");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>practice - demos</title>
+  </head>
+  <body>
+    <h1>Js - practice</h1>
+
+    <script>
+      // in this tutorial we are going to learn about 'localStorage', which is very important topic in javascript in order to store essentials (i.e data in key-value pair in string format...) which will not going to be removed when we close the page and reopen it also it will remained to be stored to your browser's local storage even if you have closed your browser and again reopens it...
+
+      // this can be visible in the application section when we presses F12 in browser...
+
+      // we can do it by one method and there some other methods are also available for rest of the use...
+
+      // setItem(key, value) : this is used to set our needed information in a key-value pair to our browser's local storage...
+
+      localStorage.setItem("color", "red");
+      localStorage.setItem("name", "krishna");
+      localStorage.setItem("fruit", "orange");
+
+      // getItem(key) : this is requires one argument which should must be a string value and here the string value refers to a key we have set to some value and stored before in our local storage. this provides the value of that passed key...
+
+      // alert(localStorage.getItem("color"));
+      // alert(localStorage.getItem("name"));
+      // alert(localStorage.getItem("fruit"));
+
+      // length is a property which defines how many key-value pairs are available currently in our localStorage...
+
+      // alert(`there are total ${localStorage.length} key-value pairs are available in our localStorage.`);
+
+      // the 'key' is a method associated with localStorage which takes one numeric argument in context of an index number and returns the key at that index number...
+
+      // alert(localStorage.key(0))
+
+      // now there is only 2 important things are left related to localStorage...
+      // 1) removeItem()  and  2) clear()
+      // both are used to remove items from the localStorage but their working is different...
+      // removeItem(key) : it requires a particular key to be removed from our browser's localStorage...
+      // clear() not accepts any argument but it removes all key-value pairs from localStorage...
+
+      // use the following example one by one to see the actual working...
+
+      // localStorage.removeItem('color');
+      // localStorage.clear();
+    </script>
+  </body>
+</html>

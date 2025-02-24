@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container">
+      <p>Hey there!</p>
+      <p>How'r you?</p>
+      <p>I am krishna</p>
+      <p>I am software developer</p>
+      <p>I am WEB DEVELOPER</p>
+    </div>
+
+    <script>
+      let div = document.getElementById("container");
+      let noOfChilds = div.childElementCount;
+      let firstElChild = div.firstElementChild;
+      console.log(firstElChild.textContent);
+      for (let i = 0; i < noOfChilds - 1; i++) {
+        firstElChild = firstElChild.nextElementSibling;
+        console.log(firstElChild.textContent);
+      }
+    </script>
+  </body>
+</html>

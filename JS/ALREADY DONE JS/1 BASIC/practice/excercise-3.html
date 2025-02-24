@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>excercise 3</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        user-select: none;
+        font-family: Arial, Helvetica, sans-serif;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: black;
+      }
+
+      .joke-frame {
+        height: 50vh;
+        width: 95vw;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -90%);
+        box-shadow: 0 0 15px 4px rgb(111, 111, 111);
+        border-radius: 10px;
+        font-size: 70px;
+        padding: 25px;
+        transition: 0.4s ease-in-out;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="joke-frame">
+      <p id="joke-content"></p>
+    </div>
+
+    <script>
+      // elem.innerHTML is used to populate a div with html. scratch online about this method and create a website with a div tag containing a random joke. given an array of jokes. use math.random and fetch those jokes from the internal(use any website to create this jokes array.) your website should show any random joke on every reload. min length of your jokes array should be 10.
+      // there is some advance concept.. if you can do this then implement it!...
+      // you have to implement something like your joke should be changed on every 5 second and a random joke should be visible...
+
+      let jokeArr = [
+        "Did you hear about the first restaurant to open on the moon? It had great food, but no atmosphere.",
+        "Why don’t scientists trust atoms? Because they make up everything!",
+        "What do dentists call their x-rays? Tooth pics!",
+        "What did one ocean say to the other ocean? Nothing, it just waved.",
+        "Do you want to hear a construction joke? Sorry, I’m still working on it.",
+        "Did you hear about the fire at the circus? It was in tents!",
+        "Why do ducks have feathers? To cover their butt quacks!",
+        "What’s the difference between a hippo and a zippo? One is really heavy and the other’s a little lighter.",
+        "What does a nosey pepper do? It gets jalapeño business.",
+        "Why should you never trust stairs? They’re always up to something.",
+      ];
+
+      let val;
+      let jokeContentArea;
+
+      function randomJoke() {
+        val = Math.round(Math.random() * 9 + 1);
+        jokeContentArea = document.querySelector("#joke-content");
+        jokeContentArea.textContent = jokeArr[val - 1];
+      }
+
+      randomJoke();
+      setInterval(randomJoke, 5000);
+    </script>
+  </body>
+</html>

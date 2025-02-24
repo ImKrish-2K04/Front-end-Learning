@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Node Object part-1</title>
+
+    <style>
+      h1 {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1 class="heading">Node Object</h1>
+
+      <p class="para">
+        Here we are going to learn about three properties of NODE object.
+      </p>
+
+      <ol class="list" type="1">
+        <li>node.nodeName</li>
+        <li>node.nodeValue</li>
+        <li>node.nodeType</li>
+      </ol>
+    </div>
+
+    <script>
+      let result = document.getElementById("container").nodeName;
+      // accessing the attributes of the container and then the first attribute's value
+      let result2 =
+        document.getElementById("container").attributes[0].nodeValue;
+      console.log(result);
+      console.log(result2);
+
+      result = document.getElementsByClassName("para")[0].nodeName;
+      // first child is textNode, its value is the text of the paragraph element..
+      result2 = document.getElementsByClassName("para")[0].firstChild.nodeValue;
+      console.log(result);
+      console.log(result2);
+
+      result =
+        document.getElementsByClassName("list")[0].firstElementChild.nodeName;
+      console.log(result);
+
+      if (document.getElementsByClassName("heading")[0].nodeType === 1) {
+        console.log("you'r trying to access element!");
+      }
+    </script>
+  </body>
+</html>

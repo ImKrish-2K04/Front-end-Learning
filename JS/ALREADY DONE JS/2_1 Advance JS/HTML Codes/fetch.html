@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <h1>fetching APIs</h1>
+
+    <script>
+      /*
+      Here we are going to see how to fetch an api and use it...
+      
+      use any one of these: ["AM","AN…LH","LM","LO","LS","PH","PK","PM","PS","PZ","SL","AL","VA","WA","WV","WI","WY","MP","PW","FM","MH"]
+      
+      let weatherApp = fetch("https://api.weather.gov/alerts/active?area=NY");
+      */
+
+      try {
+        // let state = "Gujrat";
+        // let state = "Madhyapradesh";
+        // let state = "Maharashtra";
+
+        let weatherApp = fetch(
+          `https://goweather.herokuapp.com/weather/${state}`
+        );
+
+        weatherApp
+          .then((response) => {
+            return response.json();
+          })
+          .then((response) => {
+            for (const [key, value] of Object.entries(response)) {
+              if (key === "forecast") {
+                continue;
+              }
+              console.log(`${key} : ${value}`);
+            }
+            console.log(`state : ${state}`);
+          });
+      } catch (err) {
+        console.log(err.message);
+      }
+    </script>
+  </body>
+</html>

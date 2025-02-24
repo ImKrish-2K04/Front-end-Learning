@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      h1 {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="heading">DOM Traversal</h1>
+
+    <p class="para para1">
+      Here, we are going to learn some node objects which are used to accessing
+      nodes of the elements and element nodes of the elements.
+    </p>
+
+    <p class="para para2">
+      these node objects are used to traversal into the Document Object Model
+      (i.e DOM)...
+    </p>
+
+    <p class="para para3">those objects are as follows:</p>
+
+    <ol type="1">
+      <!-- the four nodes -->
+      <li>parentNode</li>
+      <li>parentElement</li>
+      <li>childNodes</li>
+      <li>children</li>
+    </ol>
+
+    <script>
+      // look here! parentNode
+      // here we are trying to access the parent node of the second paragraph which is <body>...
+      let para2 = document.getElementsByClassName("para");
+      console.log(para2[1].parentNode);
+
+      // look here! parentElement
+      // both are used for same purpose and results also same but the parentElement is used most of time than parentNode because parentNode can gives the parent as a textNode or commentNode or elementNode or any other kinda node! but the parentElement can gives a result about only parent element node and if there is no any parent element available then it will returns null!...
+      let listItems = document.getElementsByTagName("li");
+      let parentOfLI = listItems[0].parentElement;
+      console.log(parentOfLI);
+
+      // imp
+
+      // in the following we are going to see the actual way of differentiation of the parentNode and the parentElement...
+      // here, we are trying to access the parent node of the html element using these two properties,
+      // when we are using parentNode with html element node then it will returns the document node but when we are using parentElement then it will returns null
+
+      // the reason is, the 'document' is a parent node of the html element but it is not an element in which the html is stored. html is a 'root element' of the complete html code in the document, so there is no any parent element of the html element hence it is returning 'null' with 'parentElement' and 'document' with 'parentNode'...
+
+      // check here!
+      console.log(document.querySelector("html").parentNode);
+      console.log(document.querySelector("html").parentElement);
+
+      // look here! now we are going to move ahead the rest of two!
+
+      // 1) childNodes and 2) children. these two will be checked on the ol and its childs...
+
+      // imp 1) childNodes:
+      // childNodes returns each and every childs of the particular node including text nodes and comment nodes..
+
+      let orderedList = document.querySelector("ol");
+      console.log(orderedList.childNodes);
+      // if we want to access them all one by one then use for loop as follows...
+
+      for (let i = 0; i < orderedList.childNodes.length; i++) {
+        if (
+          orderedList.childNodes[i].nodeType === 3 ||
+          orderedList.childNodes[i].nodeType === 8
+        ) {
+          console.log(orderedList.childNodes[i].nodeName);
+        } else console.log(orderedList.childNodes[i].textContent);
+      }
+
+      // imp 2) children:
+      // children returns only element nodes inside the particular element...
+
+      console.log(orderedList.children[0].childNodes[0].nodeValue);
+    </script>
+  </body>
+</html>

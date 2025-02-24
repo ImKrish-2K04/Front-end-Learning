@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>inserting adjacent element</title>
+  </head>
+  <body>
+    <h1>JS - TUTs</h1>
+
+    <p id="para"></p>
+
+    <div id="myDiv">
+      <p>paragraph inside a div.</p>
+    </div>
+
+    <script>
+      // in this tut, we are going to learn about insertAdjacentElement() method...
+
+      // this method is used to insert a specific element inside a particular element at the end or start of the element or before or after the element...
+
+      // syntax.. targetNode/parentNode.insertAdjacentElement('value', newElement);
+
+      // value can be : beforebegin, afterbegin, beforeend, afterend
+
+      // beforebegin -> before the begining of the parentNode as its previousElementSibling...
+      // afterbegin -> after begining of the parentNode means as its firstChild...
+      // beforeend -> before the end of the parentNode means as its lastChild...
+      // afterend -> after the end of the parentNode as its nextElementSibling...
+
+      let div = document.getElementById("myDiv");
+
+      let nENode = document.createElement("h2");
+
+      nENode.appendChild(document.createTextNode("New Node..."));
+
+      // before div, its places the nENode
+      // div.insertAdjacentElement('beforebegin', nENode);
+      // console.log(div.previousElementSibling);
+
+      // after div, its places the nENode
+      // div.insertAdjacentElement('afterend', nENode);
+      // console.log(div.nextElementSibling);
+
+      // inside the div as its first child Element...
+      // div.insertAdjacentElement('afterbegin', nENode);
+      // console.log(div.firstElementChild);
+
+      // inside the div as its last child Element...
+      // div.insertAdjacentElement('beforeend', nENode);
+      // console.log(div.lastElementChild);
+
+      console.log(document.querySelector("body"));
+    </script>
+  </body>
+</html>

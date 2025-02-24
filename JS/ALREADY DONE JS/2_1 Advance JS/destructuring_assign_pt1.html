@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>destructuring assignment</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        user-select: none;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Destructuring...</h1>
+
+    <!--
+    ! 'DESTRUCTURING ASSIGNMENT'
+
+    ? here we are going to learn everything about the destructuring assingment of array and in the second part, we are going to study about destructuring assignment of the object...
+
+    destructuring assignment syntax is used to unpack the values from the array and properties from the object into the distinct variables...
+
+    let's have an example to understand it properly...
+  -->
+
+    <script>
+      let arr = [10, 20, 30, 40, 50];
+      // let arr = [, 20, 30, 40, 50]; // this is for default value experiments...
+
+      // basic array destructuring...
+      // here, the first and second element of the array will going to be unpacked and the rest were ingnored as there are no more variables to holds them...
+
+      /*
+      let [a, b] = arr;
+      console.log(a);
+      console.log(b);
+      */
+
+      // skipping elements...
+      // here, we are skipping the second value of the array and the first and third value of the array is stored inside the 'a' and 'c' variable...
+
+      /*
+      let [a, , c] = arr;
+      console.log(a);
+      console.log(c);
+      */
+
+      // Default Values in Destructuring
+      // A default value in destructuring is a fallback value assigned to a variable if the value being destructured from the array or object is undefined. This ensures that the variable gets a meaningful value even when the destructured element or property is missing or undefined.
+
+      // 1. Default Values:
+      // --------------------------------
+      // They are used as fallback values.
+      // They come into play when the corresponding element in the array or property in the object is undefined.
+
+      // 2. When Default Values are Used:
+      // --------------------------------
+      // If the array does not have a value at the position being destructured.
+      // If the property does not exist in the object.
+      // If the value is explicitly undefined.
+
+      /*
+      let aDefault = 40;
+      let [a = aDefault, b] = arr;
+      console.log(a);
+      console.log(b);
+      */
+
+      // rest operator
+      // rest operator is used if we are storing few imp. values of array to specific variables and then we thinks that the rest values are also will be useful then we are storing them as an array using the rest operator '...variableName'
+
+      /*
+      let [a,b,...rest] = arr;
+      console.log(a);
+      console.log(b);
+      console.log(rest);
+      */
+
+      // skipping elements and using rest operator also...
+      // here the value 20 is skipped and the first value and the rest values are stored/captured/unpacked...
+
+      /*
+      let [a, , ...rest] = arr;
+      console.log(a);
+      console.log(rest);
+      */
+
+      // rest operator with nested array destructuring...
+      // here we are doing the same thing which is basic array destructuring but also a nested form of itself...
+
+      let [a, b, ...[c, d]] = arr;
+      // here the first and second values of array are stored in 'a' and 'b' respectively... where from the rest values the first and second values are stored inside 'c' and 'd' and the last element value of the array is fifth is ignored as there is nothing to handle it...
+      // here we have to understand one very imp thing which is, due to the use of the '...' rest parameter, the rest values are destructured and stored to it as a new array but here we have again destructured that new array [30, 40, 50] and stored its first and second values into 'c' and 'd' variables...
+
+      console.log(a);
+      console.log(b);
+      console.log(c);
+      console.log(d);
+
+      // if we doing this : 'let [a, b, ...[c, , d]] = arr;' then it will ignores the second value of the rest value's array... which is 40, so the result will be as : '10, 20, 30, 50'
+    </script>
+  </body>
+</html>

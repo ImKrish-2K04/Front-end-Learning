@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>excersize - 2</title>
+  </head>
+  <body>
+    <h1>JS - TUTs</h1>
+
+    <script>
+      // use javascript to create a game of snake, water and gun. the game should ask you to enter 'S', 'W' or 'G'. the computer should be able to randomly generate one of those three choices and then you have to compare your choice with the computer's generated choice. according to the comparision you have to popup the alert msg about the WIN or LOSS! use confirm and prompt wherever required...
+
+      // ((Math.random * maxNum) + 1) -> it will returns the random number from the range of 1 to maxNum...
+
+      let choiceList = null;
+      let userChoice = null;
+      let choice = true;
+      let val = null;
+
+      while (choice == true) {
+        // it contains the list of choice we have to enter!
+        choiceList = ["S", "G", "W"];
+
+        // let the user to enter his choice is case in-sensitive...
+        userChoice = prompt(
+          `select 'S' or 'W' or 'G'\n'S' - 'SNAKE'\n'W' - 'WATER'\n'G' - 'GUN'\nenter your choice here!`
+        ).toUpperCase();
+
+        // the loop will continue execution until the choice of user is one of the values of the choiceList array...
+        while (!choiceList.includes(userChoice)) {
+          alert("You have entered an incorrect choice! pl. try it again!");
+          userChoice = prompt(
+            `select 'S' or 'W' or 'G'\n'S' - 'SNAKE'\n'W' - 'WATER'\n'G' - 'GUN'\nenter your choice here!`
+          ).toUpperCase();
+        }
+
+        // generates any number between 1 to 3...
+        val = Math.floor(Math.random() * 3 + 1);
+
+        compChoice = null;
+
+        // if 1 then snake, 2 then water and 3 then gun, is assignation of the values to the compChoice variable...
+        if (val == 1) compChoice = "S";
+        else if (val == 2) compChoice = "W";
+        else if (val == 3) compChoice = "G";
+
+        // checking is performed over the compChoice and userChoice, if both are same then WON! else LOSE!
+        if (userChoice == compChoice) alert("YAY! You Won!");
+        else alert("You not WON!!");
+
+        // provides confirmation, if you agrees then you will play it again else the game will over! its like a close button of a particular game...
+        choice = confirm("Do you want to play it again?");
+      }
+    </script>
+  </body>
+</html>

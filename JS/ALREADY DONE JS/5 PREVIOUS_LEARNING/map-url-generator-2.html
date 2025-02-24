@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google Maps URL Generator</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<h2>Google Maps URL Generator</h2>
+<p>Enter the address below to generate a Google Maps URL:</p>
+
+<input type="text" id="addressInput" placeholder="Enter address...">
+<button onclick="generateMapURL()">Generate URL</button>
+
+<p id="mapURL"></p>
+
+<script>
+function generateMapURL() {
+  var address = document.getElementById('addressInput').value.trim();
+  if (address === '') {
+    alert('Please enter an address.');
+    return;
+  }
+
+  var baseURL = 'https://www.google.com/maps/search/?api=1&query=';
+  var formattedAddress = encodeURIComponent(address);
+  var mapURL = baseURL + formattedAddress;
+
+  document.getElementById('mapURL').innerHTML = '<a href="' + mapURL + '" target="_blank">' + mapURL + '</a>';
+}
+</script>
+
+</body>
+</html>

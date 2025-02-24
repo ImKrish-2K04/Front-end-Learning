@@ -1,0 +1,160 @@
+in this tutorial, we are going to see some of the example programs of the error handling...
+
+
+<---------------------------------------------------------------------------------------------------
+EX. 1       NOTE : this is not an error handling program but is very useful for understanding...
+----------------------------------------------------------------------------------------------------
+
+const loadScript = (src, callback) => {
+    let script = document.createElement('script');
+    script.src = src;
+    document.body.appendChild(script);
+    
+    script.onload = () => {
+        console.log('script loaded successfully with SRC: ' + src);
+        callback();
+    }
+}
+
+const greet = () => {
+    console.log('Hi! glad to see you..');
+}
+
+loadScript("https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js", greet);
+
+--------------------------------------------------------------------------------------------------->
+
+
+<---------------------------------------------------------------------------------------------------
+EX. 2
+----------------------------------------------------------------------------------------------------
+
+const loadScript = (src, callback) => {
+    let script = document.createElement('script');
+    script.src = src;
+    document.body.appendChild(script);
+
+    script.onload = () => {
+        callback(null, 'Script loaded successfully!');
+    }
+
+    script.onerror = () => {
+        callback('Script loading is failed!', null);
+    }
+}
+
+const greet = (err, success) => {
+    if (err === null) {
+        console.log(success);
+    }
+    else {
+        console.log(err);
+    }
+}
+
+loadScript("https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js", greet);
+
+--------------------------------------------------------------------------------------------------->
+
+
+<---------------------------------------------------------------------------------------------------
+EX. 3 : Create a function called divide that takes two numbers as input and a callback function. Implement error handling in the callback using the error-first convention. If the second number is 0, invoke the callback with an error message. Otherwise, invoke the callback with the result of dividing the first number by the second number.
+----------------------------------------------------------------------------------------------------
+
+const divide = (num1, num2, callback) => {
+    if (num2 === 0) {
+        return callback("Error: Cannot divide by 0.", null);
+    }
+
+    let result = num1 / num2;
+    return callback(null, result);
+};
+
+const checkResult = (err, result) => {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log("The result of division is: " + result);
+    }
+};
+
+Test Cases:
+-----------
+
+divide(12, 6, checkResult); // ✅ The result of division is: 2
+divide(12, 0, checkResult); // ❌ Error: Cannot divide by 0.
+divide(0, 6, checkResult);  // ✅ The result of division is: 0
+
+
+--------------------------------------------------------------------------------------------------->
+
+
+<---------------------------------------------------------------------------------------------------
+EX. 4 : Create a function called fetchUserData that simulates fetching user data from a server asynchronously. Use a timeout to mimic the asynchronous operation. Implement error handling in the callback function. If the request fails (for example, due to network error), invoke the callback with an error. Otherwise, invoke the callback with the user data.
+----------------------------------------------------------------------------------------------------
+
+const fetchUserData = (callback) => {
+    let success = Math.random() < 0.5;
+
+    if (success) {
+        let userData = {
+            id: 1,
+            name: "ramesh",
+            age: 49,
+            gender: "male",
+        };
+
+        callback(null, userData);
+    }
+    else {
+        callback("User-data fetching was failed! sorry.", null);
+    }
+};
+
+const fetching = (err, data) => {
+    if (err === null) {
+        console.log(
+            `the name of the user is ${data.name} is ${data.gender} and his age is ${data.age}.`
+        );
+    } 
+    else {
+        console.log(err);
+    }
+};
+
+fetchUserData(fetching);
+
+--------------------------------------------------------------------------------------------------->
+
+
+<---------------------------------------------------------------------------------------------------
+EX. 5 : Create a function called calculateArea that calculates the area of a rectangle given its width and height. Implement error handling in the callback function. If either the width or height is negative, invoke the callback with a custom error message. Otherwise, invoke the callback with the calculated area.
+----------------------------------------------------------------------------------------------------
+
+const calculateArea = (height, width, callback) => {
+    if (height <= 0 || width <= 0) {
+        callback(
+            "Error: Height or width cannot be less than or equal to 0.",
+            null
+        );
+    }
+    else {
+        let calcArea = height * width;
+        callback(null, calcArea);
+    }
+};
+
+const handleAreaCalculation = (err, result) => {
+    if (err === null) {
+        console.log("The area of the rectangle is: " + result);
+    }
+    else {
+        console.error(err);
+    }
+};
+
+calculateArea(12, 8, handleAreaCalculation);
+calculateArea(12, 0, handleAreaCalculation);
+calculateArea(-12, -8, handleAreaCalculation);
+
+--------------------------------------------------------------------------------------------------->

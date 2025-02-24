@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>creating new comment node</title>
+</head>
+<body>
+    <h1>JS - TUTs</h1>
+
+    <script>
+        // in this tut, we are going to learn how to create a comment node.
+        // a comment node is a node which can be inside any element node and this is takes a text/string value which can be treated as a text-content for comment...
+        // this can be done by one method of the DOM is 'createComment(string)'...
+
+        let nTNode = document.createComment('i am krishna');
+        console.log(nTNode.nodeValue);
+        
+        nTNode.nodeValue = 'i am a web developer.';
+        console.log(nTNode.nodeValue);
+
+        console.log("node type:", nTNode.nodeType, "\nnode name:", nTNode.nodeName);
+    </script>
+</body>
+</html>

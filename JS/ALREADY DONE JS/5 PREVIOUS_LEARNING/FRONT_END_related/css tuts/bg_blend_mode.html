@@ -1,0 +1,48 @@
+<!-- this mode is used when you have applied any image in background and you have applied any
+background color or gradient then you can mix that bg image or color or gradient and create new effects...
+-->
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Hello World!!</title>
+
+    <style>
+      .blendImg {
+        height: 400px;
+        border-radius: 20px;
+        box-shadow: 2px 2px 10px 3px green;
+        width: 450px;
+        background-image: linear-gradient(to right, blue, red),
+          url("images/gra12.jpg");
+        background-size: cover;
+        /* bg-blend-mode here... */
+        background-blend-mode: hue;
+      }
+    </style>
+  </head>
+
+  <body bgcolor="black">
+    <!-- background-blend-mode values...
+
+    -> Normal
+    -> Multiply
+    -> screen
+    -> overlay
+    -> darken
+    -> lighten
+    -> color-dodge
+    -> color-burn
+    -> hard-light
+    -> soft-light
+    -> difference
+    -> exclusion
+    -> hue
+    -> color
+    -> saturation
+    -> luminosity
+    -->
+    <div class="blendImg"></div>
+  </body>
+</html>

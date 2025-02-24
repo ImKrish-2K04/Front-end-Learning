@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Hello World</title>
+  </head>
+
+  <body>
+    <h1>We are learning JS</h1>
+    <h1>Subscribe My Channel</h1>
+    <h2>Now</h2>
+    <p id="geek">
+      Hello <span>GeekyShows</span> <em>World</em> <span>Youtube</span>
+    </p>
+    <p id="find"><span>Bye</span> GeekyShows</p>
+    <div>
+      <p>1st p inside div</p>
+      <p>2nd p inside div</p>
+    </div>
+    <script>
+      //accessing elements using for loop and the length property..
+
+      var len = document.getElementsByTagName("p").length;
+
+      for (var i = 0; i < len; i++) {
+        var result = document.getElementsByTagName("p")[i].innerText;
+        if (i == 1) continue;
+        console.log(result);
+      }
+    </script>
+  </body>
+</html>

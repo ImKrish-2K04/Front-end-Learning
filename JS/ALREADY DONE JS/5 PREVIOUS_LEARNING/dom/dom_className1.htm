@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>classNameOfDom</title>
+  </head>
+
+  <body>
+    <p class="geek">Hello GeekyShows</p>
+    <div class="geek">
+      <p>1st p inside geek div</p>
+      <p>2nd p inside geek div</p>
+    </div>
+
+    <script>
+      var demo = document.getElementsByClassName("geek");
+      console.log(demo[1].getElementsByTagName("p")[0].innerText);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Hello World</title>
+  </head>
+
+  <body>
+    <h1>JS - TuTs</h1>
+
+    <script>
+      //in this tut. we are going to returning an anonymous function..
+
+      document.write("<br>" + "I Am Krishna..");
+
+      function returningFunc(a) {
+        return function (b) {
+          return a + b;
+        };
+      }
+
+      let af = returningFunc(10);
+      document.write("<br>" + af(20));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>document</title>
+  </head>
+  <body>
+    <h1>JS - TUTs</h1>
+
+    <p id="para">I am paragraph.</p>
+
+    <script>
+        console.log(document.getElementById('para').getAttribute('id'))
+        document.getElementById('para').setAttribute('class', 'paragraphs');
+        // as follows also you can access attributes...
+        console.log(document.getElementById('para').attributes['class'].nodeValue);
+    </script>
+  </body>
+</html>

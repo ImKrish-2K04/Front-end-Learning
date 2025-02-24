@@ -1,0 +1,4 @@
+there are total 7 primitive types in java script..
+
+n-n-s-s-b-b-u
+null-number-string-symbol-boolean-bigint-undefined

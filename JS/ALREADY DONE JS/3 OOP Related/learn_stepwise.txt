@@ -1,0 +1,36 @@
+1️⃣ Basics of Objects**  
+Start with fundamental object concepts before moving to OOP:  
+- `object_pt_1.js`  
+- `object_pt_2.js`  
+- `obj_property_fetch.js`  
+
+2️⃣ Object Creation Methods**  
+Learn different ways to create objects:  
+- `types_of_obj_creation.js`  
+- `factory_functions.js`  
+
+3️⃣ Constructor Functions & Classes**  
+Understand constructors and how they relate to classes:  
+- `constructor_pt_1.js`  
+- `constructor_pt_2.js`  
+- `constructor_as_a_class.js`  
+
+4️⃣ Prototype & Inheritance**  
+Deep dive into JavaScript’s prototype chain and inheritance:  
+- `prototype_pt1.js`  
+- `prototype_pt2.js`  
+- `prototype_inheritance_pt1.js`  
+- `prototype_inheritance_pt2.js`  
+
+5️⃣ Compositions & Mixins**  
+Explore alternative OOP patterns beyond inheritance:  
+- `compositions&mixins1.js`  
+- `compositions&mixins2.js`  
+
+6️⃣ Important Object Methods**  
+Learn essential built-in object methods:  
+- `fewImpObjMethods.txt`  
+
+7️⃣ Practice & Application**  
+Finally, apply your knowledge through practice questions:  
+- `oop_practice_ques.html`  

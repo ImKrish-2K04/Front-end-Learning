@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise on promises</title>
+  </head>
+  <body>
+    <h1>Promise Exercise...</h1>
+
+    <script>
+      /*
+        Exercise 1: Simple Promise
+
+        Description:
+        Create a Promise that simulates fetching data from a server. The Promise should resolve with the data (a simple message or object) after a delay of 2 seconds. Handle the result of the Promise using `.then()` and display the fetched data in the console.
+
+        const fetchData = new Promise((resolve, reject) => {
+            setTimeout(() => {
+          let userData = {
+            name: "kamlesh",
+            age: 47,
+            gender: "male",
+          };
+
+          resolve(userData);
+        }, 2000);
+      });
+
+      fetchData
+        .then((result) => {
+          console.log(
+            `username is ${result.name}, his age is ${result.age} and ${result.name} is ${result.gender}.`
+          );
+        })
+        .catch((error) => {
+            console.error(error.message);
+        });
+      */
+
+      /*
+        Exercise 2: Promise with Error Handling
+
+        Description:
+        Create a Promise that simulates a coin toss. The Promise should resolve with "Heads" if the toss is heads and reject with "Tails" if the toss is tails. Simulate the coin toss using `Math.random()`. Handle both the success and failure cases using `.then()` and `.catch()`, and display the result in the console.
+
+        const coinToss = new Promise((resolve, reject) => {
+          console.log("Toss is spinned!");
+          setTimeout(() => {
+            let tossArr = ["Heads", "Tails"];
+            let rand = Math.round(Math.random() + 1);
+            let toss = tossArr[rand - 1];
+            if (toss === "Heads") resolve("Heads");
+            else reject("Tails");
+          }, 3000);
+        });
+
+        coinToss
+          .then((result) =>
+            console.log("You win! the result of toss is: " + result)
+          )
+          .catch((fails) =>
+            console.log("You lose! the result of toss is: " + fails)
+          );
+      */
+
+      /*
+        Exercise 3: Promise Chaining
+
+        Description:
+        Create a series of Promises that simulate a sequence of steps in a process (e.g., making a sandwich). Each step should be represented by a separate Promise that resolves after a delay. Chain the Promises together so that they execute in sequence. For example:
+
+        1. Get bread (1 second delay)
+        2. Add peanut butter (1 second delay)
+        3. Add jelly (1 second delay)
+        4. Close sandwich (1 second delay)
+        
+        const getBread = () => {
+          return new Promise((resolve) => {
+            console.log("sandwich preparation is started!");
+            setTimeout(() => {
+              resolve("putting one slice of bread on table.");
+            }, 1000);
+          });
+        };
+  
+        const addPeanutButter = () => {
+          return new Promise((resolve) => {
+            setTimeout(() => {
+              resolve("adding peanut butter on bread slice.");
+            }, 1000);
+          });
+        };
+  
+        // you can do as following also! because the expression following the arrow => is implicitly returned and if we are declaring the body of the function while in arrow function then you have to explicitly define the return statement!
+  
+        const addJelly = () =>
+          new Promise((resolve) => {
+            setTimeout(() => {
+              resolve("adding some jelly on the top of the peanut butter!");
+            }, 1000);
+          });
+  
+        const closeSandwich = () =>
+          new Promise((resolve) => {
+            setTimeout(() => {
+              resolve(
+                "putting one more slice of bread on the top of jelly and closing the sandwich."
+              );
+            }, 1000);
+          });
+  
+        getBread()
+          .then((result) => {
+            console.log(result);
+            return addPeanutButter();
+          })
+          .then((result) => {
+            console.log(result);
+            return addJelly();
+          })
+          .then((result) => {
+            console.log(result);
+            return closeSandwich();
+          })
+          .then((result) => {
+            console.log(result);
+          });
+      */
+
+      /*
+        Exercise 4: Promise Chaining with Error Handling
+
+        Description:
+        Create a sequence of Promises that simulate an assembly line. Each step should be a Promise that resolves after a delay, but one step should have a chance to fail (e.g., using `Math.random()`). If any step fails, handle the error and stop the chain. For example:
+
+        1. Step 1 (1 second delay)
+        2. Step 2 (1 second delay)
+        3. Step 3 (1 second delay, with a chance to fail)
+        4. Step 4 (1 second delay)
+
+        Display the result of each step in the console, and handle any errors that occur.
+        
+        const promise1 = () =>
+          new Promise((resolve, reject) => {
+            setTimeout(() => {
+              let rand = Math.random() < 0.5;
+              if (rand) resolve("step 1 is completed!");
+              else reject("step 1 is failed!");
+            }, 1000);
+          });
+   
+        const promise2 = () =>
+          new Promise((resolve, reject) => {
+            setTimeout(() => {
+              let rand = Math.random() < 0.5;
+              if (rand) resolve("step 2 is completed!");
+              else reject("step 2 is failed!");
+            }, 1000);
+          });
+   
+        const promise3 = () =>
+          new Promise((resolve, reject) => {
+            setTimeout(() => {
+              let rand = Math.random() < 0.5;
+              if (rand) resolve("step 3 is completed!");
+              else reject("step 3 is failed!");
+            }, 1000);
+          });
+   
+        const promise4 = () =>
+          new Promise((resolve, reject) => {
+            setTimeout(() => {
+              let rand = Math.random() < 0.5;
+              if (rand) resolve("step 4 is completed!");
+              else reject("step 4 is failed!");
+            }, 1000);
+          });
+   
+        promise1()
+          .then((result) => {
+            console.log(result);
+            return promise2();
+          })
+          .then((result) => {
+            console.log(result);
+            return promise3();
+          })
+          .then((result) => {
+            console.log(result);
+            return promise4();
+          })
+          .then((result) => {
+            console.log(result);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      */
+
+      /*
+        Exercise 5: Using Promise.all()
+
+        Description:
+        Create three Promises that each resolve after a different delay (e.g., 1 second, 2 seconds, and 3 seconds). Use `Promise.all()` to wait for all three Promises to resolve, and then display the results in the console. If any of the Promises reject, handle the error using `.catch()`.
+        
+        const step1 = () =>
+          new Promise((resolve, reject) => {
+            setTimeout(() => {
+              if (Math.random() < 0.5) resolve("step-1 is cleared!");
+              else reject("step-1 is failed!");
+            }, 1000);
+          });
+   
+        const step2 = () =>
+          new Promise((resolve, reject) => {
+            setTimeout(() => {
+              if (Math.random() < 0.5) resolve("step-2 is cleared!");
+              else reject("step-2 is failed!");
+            }, 2000);
+          });
+   
+        const step3 = () =>
+          new Promise((resolve, reject) => {
+            setTimeout(() => {
+              if (Math.random() < 0.5) resolve("step-3 is cleared!");
+              else reject("step-3 is failed!");
+            }, 3000);
+          });
+   
+        Promise.all([step1(), step2(), step3()])
+          .then((result) =>
+            result.forEach((val) => {
+              console.log(val);
+            })
+          )
+          .catch((err) => {
+            console.log(err);
+          });
+      */
+
+// -----------------------------------------------------------------------------------------------------------
+
+      // with some advancement of the programs above..........
+
+
+
+      /*
+      // Exercise 1: Simple Promise
+
+      // Description:
+
+      // Create a Promise that simulates fetching data from a server. The Promise should resolve with the data (a simple message or object) after a delay of 2 seconds. Handle the result of the Promise using `.then()` and display the fetched data in the console.
+
+      let fetchData = new Promise((resolve) => {
+        setTimeout(() => {
+          resolve({ name: "Krishna", age: 20, profession: "student" });
+        }, 2000);
+      });
+
+      fetchData
+        .then((userData) => {
+          for (const [key, value] of Object.entries(userData)) {
+            console.log(`${key} : ${value}`);
+          }
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+        });
+      */
+
+      /*
+      // Exercise 2: Promise with Error Handling
+
+      // Description:
+
+      // Create a Promise that simulates a coin toss. The Promise should resolve with "Heads" if the toss is heads and reject with "Tails" if the toss is tails. Simulate the coin toss using `Math.random()`. Handle both the success and failure cases using `.then()` and `.catch()`, and display the result in the console.
+
+      let tossTheCoin = new Promise((resolve, reject) => {
+        console.log("Coin tossed!!");
+        const tossResultArr = ["Heads", "Tails"];
+
+        setTimeout(() => {
+          if (Math.round(Math.random() * 1)) {
+            reject(tossResultArr[1]);
+          } else {
+            resolve(tossResultArr[0]);
+          }
+        }, 1500);
+      });
+
+      tossTheCoin
+        .then((wins) => console.log("You win:", wins))
+        .catch((fail) => console.log("You lose:", fail));
+      */
+
+      /*
+      // Exercise 3: Promise Chaining
+
+      // Description:
+
+      // Create a series of Promises that simulate a sequence of steps in a process (e.g., making a sandwich). Each step should be represented by a separate Promise that resolves after a delay. Chain the Promises together so that they execute in sequence. For example:
+
+      // 1. Get bread (1 second delay)
+      // 2. Add peanut butter (1 second delay)
+      // 3. Add jelly (1 second delay)
+      // 4. Close sandwich (1 second delay)
+
+      let getBread = () =>
+        new Promise((resolve) => {
+          setTimeout(() => {
+            resolve("take one bread slice...");
+          }, 1000);
+        });
+
+      let addPeanutButter = () =>
+        new Promise((resolve) => {
+          setTimeout(() => {
+            resolve("add some peanut butter on the bread...");
+          }, 1000);
+        });
+
+      let addJelly = () =>
+        new Promise((resolve) => {
+          setTimeout(() => {
+            resolve("add some jelly over peanut butter...");
+          }, 1000);
+        });
+
+      let closeSandwich = () =>
+        new Promise((resolve) => {
+          setTimeout(() => {
+            resolve(
+              "after adding another slice of bread on the top of sandwich, is prepared!"
+            );
+          }, 1000);
+        });
+
+      getBread()
+        .then((call1) => {
+          console.log(call1);
+          return addPeanutButter();
+        })
+        .then((call2) => {
+          console.log(call2);
+          return addJelly();
+        })
+        .then((call3) => {
+          console.log(call3);
+          return closeSandwich();
+        })
+        .then((close) => {
+          console.log(close);
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
+      */
+
+      /*
+      // Exercise 4: Promise Chaining with Error Handling
+
+      // Description:
+
+      // Create a sequence of Promises that simulate an assembly line. Each step should be a Promise that resolves after a delay, but one step should have a chance to fail (e.g., using `Math.random()`). If any step fails, handle the error and stop the chain. For example:
+
+      // 1. Step 1 (1 second delay)
+      // 2. Step 2 (1 second delay)
+      // 3. Step 3 (1 second delay, with a chance to fail)
+      // 4. Step 4 (1 second delay)
+
+      // Display the result of each step in the console, and handle any errors that occur.
+
+      let step1 = () =>
+        new Promise((resolve, reject) => {
+          setTimeout(() => {
+            let rand = Math.random() < 0.5;
+
+            if (rand) {
+              resolve("Step 1 is completed!");
+            } else {
+              reject("Step 1 is failed!");
+            }
+          }, 1000);
+        });
+
+      let step2 = () =>
+        new Promise((resolve, reject) => {
+          setTimeout(() => {
+            let rand = Math.random() < 0.5;
+
+            if (rand) {
+              resolve("Step 2 is completed!");
+            } else {
+              reject("Step 2 is failed!");
+            }
+          }, 1000);
+        });
+
+      let step3 = () =>
+        new Promise((resolve, reject) => {
+          setTimeout(() => {
+            let rand = Math.random() < 0.5;
+
+            if (rand) {
+              resolve("Step 3 is completed!");
+            } else {
+              reject("Step 3 is failed!");
+            }
+          }, 1000);
+        });
+
+      let step4 = () =>
+        new Promise((resolve, reject) => {
+          setTimeout(() => {
+            let rand = Math.random() < 0.5;
+
+            if (rand) {
+              resolve("Step 4 is completed!");
+            } else {
+              reject("Step 4 is failed!");
+            }
+          }, 1000);
+        });
+
+        step1()
+        .then((step1_result) => {
+          console.log(step1_result);
+          return step2();
+        })
+        .then((step2_result) => {
+          console.log(step2_result);
+          return step3();
+        })
+        .then((step3_result) => {
+          console.log(step3_result);
+          return step4();
+        })
+        .then((step4_result) => {
+          console.log(step4_result);
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+
+        ---------------OR---------------
+
+      async function callSteps() {
+        try {
+          console.log(await step1());
+          console.log(await step2());
+          console.log(await step3());
+          console.log(await step4());
+        } catch (err) {
+          console.log(err);
+        }
+      }
+
+      callSteps();
+      */
+
+      /*
+      // Exercise 5: Using Promise.all()
+
+      // Description:
+
+      // Create three Promises that each resolve after a different delay (e.g., 1 second, 2 seconds, and 3 seconds). Use `Promise.all()` to wait for all three Promises to resolve, and then display the results in the console. If any of the Promises reject, handle the error using `.catch()`.
+
+      let promise1 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          let rand = Math.random() < 0.5;
+
+          if (rand) resolve("Promise 1 is executed successfully!");
+          else reject("Promise 1 is failed to execute!");
+        }, 1000);
+      });
+
+      let promise2 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          let rand = Math.random() < 0.5;
+
+          if (rand) resolve("Promise 2 is executed successfully!");
+          else reject("Promise 2 is failed to execute!");
+        }, 2000);
+      });
+
+      let promise3 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          let rand = Math.random() < 0.5;
+
+          if (rand) resolve("Promise 3 is executed successfully!");
+          else reject("Promise 3 is failed to execute!");
+        }, 3000);
+      });
+
+      Promise.all([promise1, promise2, promise3])
+        .then((result) => {
+          result.forEach((val) => {
+            console.log(val);
+          });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+
+        ---------------OR---------------
+
+      async function ens() {
+        try {
+          let one = await Promise.all([promise1, promise2, promise3]);
+          one.forEach((val) => {
+            console.log(val);
+          });
+        } catch (err) {
+          console.log(err);
+        }
+      }
+
+      ens();
+      */
+    </script>
+  </body>
+</html>

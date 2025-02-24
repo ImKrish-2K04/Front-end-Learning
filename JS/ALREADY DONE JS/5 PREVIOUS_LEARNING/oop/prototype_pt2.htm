@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Hello World!!</title>
+  </head>
+
+  <body>
+    <h1>JS - TuTs</h1>
+
+    <script>
+      //prototyping and passing args to the call method
+
+      var Mobile = function (model) {
+        this.model = model;
+      };
+
+      Mobile.prototype.getModel = function () {
+        return this.model;
+      };
+
+      var Samsung = function (model, price) {
+        Mobile.call(this, model);
+        this.price = price;
+      };
+
+      Samsung.prototype = Object.create(Mobile.prototype);
+      Samsung.prototype.constructor = Samsung;
+
+      let sam = new Samsung("Lumia", 45000);
+
+      console.log(sam.getModel());
+    </script>
+  </body>
+</html>

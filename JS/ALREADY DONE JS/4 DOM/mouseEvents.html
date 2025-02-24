@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mouse events</title>
+
+    <style>
+      *{
+        user-select: none;
+      }
+
+      h2{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JS - TUTs</h1>
+
+    <p>i am a paragraph.</p>
+
+    <h2>i am sensitive.</h1>
+
+    <script>
+      let demo = document.querySelector('h2');
+
+      let count = 0;
+      
+      // for click, dblclick, "'contextmenu' -> for right button click"
+      
+      /*
+      demo.addEventListener('dblclick', function(e){
+        if(count === 0 || count%2 === 0) {
+          this.style.transition='0.4s ease-in-out';
+          this.style.color='green';
+          count++;
+        }
+        else if(count === 1 || count %2 !== 0){
+          this.style.transition='0.4s ease-in-out';
+          this.style.color='black';
+          count++;
+        }
+      })
+      */
+
+      // (mousedown, mouseup), (mouseenter, leave), (over, out), move
+      
+      demo.addEventListener('mouseenter', function(e){
+        this.style.transition = '0.4s ease-in-out';
+        this.style.color = 'green';
+      })
+      
+      demo.addEventListener('mouseleave', function(e){
+        this.style.transition = '0.4s ease-in-out';
+        this.style.color = 'black';
+      })
+    </script>
+  </body>
+</html>

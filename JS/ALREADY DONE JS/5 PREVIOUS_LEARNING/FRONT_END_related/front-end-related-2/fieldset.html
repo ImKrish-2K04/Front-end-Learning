@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>fieldSet</title>
+
+    <style>
+      label {
+        margin-right: 5px;
+      }
+
+      input {
+        margin-top: 10px;
+        margin-left: 20px;
+      }
+
+      fieldset {
+        width: 25%;
+      }
+
+      #mybtn {
+        margin-left: 97px;
+      }
+
+      #eml {
+        margin-left: 47px;
+      }
+
+      legend {
+        padding: 0 5px;
+        background-color: antiquewhite;
+        margin-left: 3px;
+        margin-right: 3px;
+        border-radius: 5px;
+        box-shadow: 1.5px 1.5px 3px olivedrab;
+        border-top-left-radius: 0;
+        color: black;
+      }
+
+      fieldset {
+        background-color: brown;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body bgcolor="black">
+    <form action="www.google.com">
+      <fieldset>
+        <legend>Enter Data</legend>
+        <label for="fname">First Name</label>
+        <input type="text" required /> <br />
+        <label for="lname">Last Name</label>
+        <input type="text" required /> <br />
+        <label for="e-mail">E-mail</label>
+        <input type="email" required id="eml" /> <br />
+        <label for="b-date">Birth-Date</label>
+        <input type="date" required /> <br />
+        <input type="submit" value="submit" id="mybtn" />
+      </fieldset>
+    </form>
+  </body>
+</html>

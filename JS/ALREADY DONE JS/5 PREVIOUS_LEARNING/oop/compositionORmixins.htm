@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Hello World</title>
+  </head>
+
+  <body>
+    <script>
+      let eating = {
+        eat: function () {
+          return "can eat";
+        },
+      };
+
+      let walking = {
+        walk: function () {
+          return "can walk";
+        },
+      };
+
+      let talking = {
+        talk: function () {
+          return "can talk";
+        },
+      };
+
+      let satish = Object.assign({}, eating, walking, talking);
+
+      console.log("satish " + satish.eat());
+      console.log("satish " + satish.talk());
+      console.log("satish " + satish.walk());
+
+      let start = {
+        starts: function () {
+          return "is started..";
+        },
+      };
+
+      let Robot = Object.assign({}, walking, talking, start);
+
+      console.log("Robot " + Robot.talk());
+      console.log("Robot " + Robot.walk());
+      console.log("Robot " + Robot.starts());
+    </script>
+  </body>
+</html>

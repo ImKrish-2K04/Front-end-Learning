@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spread...</title>
+  </head>
+  <body>
+    <h1>Spread Syntax...</h1>
+
+    <!--
+    ! Rest Parameters
+    -----------------
+
+    * Rest parameters are used in function definitions to condense multiple arguments into a single array. This allows a function to accept an indefinite number of arguments as an array.
+
+    ? Example of Rest Parameters
+    ----------------------------
+
+    function sum(...numbers) {
+      return numbers.reduce((acc, curr) => acc + curr, 0);
+    }
+
+    console.log(sum(1, 2, 3)); // 6
+    console.log(sum(1, 2, 3, 4, 5)); // 15
+
+    * In this example, `...numbers` is a rest parameter that collects all the arguments passed to the `sum` function into an array named `numbers`.
+
+    ! Spread Syntax
+    ---------------
+
+    * The spread syntax is used to expand elements of an iterable (like an array or a string) into individual elements.
+
+    ? Example of Spread Syntax with Arrays
+    --------------------------------------
+
+    const arr1 = [1, 2, 3];
+    const arr2 = [4, 5, 6];
+    const combined = [...arr1, ...arr2];
+
+    console.log(combined); // [1, 2, 3, 4, 5, 6]
+
+    * Here, `...arr1` and `...arr2` spread the elements of `arr1` and `arr2` into a new array `combined`.
+
+    ! Example of Spread Syntax with Function Arguments
+    --------------------------------------------------
+
+    function sum(x, y, z) {
+      return x + y + z;
+    }
+
+    const numbers = [1, 2, 3];
+    console.log(sum(...numbers)); // 6
+
+    * In this example, `...numbers` spreads the elements of the `numbers` array as individual arguments to the `sum` function.
+
+    ! Key Points
+    ------------
+
+    ! 1. Rest Parameters:
+    ---------------------
+    * Used in function definitions to gather multiple arguments into a single array.
+    * Syntax: `function fn(...restParam) { }`
+
+    ! 2. Spread Syntax:
+    -------------------
+    * Used to spread elements of an iterable (like an array or string) into individual elements.
+    * Can be used in array literals, function calls, and object literals.
+    * Syntax: `const newArray = [...iterable];` or `fn(...iterable)`
+
+    ! Summary
+    ---------
+
+    * Rest Parameters condense multiple arguments into a single array when defining a function.
+    * Spread Syntax expands elements of an iterable into individual elements when used in array literals, function calls, and other contexts.
+    * rest parameters collect multiple arguments into an array, while spread syntax expands elements of an array or other iterable.
+    -->
+
+    <script>
+      // 1) spread syntax in array :
+      // let arr = [1, 2, 3, 4, 5];
+      // console.log(...arr);
+
+      // 1> copying arrays...
+      /*
+      let arr1 = [1, 2, 3, 4, 5];
+      let arr2 = [...arr1];
+      console.log(arr2);
+      */
+
+      // 2> combining arrays...
+      /*
+      let arr1 = [1,2,3];
+      let arr2 = [4,5,6];
+      let arr = [...arr1, ...arr2];
+      console.log(arr);
+      */
+
+      // 3> adding elements...
+      // here the thing is about adding elements to another array in between...
+      /*
+      let arr = [1, 2, 3];
+      let arr2 = [0, ...arr, 4];
+      console.log(arr2);
+      */
+
+      // 2) spread syntax in objects :
+      let obj = {
+        name: "krishna",
+        age: 20,
+        gender: "male",
+      };
+
+      // 1> copying objects...
+      /*
+      let objCp = {...obj};
+      console.log(objCp);
+      */
+
+      // 2> combining objects...
+      /*
+      let obj1 = {
+        roll_no: 73,
+        name: "krishna",
+      };
+
+      let obj2 = {
+        age: 20,
+        gender: "male",
+      };
+
+      let mainObj = { ...obj1, ...obj2 };
+
+      console.log(mainObj);
+      */
+
+      // 3> overriding properties...
+      /*
+      let obj1 = { a: 1, b: 2 }; // before: b = 2
+      let obj2 = { b: 3, c: 4 }; // after : b = 3
+
+      let mainObj = { ...obj1, ...obj2 };
+
+      console.log(mainObj);
+      */
+
+      // 3) spread syntax in function arguments :
+
+      // 1> passing array elements as arguments...
+      /*
+      let arr = [1, 2, 3];
+      let sum = (a, b, c) => {
+        return a + b + c;
+      };
+      console.log(`the sum is ${sum(...arr)}.`);
+      */
+
+      // 4) Spread Syntax in Destructuring :
+
+      // 1> Rest Operator in Array Destructuring...
+      /*
+      let arr = [1, 2, 3, 4, 5];
+
+      let [a, b, ...c] = arr;
+
+      console.log(a);
+      console.log(b);
+      console.log(c);
+      */
+
+      // 2> Rest Operator in Object Destructuring...
+      /*
+      let obj1 = { a: 1, b: 2, c: 3, d: 4, e: 5 };
+
+      let { a, ...rest } = obj1;
+
+      console.log(a);
+      console.log(rest);
+      */
+    </script>
+  </body>
+</html>

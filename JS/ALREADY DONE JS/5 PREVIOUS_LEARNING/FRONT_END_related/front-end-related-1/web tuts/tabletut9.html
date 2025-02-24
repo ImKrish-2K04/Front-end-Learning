@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Tut no 9</title>
+
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+
+      table .cl2 {
+        border: 1px solid black;
+      }
+
+      .cl2 th {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+
+      .cl2 td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        font-weight: bolder;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .cl1 th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .cl1 td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-weight: bolder;
+      }
+
+      table .cl1 {
+        border: 1px solid black;
+      }
+
+      .cl2 th {
+        background-color: orangered;
+      }
+
+      .cl2 td {
+        background-color: orangered;
+      }
+
+      .cl1 {
+        width: 100%;
+      }
+
+      .cl2 {
+        width: 100%;
+        margin-left: 60px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <table id="main_table">
+      <tr>
+        <td>
+          <table class="cl1">
+            <caption>
+              <b>Passed</b>
+            </caption>
+            <tr>
+              <th>No. of boys</th>
+              <th>No. of girls</th>
+            </tr>
+            <tr>
+              <td>23</td>
+              <td>15</td>
+            </tr>
+          </table>
+        </td>
+
+        <td>
+          <table class="cl2">
+            <caption>
+              <b>Failed</b>
+            </caption>
+            <tr>
+              <th>No. of boys</th>
+              <th>No. of girls</th>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>5</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

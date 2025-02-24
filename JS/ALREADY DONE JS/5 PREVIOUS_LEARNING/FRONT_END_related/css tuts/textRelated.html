@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <style>
+      * {
+        padding: 10px;
+        margin: 7px;
+        word-spacing: 1.3px;
+      }
+
+      samp {
+        font: bold 12px arial;
+        /* text-decoration: 2px underline black solid; */
+        border: none;
+        background-color: blueviolet;
+        padding: 3px;
+        border-radius: 5px;
+      }
+
+      .scs {
+        border: 4px solid plum;
+        width: 350px;
+        height: 160px;
+        text-align: justify;
+        overflow: scroll;
+        padding: 13px;
+        border-radius: 9px;
+        font: italic small-caps bold 15px/25px arial;
+        background-color: purple;
+        color: white;
+        text-align-last: right; /*aligning last line of block(paragraph)*/
+        text-indent: 30px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--
+        ! text align properties : left(default),right,center,justify
+        ! text-align-last : last,start,auto
+        start and last also in aligning work as left and right respectively..
+        auto aligns last line as per the property of text-align..
+
+        !text-transform : uppercase,lowercase,capitalize
+        !text-indent : size in pixel or in other format..
+        it is useful for give a paragraph type indent..
+
+        !text-decoration-line : underline,overline,linethrough,none
+        !text-decoration-color : any color or color style type
+        !text-decoration-style : solid,dotted,dashed,double,wavy
+
+        !shorthand notation : text-decoration : line color style;
+        *ex. : text-decoration : underline red wavy;
+
+        !word-spacing : size;
+        !letter-spacing : size;
+    -->
+
+    <div class="scs">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat amet ullam
+      facilis voluptas quae possimus excepturi aliquid dolore dolor voluptatum
+      hic magnam, molestias cum eum quaerat illo impedit deserunt fugit! Lorem
+      ipsum dolor sit amet consectetur adipisicing elit. Fugiat amet ullam
+      facilis voluptas quae possimus excepturi aliquid dolore dolor
+      <samp>voluptatum</samp>
+      hic magnam, molestias cum eum quaerat illo -impedit deserunt fugit!
+    </div>
+  </body>
+</html>

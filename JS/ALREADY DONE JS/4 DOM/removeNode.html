@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>remove Child</title>
+  </head>
+  <body>
+    <h1>JS - TUTs</h1>
+
+    <p id="para">
+      <b>i am web designer.</b>
+    </p>
+
+    <div id="myDiv">
+      <p>i am first paragraph.</p>
+      <p>i am fourth paragraph.</p>
+      <p>i am second paragraph.</p>
+    </div>
+
+    <script>
+      //   here we can see, we have created a bold elemented text inside <b> tag/element...
+      //   suppose, that <b> is not a necessary node and we don't need it so we want to remove it from the <p> and append some text into <p>...
+      //   therefore we should have to use one DOM method, which is removeChild(target_node), which will remove the node from the DOM but not actually cuz it will be exists in memory until a garbage collector will take a look at that and removes it and frees up the memory space...
+      //   Syntax : parentNode.removeChild(targetNode)
+      //   here parentNode is a node in which the a particular node is exists to which we needs to remove...
+      //   targetNode is a node to which we want to remove from its specific parent...
+      //   let's see it...
+
+      let parentNode = document.querySelector("#para");
+      let targetNode = document.querySelector("b");
+      let tNode = document.createTextNode("i am paragraph.");
+
+      console.log(parentNode.innerHTML);
+      parentNode.removeChild(targetNode);
+
+      parentNode.appendChild(tNode);
+      console.log(parentNode.innerHTML);
+
+      //<----------------------------------->
+
+      let div = document.querySelector("#myDiv");
+      let secondP = div.getElementsByTagName("p")[1];
+      div.removeChild(secondP);
+    </script>
+  </body>
+</html>

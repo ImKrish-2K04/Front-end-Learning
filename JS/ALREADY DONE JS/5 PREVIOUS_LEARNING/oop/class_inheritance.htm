@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Hello World</title>
+  </head>
+
+  <body>
+    <script>
+      //inheritance using class ...
+
+      class Father {
+        showFMoney() {
+          return "Father's Money is 123040 rs.";
+        }
+      }
+
+      class Son extends Father {
+        showSMoney() {
+          return "Son's Money is 10000 rs.";
+        }
+      }
+
+      class GrandSon extends Son {
+        showGSMoney() {
+          return "Grand Son's Money is 4500 rs.";
+        }
+      }
+
+      let Gs = new GrandSon();
+
+      console.log(Gs.showFMoney());
+      console.log(Gs.showSMoney());
+      console.log(Gs.showGSMoney());
+
+      /*
+      there is some more imp topics to understand..
+
+      class declaration.....
+
+      let Mobile = class{...Content i.e properties or methods...};
+
+      let Mobile = class Mobile2 {...Content i.e properties or methods...};
+      */
+    </script>
+  </body>
+</html>

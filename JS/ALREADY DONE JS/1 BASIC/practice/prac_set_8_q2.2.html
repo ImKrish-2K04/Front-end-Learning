@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>demo</title>
+
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        user-select: none;
+        color: white;
+        background-color: black;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 25vh;
+        width: 30vw;
+        border: none;
+        box-shadow: 0 0 10px 2px gray;
+        border-radius: 10px;
+        background-color: darkgoldenrod;
+      }
+
+      form {
+        margin-top: 25px;
+      }
+
+      .display-box {
+        height: 100px;
+        width: 70%;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 2px goldenrod;
+        margin-top: 100px;
+        overflow-y: scroll;
+        margin-bottom: 25px;
+        padding: 10px;
+      }
+
+      input[type="button"] {
+        border: none;
+        border-radius: 7px;
+        padding: 5px 10px;
+        margin-top: 10px;
+        background-color: rgb(170, 150, 0);
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form action="" method="post">
+        <table>
+          <tr>
+            <td><label for="bookmark">Enter bookmark link:</label></td>
+            <td><input type="text" id="bookmark-link" /></td>
+          </tr>
+
+          <tr>
+            <td></td>
+            <td>
+              <input type="button" value="Add bookmark" id="add-bookmark" />
+            </td>
+          </tr>
+        </table>
+      </form>
+
+      <div class="display-box"></div>
+    </div>
+
+    <script>
+      let btn = document.getElementById("add-bookmark");
+      btn.addEventListener("click", (e) => {
+        let b_link = document.querySelector("#bookmark-link");
+        let dispBox = document.querySelector(".display-box");
+        let child = document.createElement("span");
+        child.textContent = b_link.value;
+        dispBox.append(child);
+        dispBox.appendChild(document.createElement("br"));
+      });
+    </script>
+  </body>
+</html>

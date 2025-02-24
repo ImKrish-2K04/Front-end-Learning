@@ -1,0 +1,66 @@
+in this lecture we are going to understand about the asyncronous and syncronous callbacks...
+
+here we are going to compare them, find the difference between them and see some codes which will illustrates it at all...
+
+let's go........................
+
+little definition time...
+-------------------------
+
+Synchronous Callbacks: Called immediately within the same function call.
+
+Asynchronous Callbacks: Called later, after some time or event.
+
+
+Understanding Synchronous vs. Asynchronous Callbacks
+----------------------------------------------------
+
+Synchronous Callbacks:
+----------------------
+
+A synchronous callback is executed immediately within the same function call. This means that the execution of the outer function pauses until the callback completes. Synchronous callbacks are often used in situations where you need to perform a series of operations in a specific order.
+
+Example of a Synchronous Callback:
+----------------------------------
+
+```javascript code```
+---------------------
+
+function calculate(num1, num2, callback) {
+  let result = num1 + num2;
+  callback(result);
+}
+
+function displayResult(result) {
+  console.log('The result is: ' + result);
+}
+
+calculate(5, 10, displayResult);
+
+In this example, `displayResult` is a synchronous callback because it is called immediately after the result is calculated.
+
+Asynchronous Callbacks:
+-----------------------
+
+An asynchronous callback is executed at a later time, after the current function call has completed. Asynchronous callbacks are often used in operations that take time to complete, such as fetching data from a server, reading files, or setTimeout/setInterval operations.
+
+Example of an Asynchronous Callback:
+------------------------------------
+
+```javascript code```
+---------------------
+
+function fetchData(callback) {
+  setTimeout(() => {
+    let data = 'Some data from the server';
+    callback(data);
+  }, 2000); // Simulate a 2-second delay
+}
+
+function processData(data) {
+  console.log('Processing: ' + data);
+}
+
+fetchData(processData);
+
+In this example, `processData` is an asynchronous callback because it is called after a 2-second delay, simulating data fetching from a server.

@@ -1,0 +1,46 @@
+--------------------------------------------------------------
+1. Basic Class and Object Concepts
+--------------------------------------------------------------
+class_pt1.htm (Introduction to classes)
+object_pt_1.htm (Introduction to objects)
+ways_of_obj.htm (Different ways to create objects)
+--------------------------------------------------------------
+
+
+
+--------------------------------------------------------------
+2. Prototypal Inheritance and Object Basics
+--------------------------------------------------------------
+prototype.htm (Understanding prototypes)
+prototype2.htm (Prototype properties and methods)
+proto_inheritance.htm (Prototypal inheritance basics)
+--------------------------------------------------------------
+
+
+
+--------------------------------------------------------------
+3. Inheritance & Super Keyword
+--------------------------------------------------------------
+class_inheritance.htm (Class inheritance explained)
+super_keyword.htm (Using the super keyword)
+--------------------------------------------------------------
+
+
+
+--------------------------------------------------------------
+4. Advanced Inheritance and Composition
+--------------------------------------------------------------
+mul_lvl_inheritance.htm (Multilevel inheritance)
+compositionORmixins.htm (Composition or mixins vs inheritance)
+composition_pt_2.htm (Composition in inheritance - Part 2)
+--------------------------------------------------------------
+
+
+
+--------------------------------------------------------------
+5. Math, Nested Objects, and Miscellaneous
+--------------------------------------------------------------
+mathObject.htm (Math object and inheritance)
+class_old_way.html (Old school way of creating classes)
+nested_object.htm (Nested object structures)
+--------------------------------------------------------------

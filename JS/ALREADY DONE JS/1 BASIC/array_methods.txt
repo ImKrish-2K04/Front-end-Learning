@@ -1,0 +1,276 @@
+in this tutorial, we are going to learn about few array methods which we haven't learned in before sections of the array...
+
+let's start with the array methods!
+
+1) reverse()
+2) toString()
+3) isArray()
+4) splice()
+5) fill()
+6) sort()
+7) some()
+8) every()
+9) find()
+10) findIndex()
+11) filter()
+12) map()
+
+-----------------------------------------------------------
+
+1) reverse()
+
+this method is used to reverse the array!
+this affects to the original array!
+
+let arr1 = ["val1", "val2", "val3", "val4"];
+
+console.log("the array before reversing:", arr1);
+console.log("the array after reversing:", arr1.reverse());
+console.log("the array after reversing:", arr1);
+
+-----------------------------------------------------------
+
+2) toString()
+
+this method is used to convert the array into a string of the comma seperated values of the array!
+this method is an alternative of the join() method without any argument passed to it.
+toString() method is also used for finding the binary / octal / hexadecimal value of elements of the array!
+
+Example:
+
+let arr = ["one", "two", "three", "four", "five"];
+console.log("the array before converting into string: ");
+console.log(arr);
+
+console.log("\nafter the conversions: ");
+console.log(arr.toString());
+
+let arr2 = [1, 2, 3, 4, 10];
+console.log("\nthe binary values of all values of the array:");
+console.log(
+    arr2.map((value) => {
+        return value.toString(2);
+        // return value.toString(8); // for octal
+        // return value.toString(16); // for hexadecimal
+    }),
+);
+
+-----------------------------------------------------------
+
+3) Array.isArray()
+
+there is one very least but useful method is 'isArray()'.
+this method is used to check whether the value passed to it is an array or not!
+let's check it with the help of 2 variables...
+
+let val1 = "makwana krishna.";
+let val2 = ["makwana", "krishna."];
+
+console.log("let's check first for the val1..");
+console.log("Is val1 is array? :", Array.isArray(val1));
+
+console.log("\nlet's check for the val2..");
+console.log("Is val2 is array? :", Array.isArray(val2));
+
+-----------------------------------------------------------
+
+4) splice()
+
+we have seen this method in our previous sessions, but there we have used it for removing the values from the array! and that was just a simple task. but in this method, we can also add the values in the array! or we can say replace the values in the array by removing previous values!
+
+syntax : splice(starting-index, no-of-values-to-be-removed, values-to-be-added)
+
+let arr3 = ["lenovo", "hp", "demo1", "demo2", "dell"];
+
+console.log("the array before splicing:");
+console.log(arr3);
+
+console.log(
+    "\nhere we have to remove those 'demo1' and 'demo2' values from the array...",
+);
+console.log("and replace them with 'samsung' and 'mac' respectively...\n");
+
+arr3.splice(2, 2, 'samsung', 'mac');
+
+console.log("the array after splicing:");
+console.log(arr3);
+
+----------------------------------------------------------------
+
+5) fill()
+
+this method is used to fill the values of the array with the given value!
+it is just like the splice() method, but we have to give the starting index and the no-of-values to be filled with the given value...
+syntax : fill(value, starting-index, ending-index)
+
+let arr = ["dell", "asus", "acer", "mac"];
+here we want to fill the values of the array with 'hp' over the index 2 and 3...
+
+console.log("the array before filling:");
+console.log(arr);
+
+console.log("\nthe array after filling:");
+console.log(arr.fill("hp", 2, 4));
+
+----------------------------------------------------------------------
+
+6) sort()
+
+this method is used to sort the array in ascending order!
+
+let arr = ["val3", "val2", "val4", "val1", "val5"];
+
+arr.sort();
+
+for (let val of arr) {
+    console.log(val);
+}
+
+----------------------------------------------------------------------
+
+7) some()
+
+this method is used to check whether the given condition is true for atleast one element of the array!
+here, the condition test is created using a function and that function will be passed to the some() method along with the array!
+
+for ex. here we have to check at least one value should be negative of the array...
+
+let arr = [1, 2, 3, -4, 5, 6, 7, 8, 9, 10];
+console.log(
+    arr.some((val) => {
+        return val < 0;
+    }),
+);
+
+there is something we have to know and understand about some() method.
+when we are using some() method, we are getting the result in the boolean value of it i.e true or false.
+if the condition test is passed by the array values, then it will be returns the true else it will return false.
+here the main part of this method, suppose our goal is to find at least one negative value from the array and we got it on 3rd index of the array, then the condition test will be passed and the result will be true, but the iteration of this method will not stops, it will continues until the array is completely checked! that is the most important thing to understand about some() method and the most crucial time consuming thing when we are talking about the CPU occupying time!
+
+----------------------------------------------------------------------
+
+8) every()
+
+this method is also used to perform the condition tests over the array but is not about to passed by at least one element or more but is about to passed by all the elements of the array!
+that makes it different from the some() method!
+in summary, the every() method is used to check whether the condition test is passed by all the elements of the array or not! if yes, it returns true else it returns false!
+
+let's take an example...
+
+here we want to check whether each and every values of the array are the multiple of 2 or not...
+
+let arr = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20];
+
+console.log(
+    arr.every((val) => {
+        return val % 2 == 0;
+    }),
+);
+
+----------------------------------------------------------------------
+
+9) find()
+
+this method is used to find the first element of the array which passes the condition of the test!
+this is best in the case of finding the first matching element and stopping the execution at that time and also it will returns the value which passes the condition test instead of the boolean value true or false... this is the best thing of the find() method in comparision of the some() and every() methods!
+
+let's check the example of it!...
+
+here we have to find the first element of the array which is the multiple of 3...
+
+let arr = [1, 4, 7, 10, 22, 27, 30, 33, 36, 39];
+
+the following will checks for the values are multiple of 3 so we can check which are one of them...
+
+for (let val of arr) {
+    if(val % 3 == 0) {
+        console.log(val);
+    }
+}
+
+the following will find the first value which is multiple of 3 and then returns that value and stops the execution for the rest of the values...
+
+console.log(arr.find((val) => {
+    return val % 3 == 0;
+}));
+
+----------------------------------------------------------------------
+
+10) findIndex()
+
+this method is the same as the find() method but it returns the index of the first element which passes the condition test instead of the value of the element of the array!
+
+let arr = [1, 4, 7, 10, 22, 27, 30, 33, 36, 39]
+
+console.log(arr.findIndex((val) => {
+    return val % 3 == 0;
+}));
+
+output will be 5 for this code because the first value is 27 in this array which is multiple of 3 and the index of 27 is 5!
+
+-----------------------------------------------
+
+11) filter()
+
+this method is used to filtering out the provided array and returns the new array with the filtered values, these filtered values are depended on the condition test which is also created in the same way as we are in the previous few methods. after creating the condition test inside a particular function, we have to pass that function to the filter() method along with the array!
+
+NOTE : we have to take it into account that this method is used to create a new array and it does not affect the original array!
+
+for ex1. here we are going to filter out the values which are less than 10 from the array...
+for ex2. here we have to filter out all the even number from the array...
+for ex3. here we have to find all the values which are less than '10' and 'even' from the array...
+
+let arr = [5, 17, 8, 12, 3, 19, 10, 6, 14, 2];
+
+arr.sort((a, b) => a - b);
+
+first of all we have sorted the array in ascending order using the sort() method and then we have passed the function to the sort() method which is a callback. here the function inside the sort method is takes two args. a & b. a is the first value of the array and b is the second value of the array. then we have to return a-b where if the result of the substraction is negative then a is less than b and the value of a will come before value of b...
+
+now, the time is begin to use the filter() method..
+
+ex1:
+
+let func = (value) => {
+    return value < 10;
+}
+
+let result = arr.filter(func);
+
+console.log(result);
+
+ex2:
+
+let func = (value) => {
+    return value % 2 == 0;
+}
+
+let result = arr.filter(func);
+
+console.log(result);
+
+ex3:
+
+let func = (value) => {
+    return value < 10 && value % 2 == 0;
+};
+
+let result = arr.filter(func);
+
+console.log(result);
+
+----------------------------------------------------------------------------
+
+12) map()
+
+this method is used to create a new array from the existing array with modification and without modification...
+there is no more things to talk about this method because it is also similar to all above methods and very simple to use like them...
+
+let's have a close look with an example...
+we need the binary values of the numbers in the array and they also should be in a different array...
+
+let arr = [1, 2, 3, 4, 5];
+let func = (val) => {
+    return val.toString(2);
+}
+let result = arr.map(func);
+console.log(result);

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Handling pt1</title>
+  </head>
+  <body>
+    <h1>JS - TUTs</h1>
+
+    <p id="para">i am a paragraph.</p>
+
+    <input type="button" value="click me!" onclick="greet();">
+
+    <script>
+      // simple use of event handling in normal way is explained using a simple greeting example as per the current time!
+      // 24:00 (i.e night 12:00) to 11:59 -> AM ------------ 12:00 to 11:59 (i.e 23:59) -> PM
+
+      function greet(){
+        let dt = new Date();
+        let hour = dt.getHours();
+        if(hour >= 6 && hour < 12) alert('Good Morning!')
+        else if(hour >= 12 && hour < 18) alert('Good Afternoon!')
+        else if(hour >= 18 && hour < 22) alert('Good Evening')
+        else if(hour >= 22 && hour < 6) alert('Good Night!')
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Hello World</title>
+  </head>
+
+  <body>
+    <h1>JS - TuTs</h1>
+
+    <script>
+      //generating random number in java script..
+      //random number generation is very easy stuff..
+      //for generate random number we have to use math object with its function random..
+      //let's create a function that generates random number and returns to us..
+      //the syntax is => " Math.floor(Math.random() * (max - min + 1)) + min "...
+
+      function randoms() {
+        let assums = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
+        return assums;
+      }
+
+      let compChoice = randoms();
+      let playerChoice = prompt("Enter your assumption b/w 1 to 6 ..");
+
+      if (playerChoice == null) {
+        console.log("ok then sorry");
+      } else if (playerChoice < 1) {
+        alert("you have entered number less than range..");
+      } else if (playerChoice > 6) {
+        alert("You have entered number greater than range..");
+      } else if (playerChoice == compChoice) {
+        alert("You Win! Congratulations");
+        console.log("choice of computer is " + compChoice);
+      } else if (!(playerChoice / 2) && !(playerChoice / 1)) {
+        //this 'll help in block words input processing..
+        console.log("invalid number! sorry");
+      } else {
+        alert("You loss! Sorry..");
+        console.log("choice of computer is " + compChoice);
+      }
+    </script>
+  </body>
+</html>

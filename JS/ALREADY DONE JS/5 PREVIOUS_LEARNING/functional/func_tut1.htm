@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>fetching values and add them</title>
+  </head>
+
+  <body>
+    <h1>Summation of numbers Using JS</h1>
+
+    <label>Enter 1st number</label>
+    <input type="number" name="value1" id="i1" /><br /><br />
+    <label>Enter 2nd number</label>
+    <input type="number" name="value2" id="i2" /><br /><br />
+    <button onclick="summation()" id="b1">Sum</button>
+
+    <script>
+      let v1, v2, sum;
+
+      function summation() {
+        v1 = document.getElementById("i1").value;
+        v2 = document.getElementById("i2").value;
+        sum = Number(v1) + Number(v2);
+        alert("Sum is " + sum);
+      }
+    </script>
+  </body>
+</html>
+
+<!--
+var Mobile = function () {
+  this.model = "mobile model";
+  var price = 10999; //private variable
+  var func1 = function () { //private function
+    console.log("this is function.");
+    console.log(price);
+  };
+
+  this.func = function () { //publically accessible function from where you can access that private function.
+    func1();
+  };
+};
+
+let samsung = new Mobile();
+console.log(samsung.model);
+samsung.func();  
+-->

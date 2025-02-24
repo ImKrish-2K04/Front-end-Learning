@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>addEventListener method</title>
+
+    <style>
+      .btn {
+        cursor: pointer;
+        border: none;
+        border: 1px solid black;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        border-radius: 10px;
+        background-color: rgb(209, 234, 255);
+        padding: 5px;
+        transition: 0.2s ease-in-out;
+      }
+
+      .btn:hover {
+        background-color: rgb(159, 211, 253);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JS - TUTs</h1>
+
+    <p id="para">i am a paragraph.</p>
+
+    <!-- 
+      ! here we are going to create 3 buttons. when a user clicks on a button, the text of the button will be shown to user in the alert box...
+    -->
+
+    <button class="btn btn1">i am button 1.</button>
+    <button class="btn btn2">i am button 2.</button>
+    <button class="btn btn3">i am button 3.</button>
+
+    <script>
+      // let's learn about addEventListener() method which is used to add any kind of event on a particular node and it accepts a function which will be executed when the specific event is captured by the JS machine...
+
+      // syntax :- 'addEventListener('event', function(){})' where the 'event' is a string which is the name of events and the 'function()' is an anonymous function which will be executed when the specific event 'll be captured!!
+
+      // let's have a closer look to it!
+
+      let btn = document.querySelectorAll(".btn");
+
+      btn.forEach((btns) => {
+        btns.addEventListener("click", function () {
+          alert(btns.firstChild.nodeValue);
+        });
+      });
+
+      // here one more important thing which can be very useful in some specific and rare case or scenario...
+      // as you can add an event on a particular element you can also remove that event from that element...
+      // for performing this you have to use a method 'removeEventListener()', this method requires the same value you have passed at the time of its adding method...
+
+      // like here you have used this method 
+      // btns.addEventListener("click", function ());
+      // then you have to use method like this
+      // btns.removeEventListener("click", function ());
+
+      // NOTE : this is useful when the anonymous function is not the first time declared inside this method. means we have declared it outside of function and we are using it as a parameter then you can use these all...
+
+      // like : NOTE: don't run the following CUZ it ruins the output of the previous code...
+
+      // let func = function(){
+      //   alert('i am func');
+      // }
+
+      // btn.addEventListener('click', func);
+      // btn.removeEventListener('click', func);
+    </script>
+  </body>
+</html>

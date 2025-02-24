@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1st tut</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: verdana;
+        color: white;
+      }
+
+      .wrapper {
+        margin: 7px;
+      }
+    </style>
+  </head>
+  <body bgcolor="#666666">
+    <div class="wrapper">
+      <h2 id="h2"></h2>
+    </div>
+  </body>
+
+  <script>
+    var name = prompt("Enter your name here: ");
+    document.getElementById("h2").innerText = "Hello " + name + ", welcome!";
+  </script>
+</html>

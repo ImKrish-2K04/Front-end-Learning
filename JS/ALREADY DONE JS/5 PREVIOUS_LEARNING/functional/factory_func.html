@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Hello World</title>
+  </head>
+
+  <body>
+    <h1>JS - TuTs</h1>
+
+    <script>
+      //let's create a factory function -> a function that returns object(s)..
+
+      function objFunc(m, p) {
+        return {
+          model: m,
+          price: function () {
+            return `price is ${p}`; //here we have used a template literal so our work become easy and short..
+          },
+        };
+      }
+
+      let samsung = objFunc("samsung", 45000);
+      console.log("model = " + samsung.model + ", " + samsung.price());
+
+      let nokia = objFunc("3310", 4500);
+      console.log("model = " + nokia.model + ", " + nokia.price());
+    </script>
+  </body>
+</html>

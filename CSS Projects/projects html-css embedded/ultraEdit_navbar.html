@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>navbar project</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        user-select: none;
+        font-family: JetBrains Mono;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      .container {
+        height: 100vh;
+        font-size: 1.8rem;
+
+        & .header {
+          & .navbar {
+            height: 8.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40rem;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+              rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+
+            & .logo {
+              & img {
+                height: 6.5rem;
+                width: 20rem;
+              }
+            }
+
+            & .links {
+              & ul {
+                height: 100%;
+                list-style-type: none;
+                display: flex;
+                gap: 5rem;
+
+                & a {
+                  color: black;
+                  text-decoration: none;
+                  position: relative;
+
+                  &::after {
+                    content: "\f0d7";
+                    font-family: "Font Awesome 6 Free";
+                    font-weight: 900;
+                    margin-right: 8px;
+                    position: absolute;
+                    right: -2.5rem;
+                    top: 0.3rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    </style>
+
+    <script
+      src="https://kit.fontawesome.com/d23d3257b7.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <nav class="navbar">
+          <div class="logo">
+            <a href="#"
+              ><img
+                src="../images/utilities/ultreEditLogo.webp"
+                alt="ultraEdit-logo"
+                height="100px"
+                width="100px"
+            /></a>
+          </div>
+          <div class="links">
+            <ul>
+              <li><a href="#">Products</a></li>
+              <li><a href="#">Pricing</a></li>
+              <li><a href="#">Resources</a></li>
+              <li><a href="#">About us</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Hello World</title>
+  </head>
+
+  <body>
+    <h1>Functions..</h1>
+
+    <!--
+      !  1. isNaN()
+      ?  the isNaN function is used to determine whether a value is an illegal number (Not-A-Number)..
+      ?  the function returns true if value equates to NaN. Otherwise it returns false.
+      ?  the function is different from a number specific Number.isNaN() method.
+      ?  the global isNaN() function, converts the tested value to a Number, then tests it.
+      var a = "50";
+      var b = "Hello";
+      var c = 50;
+
+      if (isNaN(c)) {
+        console.log("is not a number");
+      } else {
+        console.log("is a number");
+      }
+
+      !  some concept upon infinity and negative infinity..
+      ?  some integer values that are not countable but if they are given in positive value then js returns 'infinity' and vice versa it returns '-infinity'...
+      console.log(5 / 0);
+      console.log(-5 / 0);
+
+      !  There are some 'Methods'...
+      ?  1. toString()
+      ?  2. toExponential()
+      ?  3. toFixed()
+      ?  4. toPrecision()
+      ?  5. valueOf()
+      ?  6. isFinite()
+      ?  7. isInteger()
+      ?  8. isNaN()
+      ?  9. isSafeInteger()
+
+
+      !  2.1.  toString();
+      var a = 14;
+      console.log(a.toString(16));  //base 2 or 8 or 16 => Ans As Value
+
+      !  2.2.  toExponential();
+      ?  the toExponential() method converts a number into an Exponential notation..
+      ?  variable_name.toExponential(y);
+      ?  where y is integer b/w 0-20 and representing the number of digits in the notation after the decimal point. if Ommited, it is set to as many digits as necessary to represent the value.
+
+      var a = 58975.98745;
+      document.write(a.toExponential() + "<br>");
+      document.write(a.toExponential(2) + "<br>");
+      document.write(a.toExponential(4) + "<br>");
+      var b = 58975.98745e4;
+      var c = 58975.98745e-4;
+      console.log("When sign is + or nothing : " + b);
+      console.log("When sign is - : " + c);
+
+      !  2.3.  toFixed();
+      ?  the toFixed() method converts a number into a string, keeping a specified number of decimals also it rounds the decimal. If the desired number of decimals are higher than the actual number, nulls are added to create the desired decimal length.
+      ?  Syntax.:- a.toFixed(y);
+      ?  where y is the number of digits after the decimal point. Default is 0 (no digits after the decimal point)
+      Ex.:- var a = 19.65823;
+      document.write(a.toFixed() + "<br>"); //20
+      document.write(a.toFixed(2) + "<br>"); //19.66
+      document.write(a.toFixed(4) + "<br>"); //19.6582
+      document.write(a.toFixed(8) + "<br>"); //19.65823000
+
+      !  2.4.  toPrecision();
+      ?  the toPrecision() method formats a number to a specified length.
+      ?  A decimal point and nulls are added (if needed), to create the specified length.
+      ?  Syntax :-
+      ?  variable_name.toPrecision(y);
+      ?  Where y is the number of digits. if omitted, it returns the entire number(without any formatting)
+      Ex:-
+      var a = 19.65823;
+      document.write(a.toPrecision() + "<br>");
+      /all digits are displayed without any changes..
+      document.write(a.toPrecision(2) + "<br>");
+      /only two digits are displayed with round-up..
+      document.write(a.toPrecision(4) + "<br>");
+      /only four digits are displayed with round-up..
+      document.write(a.toPrecision(9) + "<br>");
+      /all digits with additional 0s are displayed..
+
+      !  2.5.  Number.isInteger();
+      ?  the Number.isInteger() method determines whether a value is an Integer or not.
+      ?  this method returns true if the value is of the type Number, and an integer, otherwise it returns false.
+      ex:-
+      document.write(Number.isInteger() + "<br>");  //false
+      document.write(Number.isInteger(100) + "<br>");  //true
+      document.write(Number.isInteger(-100) + "<br>");  //true
+      document.write(Number.isInteger(100.45) + "<br>");  //false
+      document.write(Number.isInteger(200-100) + "<br>");  //true
+      document.write(Number.isInteger(0.1) + "<br>");  //false
+      document.write(Number.isInteger("100") + "<br>");  //false
+      document.write(Number.isInteger("Hello") + "<br>");  //false
+      
+      !  2.6.  Number.isSafeInteger();
+      ?  the Number.isSafeInteger() method determines whether a value is a safe integer.
+      ?  a safe Integer is an integer that can be exactly all integers from -(2^53 - 1) to (2^53 - 1)
+      ?  this method returns true if the value is of the type Number and a safe integer. otherwise it returns false.
+      ex:-
+      document.write(Number.isSafeInteger(100) + "<br>");   //true
+      document.write(Number.isSafeInteger(-100) + "<br>");   //true
+      document.write(Number.isSafeInteger(0.1) + "<br>");   //false
+      document.write(Number.isSafeInteger(10093823972469249379794) + "<br>");   //false
+
+      !  2.7.  parseInt();
+      ?  the parseInt() function parses a string and returns an integer.
+      ?  Syntax:- parseInt(string,radix);
+      /radix is optional..
+      ?  the radix parameter is used to specify which numeral system to be used, for example; a radix of 16(hexadecimal) indicates that the number in the string should be parsed from a hexadecimal number to a decimal number.
+      ?  if the radix parameter is omitted, javaScript assumes the following:
+        ?   ->  if the string begins with "0x" the radix is 16(hexadecimal)..
+        ?   ->  if the string begins with any other value, the radiz is 10(decimal)..
+      ?  only the first number in the string is returned..
+      ?  leading and trailing spaces are allowed.
+      ?  if the first character cannot be converted to a number, parseInt() returns NaN.
+      ex:-
+      document.write(parseInt("10") + "<br>");
+      document.write(parseInt("12.00") + "<br>");
+      document.write(parseInt("15.45") + "<br>");
+      document.write(parseInt("10 20 30") + "<br>");
+      document.write(parseInt("  90  ") + "<br>");
+      document.write(parseInt("10 years") + "<br>");
+      document.write(parseInt("years 10") + "<br>");
+      document.write(parseInt("020") + "<br>");
+      document.write(parseInt("12", 8) + "<br>");
+      document.write(parseInt("0x12") + "<br>");
+      document.write(parseInt("10", 16) + "<br>");
+
+      !  2.8.  parseFloat();
+      ?  the parseFloat() function parses a string and returns a floating point number. this function determines if the first character in the specified string is a number. if it is, it parses the string until it reaches the end of the number, and returns the number as a number, not as a string.
+      ?  Syntax:- parseFloat(string);
+      ?  only the first number in the string is returned!
+      ?  leading and trailing spaces are allowed.
+      ?  if the first character cannot be converted to a number, parseFloat() returns NaN.
+      ex:-
+      document.write(parseFloat("10") + "<br>");
+      document.write(parseFloat("12.00") + "<br>");
+      document.write(parseFloat("15.45") + "<br>");
+      document.write(parseFloat("10 20 30") + "<br>");
+      document.write(parseFloat("  90  ") + "<br>");
+      document.write(parseFloat("10 years") + "<br>");
+      document.write(parseFloat("years 10") + "<br>");
+      document.write(parseFloat("020") + "<br>");
+    -->
+
+    <script>
+      
+    </script>
+  </body>
+</html>

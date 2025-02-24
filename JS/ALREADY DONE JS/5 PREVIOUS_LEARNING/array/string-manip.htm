@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Hello World</title>
+  </head>
+
+  <body>
+    <script>
+      // concatination
+
+      let x = "Makwana";
+      let y = "Krishna";
+      let z = x.concat(" ", y);
+
+      /* sub-string -> 
+    variable.substr(start-index , required-string-length);
+    var.substring(start-index,end-position);
+    position is counting from 1 to n..
+    */
+
+      // indexOf(); -> use to find the start-pos of a word in string and gives us the pos. of the first char of word..
+
+      let longs = "a demon and sister of tanjiro kamado.";
+      //
+      let pos = longs.indexOf("tan");
+      console.log(pos);
+      console.log(pos, longs.length - 1);
+      //   length-1 is used for find the index
+      document.write(longs.substr(22, 37));
+      //
+      let lngstr = longs.substr(0, 18);
+      let lngstr2 = longs.substring(0, 7);
+      //
+      console.log("Name is " + z);
+      console.log(lngstr2);
+      //
+
+      let demo = "i am krishna i am SE iam elephant loverim.";
+
+      let pos1 = demo.indexOf("i", 14);
+      console.log(pos1);
+      console.log(demo.substr(pos1, demo.length));
+      //
+
+      console.log(demo.length);
+      console.log(demo.lastIndexOf("im"));
+
+      //   removing white-spaces..
+
+      let demo1 = " Namo Buddhaya.. ";
+      let trimmedDemo = demo1.trim();
+
+      console.log(demo1);
+      console.log(trimmedDemo);
+
+      console.log(demo1.trimEnd());
+      console.log(demo1.trimStart());
+
+      //
+
+      let demo2 = "i am krishna";
+      let demo3 = "I AM KRISHNA";
+
+      console.log(demo2.toUpperCase());
+      console.log(demo3.toLowerCase());
+
+      //   changing word into a string.. -> Replace
+
+      demo4 = "i am an ejner";
+      console.log(demo4);
+      console.log(demo4.replace("ejner", "engineer"));
+      //.includes();
+      //returns true if word exits vice-versa
+      console.log(longs.includes("demon"));
+      console.log(longs.includes("demons"));
+      //again but more precisely    --    comment all above inside script and uncomment below..
+      /*
+      let forAll;
+
+      let a = "Makwana";
+      let b = " Krishna";
+      console.log(a.concat(b));
+      //
+      let c = "My Name is Makwana Krishna.";
+      forAll = c.indexOf("Mak");
+      forAll = c.substr(forAll, 16);
+      console.log(forAll);
+      //
+      let d = " My name is Makwana Krishna. ";
+      forAll = d.trim();
+      console.log(d);
+      console.log(forAll);
+      forAll = d.trimStart();
+      forAll = d.trimEnd();
+      //
+      let e = "makwana krishna";
+      let f = "MAKWANA KRISHNA";
+
+      forAll = e.toUpperCase();
+      console.log("Upper-Case-Transformed -> " + forAll);
+      forAll = f.toLowerCase();
+      console.log("Lower-Case-Transformed -> " + forAll);
+      //
+      let g = "My Mother name is Jasminbhai";
+      console.log("Before -> " + g);
+      g = g.replace("Jasminbhai", "Bhumika ben");
+      console.log("After -> " + g);
+      //
+      let h = "my favorite is madara uchihaa.";
+      forAll = h.includes("uchihaa.");
+      console.log("Answer => " + forAll);
+      */
+    </script>
+  </body>
+</html>

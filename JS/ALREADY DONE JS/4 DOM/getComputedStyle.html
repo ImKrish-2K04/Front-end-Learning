@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>getComputedStyle</title>
+    <style>
+      #para {
+        color: white;
+        background-color: rgb(128, 0, 128);
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JS - TUTs</h1>
+
+    <p id="para" style="font-size: 18px; font-family: verdana">
+      i am a paragraph.
+    </p>
+
+    <script>
+      // here we are going to learn about one more important method of CSSStyleDeclaration is 'window.getComputedStyle(element)'...
+      // when we are declaring some styling of an element it has some precedent rule means first priorition of a particular styling will be given to the inline styling, then to the internal styling and the least will be of the external styling...
+      // in this method, the highest precedent applied styles are calculated and then creates its complete object of property-value pair and maintains it... and it returns those styles when we trying to access it by asking for an element to provide its styling...
+
+      let p = document.getElementById("para");
+      console.log(window.getComputedStyle(p).backgroundColor);
+      console.log(window.getComputedStyle(p).fontFamily);
+      console.log(window.getComputedStyle(p).fontSize);
+      console.log(window.getComputedStyle(p).color);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>table tut 2</title>
+
+    <style>
+      table,
+      th,
+      td {
+        border: 2px solid black;
+        text-align: center;
+        /*
+        if you want to apply only a single border to entire table
+        then use the border-collapse css styling with the collapse value..
+        ->  border-collapse: collapse; 
+        */
+      }
+
+      th {
+        background-color: green;
+        color: whitesmoke;
+        padding: 7px;
+        border-color: green;
+        border-radius: 5px;
+      }
+
+      td {
+        background-color: greenyellow;
+        color: orangered;
+        padding: 7px;
+        border-color: greenyellow;
+        border-radius: 5px;
+      }
+
+      table {
+        border-color: aqua;
+        background-color: aqua;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <table>
+      <tr>
+        <th title="Programming Language">Programming Language</th>
+        <th title="Scripting Language">Scripting Language</th>
+      </tr>
+      <tr>
+        <td title="Java">Java</td>
+        <td title="Java Script">Java Script</td>
+      </tr>
+      <tr>
+        <td title="ASP.NET">ASP.NET</td>
+        <td title="AJAX">AJAX</td>
+      </tr>
+    </table>
+  </body>
+</html>

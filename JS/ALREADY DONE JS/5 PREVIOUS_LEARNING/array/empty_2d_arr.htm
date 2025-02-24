@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>empty 2d array</title>
+  </head>
+
+  <body>
+    <script>
+      //we are understands about how we can show a huge amount of empty array in 2d structure..
+      //in old method how much empty valued array we need we have to write that time '[]'
+      //but in running code we have specified the num. of rows and cols so it can gives us output as per our rows and cols's numbering..
+
+      /*
+      let arr = [[], []];
+
+      for (let i = 0; i < 2; i++) {
+        for (let j = 0; j < 3; j++) {
+          document.write(arr[[i]][j] + " | ");
+        }
+        document.write("<br />");
+      }*/
+      let arr = [];
+      var rows = 8;
+      var cols = 9;
+      for (var i = 0; i < rows; i++) {
+        arr[i] = [];
+      }
+
+      for (var i = 0; i < rows; i++) {
+        for (var j = 0; j < cols; j++) {
+          document.write(arr[i][j] + " | ");
+        }
+        document.write("<br />");
+      }
+    </script>
+  </body>
+</html>

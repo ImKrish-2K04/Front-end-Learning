@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mega Project</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Navbar-section start from here! -->
+    <header class="section-navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <a href="./index.html">
+            <img
+              src="./imgs/logo.png"
+              alt="thapa-eduhub logo"
+              width="80%"
+              height="auto"
+            />
+          </a>
+        </div>
+
+        <nav class="navbar">
+          <ul>
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html#section-about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html#section-course">
+                Services
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./blog.html">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contact.html">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- Navbar-section ends here! -->
+
+    <!-- contact-us section start from here! -->
+    <section class="contact-us">
+      <div class="container">
+        <h2 class="section__common-heading">Contact Us</h2>
+        <p class="section__common-subheading">
+          Get in touch with us. We are always here to help you.
+        </p>
+      </div>
+
+      <div class="container grid grid-two--cols">
+        <div class="container-content">
+          <form action="#">
+            <div class="grid grid-two--cols mb-3">
+              <div>
+                <label for="username">Full Name</label>
+                <input
+                  type="text"
+                  name="username"
+                  id="username"
+                  autocomplete="off"
+                  placeholder="enter your name"
+                  required
+                />
+              </div>
+              <div>
+                <label for="email">Email Address</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  autocomplete="off"
+                  placeholder="abc@gmail.com"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="subject">Subject</label>
+              <input
+                type="text"
+                name="subject"
+                id="subject"
+                autocomplete="off"
+                placeholder="title of your main heading"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="message">Message</label>
+              <textarea
+                name="message"
+                id="message"
+                rows="10"
+                cols="30"
+                placeholder="enter your message here"
+              ></textarea>
+            </div>
+
+            <div class="submit-form">
+              <input
+                type="submit"
+                value="Send Message"
+                class="btn btn-submit"
+              />
+            </div>
+          </form>
+        </div>
+
+        <div class="maps">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.4780008013245!2d72.59861242535717!3d23.00621512918529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e85c51048cefb%3A0x777f51782a8b7a1a!2sKankaria%20Lake!5e0!3m2!1sen!2sin!4v1737916204488!5m2!1sen!2sin"
+            width="100%"
+            height="100%"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+    <!-- contact-us section ends here! -->
+
+    <!-- contact-section start from here! -->
+    <div class="section-contact__homepage" id="section-contact__homepage">
+      <div class="container grid grid-two--cols">
+        <div class="contact-content">
+          <h2 class="contact-title">Let's revolutionize the way you study</h2>
+          <p class="common__para">Join our free bootcamps to know us better</p>
+          <div>
+            <a href="#" class="btn">
+              Start now <i class="fa-solid fa-arrow-circle-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="contact-img">
+          <img src="./imgs/main.png" alt="a guy doing coding" />
+        </div>
+      </div>
+    </div>
+    <!-- contact-section ends here! -->
+
+    <!-- footer-section start from here! -->
+    <footer>
+      <div class="container grid grid-four--cols">
+        <div class="footer-1--div">
+          <div class="logo-brand">
+            <a href="#" class="footer-subheading">Thapa EduHub</a>
+          </div>
+          <p class="common__para">
+            Let's revolutionize the way you study with Thapa EduHub
+          </p>
+          <div class="social-footer--icons">
+            <a href="#" target="_blank">
+              <i class="fa-brands fa-discord"></i>
+            </a>
+            <a href="#" target="_blank">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="#" target="_blank">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="linking-cols footer-2--div">
+          <p class="footer-subheading">Courses</p>
+          <ul>
+            <li class="footer-links"><a href="#">home</a></li>
+            <li class="footer-links"><a href="#">home</a></li>
+            <li class="footer-links"><a href="#">home</a></li>
+            <li class="footer-links"><a href="#">home</a></li>
+            <li class="footer-links"><a href="#">home</a></li>
+          </ul>
+        </div>
+
+        <div class="linking-cols footer-3--div">
+          <p class="footer-subheading">Blogs</p>
+          <ul>
+            <li class="footer-links"><a href="#">home</a></li>
+            <li class="footer-links"><a href="#">home</a></li>
+            <li class="footer-links"><a href="#">home</a></li>
+            <li class="footer-links"><a href="#">home</a></li>
+            <li class="footer-links"><a href="#">home</a></li>
+          </ul>
+        </div>
+
+        <div class="linking-cols footer-4--div">
+          <p class="footer-subheading">Navigations</p>
+          <ul>
+            <li class="footer-links"><a href="#">home</a></li>
+            <li class="footer-links"><a href="#">home</a></li>
+            <li class="footer-links"><a href="#">home</a></li>
+            <li class="footer-links"><a href="#">home</a></li>
+            <li class="footer-links"><a href="#">home</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!-- footer-section ends here! -->
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>reflow and repaint understanding</title>
+  </head>
+  <body>
+    <!-- 
+    ! What are Reflow and Repaint?
+    ! Why are they important, and how can we optimize our script's performance by understanding them?
+
+    ? First of all, `reflow` and `repaint` are **very crucial** concepts, especially for **interview preparation** and writing **high-performance JavaScript code**.
+
+    ? **Reflow** is a **computationally expensive** process where the browser calculates the **position and dimensions** of elements on the page. Every time an element's size, position, or layout is changed, reflow occurs.
+
+    ? **Repaint**, on the other hand, is the process of **rendering** elements **pixel by pixel** on the screen. It happens when changes affect the element’s appearance **without changing its layout** (like color changes).
+
+    ? These two processes are different but related. **Without reflow, repaint cannot happen** because the browser first needs to determine the layout before it can render elements properly.
+
+    ? If we understand how to **reduce the frequency of reflows and repaints**, we can **significantly improve our script’s performance** and minimize **execution time**.
+
+    ? Below, we have demonstrated **three different approaches** in the 'script' tag to highlight the impact of reflow and repaint.
+
+    ? **Approach 1 (Worst Performance)**: Here, we are **directly modifying the DOM** inside a loop. Since each `p` element is appended to the body **one by one**, the browser performs **100 reflows and 100 repaints**.
+
+    ? **Approach 2 (Best Performance in Most Cases)**: Instead of updating the DOM repeatedly, we first create a `div`, append all `p` elements to it, and then append the `div` to the `body`. This **reduces reflow & repaint from 100 to just 1**.
+
+    ? **Approach 3 (Alternative Optimization)**: Similar to Approach 2, but instead of a `div`, we use a **DocumentFragment**. The benefit of a fragment is that it **does not trigger reflow/repaint while appending elements**, and only **one reflow/repaint happens when added to the DOM**. It can sometimes be even faster than Approach 2.
+    -->
+
+    <script>
+      // ! Approach 1 (Direct DOM Manipulation - Slowest)
+      let startTime1 = performance.now();
+      for (let i = 1; i <= 100; i++) {
+        let para = document.createElement("p");
+        para.textContent = `Para no. ${i}`;
+        document.body.appendChild(para);
+      }
+      let endTime1 = performance.now();
+      let time1 = endTime1 - startTime1;
+
+      // ! Approach 2 (Using a Single Div - Faster)
+      let startTime2 = performance.now();
+      let myDiv = document.createElement("div");
+      for (let i = 1; i <= 100; i++) {
+        let para = document.createElement("p");
+        para.textContent = `Para no. ${i}`;
+        myDiv.appendChild(para);
+      }
+      document.body.appendChild(myDiv);
+      let endTime2 = performance.now();
+      let time2 = endTime2 - startTime2;
+
+      // ! Approach 3 (Using Document Fragment - Fastest)
+      let startTime3 = performance.now();
+      let fragment = document.createDocumentFragment();
+      for (let i = 1; i <= 100; i++) {
+        let para = document.createElement("p");
+        para.textContent = `Para no. ${i}`;
+        fragment.appendChild(para);
+      }
+      document.body.appendChild(fragment);
+      let endTime3 = performance.now();
+      let time3 = endTime3 - startTime3;
+
+      // ! Display results in a readable format
+      console.table([
+        {
+          Approach: "Direct DOM Manipulation",
+          TimeTaken: time1.toFixed(4) + " ms",
+        },
+        { Approach: "Using Single Div", TimeTaken: time2.toFixed(4) + " ms" },
+        {
+          Approach: "Using Document Fragment",
+          TimeTaken: time3.toFixed(4) + " ms",
+        },
+      ]);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!--
+    in this tut we will see the overflow property..
+    ! 3 types of overflows
+    ? 1. overflow (both x and y) , 2. overflow-x , 3. overflow-y
+    * overflow have many values;
+
+    !here overflow-x is useful when the content overflows on x-axis either it will not effect anything only adds scrolls on y-axis if content overflows on y-axis..
+
+    ! auto , scroll , hidden , visible(default)
+
+    when we sets auto then it will add a scrollbar automatically when the content overflows..
+    can add x and y as per overflow type..
+
+    scroll sets scroll bar as per overflow type 
+
+    hidden hides the overflowed contents
+
+    visible shows the overflowing and it is by default value ,so it doesn't shows any difference..
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello World!</title>
+    <style>
+      .box {
+        border: 2px solid black;
+        background-color: aliceblue;
+        height: 275px;
+        width: 250px;
+        /* overflow-y: scroll; */
+        /* overflow: scroll; */
+        /* overflow: auto; */
+        /* overflow-y: auto; */
+        /* overflow: hidden; */
+        /* overflow: visible; */
+        overflow: scroll;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius id porro ex
+      ab optio error tempore quidem a, deserunt debitis minus dicta, voluptatum
+      quae provident delectus incidunt in itaque voluptates. Lorem ipsum dolor
+      sit amet consectetur adipisicing elit. Eius id porro ex ab optio error
+      tempore quidem a, deserunt debitis minus dicta, voluptatum quae provident
+      delectus incidunt in itaque voluptates. Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Eius id porro ex ab optio error tempore
+      quidem a, deserunt debitis minus dicta, voluptatum quae provident delectus
+      incidunt in itaque voluptates.
+    </div>
+  </body>
+</html>

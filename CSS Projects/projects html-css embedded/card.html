@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width='device-width', initial-scale=1.0" />
+    <title>card project</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        user-select: none;
+        box-sizing: border-box;
+        font-family: "B612 Mono", serif;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      .container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffe4a6;
+        font-size: 1.25rem;
+
+        & .card {
+          width: 27rem;
+          height: 45rem;
+          border-radius: 7.5px;
+          padding: 0.6rem 0;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+            rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-direction: column;
+          background-color: white;
+
+          :is(.imag, .genres, .titles, .about, .read-more) {
+            width: 95%;
+          }
+
+          & .imag {
+            height: 48%;
+
+            & img {
+              height: 100%;
+              width: 100%;
+              border-radius: 5px;
+            }
+          }
+
+          & .genres {
+            display: flex;
+            justify-content: start;
+            gap: 1.7rem;
+
+            & p {
+              border: 1px solid black;
+              padding: 0.3rem 0.65rem;
+              border-radius: 10px;
+              background-color: aliceblue;
+            }
+          }
+
+          & .titles {
+            padding: 0 0.65rem;
+            font-size: 1.75rem;
+            font-weight: 700;
+          }
+
+          & .about {
+            padding: 0 0.65rem;
+            text-align: justify;
+            font-size: 1.3rem;
+            text-indent: 4rem;
+          }
+
+          .read-more {
+            text-align: center;
+
+            & button {
+              border-radius: 10px;
+              padding: 0.25rem 1rem;
+              background-color: #dfeeff;
+              border: none;
+              box-shadow: 0 0 10px 2px #a9bdd3;
+              transition: 0.1s ease-in-out;
+            }
+
+            & :active {
+              box-shadow: none;
+            }
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="imag">
+          <img
+            src="../images/proj stock imgs/stock img.jpg"
+            alt="nature image"
+            width="100px"
+            height="100px"
+          />
+        </div>
+
+        <div class="genres">
+          <p>Nature</p>
+          <p>Landscape</p>
+        </div>
+
+        <div class="titles">
+          <p>Frozen Serenity</p>
+        </div>
+
+        <div class="about">
+          <p>
+            A frosty dawn paints the pond in soft pinks and purples, with misty
+            trees and frost-kissed grasses framing the scene.
+          </p>
+        </div>
+
+        <div class="read-more">
+          <button>Read more</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

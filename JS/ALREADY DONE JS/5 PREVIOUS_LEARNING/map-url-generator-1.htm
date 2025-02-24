@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        font-family: verdana;
+      }
+      p {
+        text-align: center;
+        font-size: large;
+        font-family: verdana;
+      }
+      .container {
+        text-align: center;
+      }
+      .container button {
+        cursor: pointer;
+      }
+      .container p {
+        display: inline-block;
+        margin-top: 7px;
+        font-size: small;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 align="center">Address to Link of Google-Map</h1>
+
+    <br />
+    <p>
+      Requirement : Write Your Address With white-spaces (i.e " ") between each
+      word
+    </p>
+
+    <div class="container">
+      Address :
+      <input type="text" placeholder="ex. sg highway ahmedabad" id="addr" />
+      <button id="btn" onclick="getLink()">Generate Link</button>
+      <br />
+      Link :
+      <p id="linkTarget"></p>
+    </div>
+
+    <script>
+      var ad, temp, lnk;
+
+      function getLink() {
+        ad = document.getElementById("addr").value;
+        temp = ad.replace(/\s/g, "+");
+        lnk = "https://www.google.com/maps?q=";
+        temp = lnk.concat(temp);
+        document.getElementById("linkTarget").innerText = temp;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS - OOP</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        user-select: none;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 75px;
+        text-transform: capitalize;
+      }
+
+      table {
+        margin: auto;
+      }
+
+      table caption {
+        text-transform: capitalize;
+        margin-bottom: 20px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      table,
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+
+      td:nth-child(1) {
+        text-align: center;
+      }
+
+      tr:nth-child(odd) {
+        background-color: rgba(132, 255, 0, 0.604);
+      }
+    </style>
+  </head>
+  <body>
+    <h2>OOP programming practicing...</h2>
+
+    <table>
+      <caption>
+        our tasks
+      </caption>
+
+      <tr>
+        <th>task no.</th>
+        <th>tasks</th>
+      </tr>
+
+      <tr>
+        <td>1.</td>
+        <td>
+          create a javascript class to create a complex number. create a
+          constructor to set the real and the complex part...
+        </td>
+      </tr>
+
+      <tr>
+        <td>2.</td>
+        <td>write a method to add 2 complex numbers in the above class...</td>
+      </tr>
+
+      <tr>
+        <td>3.</td>
+        <td>
+          create a class student from a class human. override a method and set
+          changes...
+        </td>
+      </tr>
+
+      <tr>
+        <td>4.</td>
+        <td>
+          see if student is an instance of human using instanceof keyword...
+        </td>
+      </tr>
+
+      <tr>
+        <td>5.</td>
+        <td>
+          use getters and setters to set and get the real and imaginary parts of
+          the complex numbers...
+        </td>
+      </tr>
+    </table>
+
+    <script>
+      /*
+      //   Q1, Q2 & Q5 altogether...
+      //   ---------------------
+
+      class ComplexNumber {
+        constructor(real, imag) {
+          this.realNum = real;
+          this.imagNum = imag;
+        }
+
+        createComplexNum() {
+          let compNum = `${this.realNum}+${this.imagNum}i`;
+          console.log("complex number created: " + compNum);
+        }
+
+        addComplexNums(r2, i2) {
+          let sumOfR = this.realNum + r2;
+          let sumOfI = this.imagNum + i2;
+          console.log(`the sum of complex numbers is: '${sumOfR}+${sumOfI}i'`);
+        }
+
+        showRealNums() {
+          console.log(`real number is: ${this.realNum}`);
+        }
+
+        showImagNums() {
+          console.log(`imaginary number is: ${this.imagNum}`);
+        }
+      }
+
+      let cn1 = new ComplexNumber(3, 4);
+      cn1.createComplexNum();
+      cn1.showRealNums();
+      cn1.showImagNums();
+
+      let cn2 = new ComplexNumber(4, 7);
+      cn2.createComplexNum();
+      cn2.showRealNums();
+      cn2.showImagNums();
+
+      cn1.addComplexNums(cn2.realNum, cn2.imagNum);
+    */
+
+      /*
+       Q3 & Q4 altogether...
+       ---------------------
+       
+       class Human {
+           constructor(show) {
+               if (show == 0) {
+                   return;
+          } else {
+            console.log("a newly baby is borned!");
+          }
+        }
+
+        setProperty(name, color) {
+          this.name = name;
+          this.color = color;
+        }
+
+        getProperty() {
+          console.log(
+            `the baby is named by ${this.name} and its skin tone is ${this.color}...`
+          );
+        }
+      }
+
+      let b1 = new Human();
+      b1.setProperty("chheinu", "browny");
+      b1.getProperty();
+
+      class Student extends Human {
+        constructor() {
+          super(0);
+          console.log("newly student is admitted in our school...");
+        }
+
+        setProperty(name, age, gender) {
+          this.name = name;
+          this.age = age;
+          this.gender = gender;
+        }
+
+        getProperty() {
+          if (this.gender == "male")
+            console.log(
+              `the student name is ${this.name} and his age is ${this.age}.`
+            );
+          else
+            console.log(
+              `the student name is ${this.name} and her age is ${this.age}.`
+            );
+        }
+      }
+
+      let s1 = new Student();
+      s1.setProperty("aayesha", 5, "female");
+      s1.getProperty();
+
+      console.log(s1 instanceof Human);
+    */
+    </script>
+  </body>
+</html>

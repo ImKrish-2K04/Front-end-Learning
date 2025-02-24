@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Hello World!!</title>
+
+    <style>
+      hr {
+        height: 4px;
+        background-color: bisque;
+        box-shadow: 0px 3px rgb(186, 19, 19);
+        border: none;
+        border-radius: 14px;
+      }
+
+      #myDiv ol {
+        list-style-type: none;
+      }
+      #myDiv li {
+        display: inline;
+        font-weight: bold;
+        font-size: large;
+      }
+
+      a:link {
+        color: darkorange;
+      }
+
+      a:active {
+        color: red;
+      }
+
+      a:visited {
+        color: greenyellow;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Creating an ordered list</h1>
+
+    <h2>List of languages</h2>
+    <ol type="1" start="4">
+      <li>English</li>
+      <li>Spanish</li>
+      <li>Japanese</li>
+      <li>Hindi</li>
+    </ol>
+    <hr style="width: 175px; margin-left: 0" />
+
+    <h2>Roman Number Listing of languages</h2>
+    <ol type="I" start="5" reversed>
+      <li>English</li>
+      <li>Spanish</li>
+      <li>Japanese</li>
+      <li>Hindi</li>
+    </ol>
+
+    <hr style="width: 175px; margin-left: 0" />
+
+    <ul type="square">
+      <li>list1</li>
+      <li>list2</li>
+      <li>list3</li>
+      <li>list4</li>
+    </ul>
+
+    <hr style="width: 175px; margin-left: 0" />
+
+    <h2>creating description list</h2>
+    <dl>
+      <dt>- HTML</dt>
+      <dd><dfn>It is a Markup Language</dfn></dd>
+      <dt>- JavaScript</dt>
+      <dd><dfn>It is a Scripting Language</dfn></dd>
+      <dt>- SQL</dt>
+      <dd><dfn>It is a Query Language</dfn></dd>
+    </dl>
+
+    <hr style="width: 175px; margin-left: 0" />
+
+    <h2>Languages</h2>
+    <ol>
+      <li>Programming Language</li>
+      <ul type="circle">
+        <li>C++</li>
+        <li>Java</li>
+        <li>.Net</li>
+      </ul>
+      <li>Scripting Language</li>
+      <ul type="circle">
+        <li>JavaScript</li>
+        <li>PhP</li>
+      </ul>
+    </ol>
+
+    <hr style="width: 175px; margin-left: 0" />
+
+    <div id="myDiv">
+      <br />
+      <ol>
+        <li>Item1 |</li>
+        <li>Item2</li>
+      </ol>
+    </div>
+
+    <hr style="width: 175px; margin-left: 0" />
+
+    <a target="_self" href="https://9animetv.to/home">9animetv</a>
+
+    <hr style="width: 175px; margin-left: 0" />
+
+    <iframe
+      height="350px"
+      width="550px"
+      srcdoc="<a href='https://9animetv.to/home' target='_parent'>9anime</a> <br />
+    <a href='https://zoro.to/home' target='_blank'>zoro</a>"
+    ></iframe>
+
+    <hr style="width: 175px; margin-left: 0" />
+  </body>
+</html>

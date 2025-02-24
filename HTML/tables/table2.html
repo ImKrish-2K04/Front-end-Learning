@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>learning table</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            user-select: none;
+        }
+
+        main {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        table, th, td, caption {
+            border-collapse: collapse;
+            padding: 5px 15px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <table border="1">
+            <caption>Table-Exercise</caption>
+            <thead>
+                <tr>
+                    <th>Column1</td>
+                    <th>Column2</td>
+                    <th>Column3</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="2">Row1 Cell1</td>
+                    <td>Row1 Cell2</td>
+                    <td>Row1 Cell3</td>
+                </tr>
+                <tr>
+                    <td>Row2 Cell2</td>
+                    <td>Row2 Cell3</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">Row3 Cell1</td>
+                </tr>
+            </tfoot>
+        </table>
+    </main>
+</body>
+</html>

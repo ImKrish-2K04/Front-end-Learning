@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>nav-bar project</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        user-select: none;
+        box-sizing: border-box;
+        font-family: "JetBrains Mono";
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      :root {
+        --navbar_color: rgba(4, 4, 4, 0.31);
+        --link_hover_color: rgba(128, 128, 128, 0.252);
+        --color: white;
+        --navbar_height: 5rem;
+      }
+
+      .header {
+        background-color: var(--navbar_color);
+
+        & .navbar {
+          background-color: var(--navbar_color);
+          height: var(--navbar_height);
+          width: 100%;
+          display: flex;
+          align-items: center;
+          backdrop-filter: blur(0.5rem);
+          position: fixed;
+          top: 0%;
+          left: 0%;
+
+          & ul {
+            list-style-type: none;
+            display: flex;
+
+            & a {
+              padding: 1.2rem 2rem;
+              text-decoration: none;
+              color: var(--color);
+              font-size: 1.65rem;
+              transition: 0.2s ease-in-out;
+
+              &:hover {
+                background-color: var(--link_hover_color);
+              }
+            }
+          }
+        }
+      }
+
+      .hero {
+        :is(.section-1, .section-2, .section-3) {
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: white;
+          font-size: 2rem;
+        }
+
+        .section-1 {
+          background-color: darkblue;
+        }
+
+        .section-2 {
+          background-color: darkgreen;
+        }
+
+        .section-3 {
+          background-color: darkorchid;
+        }
+      }
+
+      .footer {
+        font-size: 2rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <nav class="navbar">
+        <ul>
+          <li><a href="#">HOME</a></li>
+          <li><a href="#">ABOUT</a></li>
+          <li><a href="#">SERVICES</a></li>
+          <li><a href="#">CONTACT US</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="hero">
+      <div class="section section-1">section-1</div>
+      <div class="section section-2">section-2</div>
+      <div class="section section-3">section-3</div>
+    </div>
+
+    <div class="footer">every rights reserved under copyright &copy;2025</div>
+  </body>
+</html>

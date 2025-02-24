@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>simple js project 2</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ? starting ? -->
+
+    <div class="container">
+      <div class="game-box">
+        <div class="heading">Number guessing game</div>
+        <main>
+            <p class="info">Try and guess a random number between 1 to 100</p>
+            <p class="info">
+              You have 10 attempts to guess the number right now!
+            </p>
+            <h2>Guess a number</h2>
+            <form action="#">
+              <input type="number" name="guess" id="guess" autofocus />
+              <input type="button" value="Submit guess" id="submit-btn" />
+            </form>
+            <p class="info">
+              Previous guesses: <data class="recent_guess">-</data>
+            </p>
+            <p class="info">
+              Remaining guesses: <data class="remaining_guess"></data>
+            </p>
+        </main>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

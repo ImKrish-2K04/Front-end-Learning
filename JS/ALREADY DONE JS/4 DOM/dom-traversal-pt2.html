@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      h1 {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="heading">DOM Traversal</h1>
+
+    <p class="para para1">
+      Here, we are going to learn rest of some node object properties which are
+      used to accessing nodes of the elements and element nodes of the elements.
+    </p>
+
+    <p class="para para2">
+      these node objects are used to traversal into the Document Object Model
+      (i.e DOM)...
+    </p>
+
+    <p class="para para3">those objects are as follows:</p>
+
+    <ol type="1">
+      <!-- the four nodes -->
+      <li>firstChild</li>
+      <li>lastChild</li>
+      <li>firstElementChild</li>
+      <li>lastElementChild</li>
+    </ol>
+
+    <script>
+      // look here! firstChild...
+      // imp here, firstChild property is used to access the first child node of the particular element node, it returns the first child of the specific element node and it can be a text node or comment node or element node or any other node...
+
+      let orderList = document.querySelector("ol");
+      console.log(orderList.firstChild);
+
+      // look here! lastChild...
+      // imp here, the lastChild is the same as the firstChild only difference is that the current property is starts from the last child and the firstChild is starts from the first child of the specific element node!...
+
+      // textnode->li->textnode->textContent...
+      console.log(orderList.lastChild.previousSibling.childNodes[0].nodeValue);
+
+      // look here! firstElementChild && lastElementChild...
+      //imp here, the firstElementChild returns the first child of the specific element node which will also be an element node!... here in the name also there is a specific instruction provided that it will check about the element nodes inside a particular element and the opposite of this but same to it is lastElementChild which starts from end of the element content and gives the result...using method is same for both...
+
+      console.log(orderList.firstElementChild.childNodes[0].nodeValue);
+      console.log(orderList.lastElementChild.childNodes[0].nodeValue);
+    </script>
+  </body>
+</html>
